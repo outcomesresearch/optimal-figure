@@ -4,7 +4,6 @@ import {
   Stack,
   Title,
   Divider,
-  useMantineTheme,
   useMatches,
   Box,
 } from "@mantine/core";
@@ -12,7 +11,7 @@ import WidthContainer from "./WidthContainer";
 
 export default function Footer() {
   const isMobile = useMatches(
-    { base: true, md: false },
+    { base: true, sm: false },
     { getInitialValueInEffect: false }
   );
 

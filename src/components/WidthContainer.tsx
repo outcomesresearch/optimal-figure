@@ -9,7 +9,7 @@ const WidthContainer = ({
 }) => {
   return (
     <Box w="100%" bg={backgroundColor}>
-      <Box w="92%" ml="auto" mr="auto">
+      <Box w="92%" mx="auto">
         {children}
       </Box>
     </Box>

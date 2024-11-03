@@ -15,10 +15,20 @@ import Footer from "./components/Footer";
 import NavbarSubtitle from "./components/NavbarSubtitle";
 import WidthContainer from "./components/WidthContainer";
 import Header from "./components/Header";
+import IntroCard from "./components/IntroCard";
 
 export default function App() {
   const theme = createTheme({
-    fontFamily: "Open Sans, sans-serif",
+    fontFamily: "Roboto, sans-serif",
+    components: {
+      Button: {
+        styles: () => {
+          return {
+            root: { fontFamily: "Roboto,sans-serif", fontWeight: 500 },
+          };
+        },
+      },
+    },
     colors: {
       washu: [
         "#fdeded",
@@ -45,9 +55,11 @@ export default function App() {
         <AppShell.Main w="100vw" pl={0} pr={0} pb={0} h="100%">
           <Stack pt="sm" gap={0} mih="100%">
             <NavbarSubtitle />
-            <Group styles={{ root: { flexGrow: 1 } }}>
+            <Group styles={{ root: { flexGrow: 1 } }} align="start">
               <WidthContainer>
-                <>main body of app</>
+                <Group maw="1185px" mx="auto" mt={0}>
+                  <IntroCard />
+                </Group>
               </WidthContainer>
             </Group>
             <Footer />
