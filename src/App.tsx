@@ -8,7 +8,13 @@ import {
   createTheme,
   Box,
   MantineProvider,
+  Group,
+  Stack,
 } from "@mantine/core";
+import Footer from "./components/Footer";
+import NavbarSubtitle from "./components/NavbarSubtitle";
+import WidthContainer from "./components/WidthContainer";
+import Header from "./components/Header";
 
 export default function App() {
   const theme = createTheme({
@@ -31,41 +37,21 @@ export default function App() {
 
   return (
     <MantineProvider theme={theme}>
-      <AppShell header={{ height: 48 }} padding="md">
+      <AppShell header={{ height: 48 }}>
         <AppShell.Header withBorder={false}>
-          <Box bg="washu.9" w="100%" maw="100%" h={48}>
-            <Box h="100%" w="92%" py="sm" m="auto">
-              <img
-                src="src/assets/washuLogo.svg"
-                style={{ margin: "auto", height: "100%", maxWidth: "100%" }}
-              />
-            </Box>
-          </Box>
+          <Header />
         </AppShell.Header>
 
-        <AppShell.Main w="100vw">
-          <Box w="calc(92% + 32px)" p={0} m="auto" mt="-5px">
-            <Text
-              c="red.9"
-              span
-              fw={600}
-              ff="'Source Sans 3'"
-              tt="uppercase"
-              size="14px"
-            >
-              Department of Otolaryngology&nbsp;
-            </Text>
-            <Text
-              c="red.9"
-              span
-              fw={600}
-              ff="'Source Sans 3'"
-              tt="uppercase"
-              size="14px"
-            >
-              Clinical Outcomes Research
-            </Text>
-          </Box>
+        <AppShell.Main w="100vw" pl={0} pr={0} pb={0} h="100%">
+          <Stack pt="sm" gap={0} mih="100%">
+            <NavbarSubtitle />
+            <Group styles={{ root: { flexGrow: 1 } }}>
+              <WidthContainer>
+                <>main body of app</>
+              </WidthContainer>
+            </Group>
+            <Footer />
+          </Stack>
         </AppShell.Main>
       </AppShell>
     </MantineProvider>
