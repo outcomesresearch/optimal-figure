@@ -2,7 +2,13 @@
 // All packages except `@mantine/hooks` require styles imports
 import "@mantine/core/styles.css";
 
-import { AppShell, createTheme, Box, MantineProvider } from "@mantine/core";
+import {
+  AppShell,
+  Text,
+  createTheme,
+  Box,
+  MantineProvider,
+} from "@mantine/core";
 
 export default function App() {
   const theme = createTheme({
@@ -26,20 +32,41 @@ export default function App() {
   return (
     <MantineProvider theme={theme}>
       <AppShell header={{ height: 48 }} padding="md">
-        <AppShell.Header
-          styles={{
-            header: { backgroundColor: `var(--mantine-color-washu-9)` },
-          }}
-        >
-          <Box w="92%" h="100%" py="sm" m="auto">
-            <img
-              src="src/assets/washuLogo.svg"
-              style={{ margin: "auto", height: "100%" }}
-            />
+        <AppShell.Header withBorder={false}>
+          <Box bg="washu.9" w="100%" maw="100%" h={48}>
+            <Box h="100%" w="92%" py="sm" m="auto">
+              <img
+                src="src/assets/washuLogo.svg"
+                style={{ margin: "auto", height: "100%", maxWidth: "100%" }}
+              />
+            </Box>
           </Box>
         </AppShell.Header>
 
-        <AppShell.Main>Main</AppShell.Main>
+        <AppShell.Main w="100vw">
+          <Box w="calc(92% + 32px)" p={0} m="auto" mt="-5px">
+            <Text
+              c="red.9"
+              span
+              fw={600}
+              ff="'Source Sans 3'"
+              tt="uppercase"
+              size="14px"
+            >
+              Department of Otolaryngology&nbsp;
+            </Text>
+            <Text
+              c="red.9"
+              span
+              fw={600}
+              ff="'Source Sans 3'"
+              tt="uppercase"
+              size="14px"
+            >
+              Clinical Outcomes Research
+            </Text>
+          </Box>
+        </AppShell.Main>
       </AppShell>
     </MantineProvider>
   );
