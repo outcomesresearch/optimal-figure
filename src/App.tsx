@@ -4,22 +4,26 @@ import "@mantine/core/styles.css";
 
 import {
   AppShell,
-  Text,
   createTheme,
-  Box,
   MantineProvider,
   Group,
   Stack,
+  Card,
 } from "@mantine/core";
+import Stepper from "./components/Stepper";
 import Footer from "./components/Footer";
 import NavbarSubtitle from "./components/NavbarSubtitle";
 import WidthContainer from "./components/WidthContainer";
 import Header from "./components/Header";
 import IntroCard from "./components/IntroCard";
+import { useState } from "react";
 
 export default function App() {
+  const [inStepper, setInStepper] = useState(false);
   const theme = createTheme({
     fontFamily: "Roboto, sans-serif",
+    primaryColor: "washu",
+    primaryShade: 9,
     components: {
       Button: {
         styles: () => {
@@ -45,6 +49,8 @@ export default function App() {
     },
   });
 
+  console.log({ theme });
+
   return (
     <MantineProvider theme={theme}>
       <AppShell header={{ height: 48 }}>
@@ -57,8 +63,20 @@ export default function App() {
             <NavbarSubtitle />
             <Group styles={{ root: { flexGrow: 1 } }} align="start">
               <WidthContainer>
-                <Group maw="1185px" mx="auto" mt={0}>
-                  <IntroCard />
+                <Group maw="1185px" mx="auto" mt={0} justify="center">
+                  <Card
+                    shadow="sm"
+                    padding="lg"
+                    my={{ base: "lg", md: "48px" }}
+                    radius="md"
+                    withBorder
+                  >
+                    {!inStepper ? (
+                      <IntroCard buttonCb={() => setInStepper(true)} />
+                    ) : (
+                      <Stepper />
+                    )}
+                  </Card>
                 </Group>
               </WidthContainer>
             </Group>
