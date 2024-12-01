@@ -1,6 +1,6 @@
 import RandomAllocationDescription from "../../components/stepComponents/RandomAllocationDescription";
 
-import correlationContinousMeasureTree from "./correlationContinuousMeasure/tree";
+import correlationContinuousMeasureTree from "./correlationContinuousMeasure/tree";
 import comparisonOfTwoGroupsTree from "./comparisonGroups/tree";
 import multiVariableAnalysisTree from "./multiVariableAnalysis/tree";
 
@@ -28,7 +28,7 @@ const tree = {
     ],
     inputs: [ids],
   },
-  ...correlationContinousMeasureTree,
+  ...correlationContinuousMeasureTree,
   ...comparisonOfTwoGroupsTree,
   ...multiVariableAnalysisTree,
 };
