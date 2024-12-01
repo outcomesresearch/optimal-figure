@@ -7,12 +7,14 @@ const Component = () => {
         Cox Regression with time-dependent covariate is used to analyze
         multivariable relationships in the context of time-to-event outcomes.
         This regression technique is specifically designed to accommodate
-        covariates that vary or change over time. By incorporating
-        time-dependent covariates, the Cox Regression model can provide more
-        accurate estimates of hazard ratios and survival probabilities. The
-        primary purpose of this analysis is to investigate how different
-        variables relate to the time it takes for an event of interest to occur,
-        such as disease progression, relapse, or death.
+        covariates that vary or change over time.
+      </Text>
+      <Text>
+        By incorporating time-dependent covariates, the Cox Regression model can
+        provide more accurate estimates of hazard ratios and survival
+        probabilities. The primary purpose of this analysis is to investigate
+        how different variables relate to the time it takes for an event of
+        interest to occur, such as disease progression, relapse, or death.
       </Text>
       <Text>
         With time-dependent covariates, the dynamic nature of certain factors

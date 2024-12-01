@@ -2,6 +2,7 @@ import ExperimentalStudyDescription from "../../../components/stepComponents/Exp
 import RandomizedControlledTrialDescription from "../../../components/stepComponents/RandomizedControlledTrialDescription";
 import CoxRegressionTimedependent from "../../../components/stepComponents/CoxRegressionTimedependent";
 import CountProcessAnalysis from "../../../components/stepComponents/CountProcessAnalysis";
+import CompetingRiskAnalysis from "../../../components/stepComponents/CompetingRiskAnalysis";
 
 import { MULTIVARIABLE_ANALYSIS } from "../ids";
 import * as ids from "./ids";
@@ -63,7 +64,7 @@ let tree = {
     type: "statement",
     title: "Competing Risk Analysis",
     flowChartTitle: "Randomized\nClinical Trial",
-    component: RandomizedControlledTrialDescription,
+    component: CompetingRiskAnalysis,
     color: "blue-darken-2",
     inputs: [ids],
   },

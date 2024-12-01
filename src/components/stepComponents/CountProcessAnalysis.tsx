@@ -5,11 +5,13 @@ const Component = () => {
     <>
       <Text span>
         Count Process Analysis is used to analyze time-to-event outcomes, where
-        events are counted over a given period. This analysis technique is
-        particularly useful when studying events that occur repeatedly or in a
-        recurring manner over time. It allows for the examination of multiple
-        independent variables to assess their influence on the timing and
-        occurrence of the event of interest.
+        events are counted over a given period.
+      </Text>
+      <Text>
+        This analysis technique is particularly useful when studying events that
+        occur repeatedly or in a recurring manner over time. It allows for the
+        examination of multiple independent variables to assess their influence
+        on the timing and occurrence of the event of interest.
       </Text>
       <Text>
         The primary objective of Count Process Analysis is to understand how
