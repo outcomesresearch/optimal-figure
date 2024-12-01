@@ -3,6 +3,7 @@ import RandomAllocationDescription from "../../../components/stepComponents/Rand
 import RandomizedControlledTrialDescription from "../../../components/stepComponents/RandomizedControlledTrialDescription";
 import PoissonRegression from "../../../components/stepComponents/PoissonRegression";
 import NegativeBinomial from "../../../components/stepComponents/NegativeBinomial";
+import Multinomial from "../../../components/stepComponents/MultinomialRegression";
 
 import { MULTIVARIABLE_ANALYSIS } from "../ids";
 import * as ids from "./ids";
@@ -42,9 +43,9 @@ let tree = {
   },
   [ids.MULTINOMINAL]: {
     type: "statement",
-    title: "Multinominal Regression",
+    title: "Multinomial Regression",
     flowChartTitle: "Randomized\nClinical Trial",
-    component: RandomizedControlledTrialDescription,
+    component: Multinomial,
     color: "blue-darken-2",
     inputs: [ids],
   },
