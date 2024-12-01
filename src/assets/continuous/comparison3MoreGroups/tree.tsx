@@ -3,6 +3,7 @@ import RandomAllocationDescription from "../../../components/stepComponents/Rand
 import RandomizedControlledTrialDescription from "../../../components/stepComponents/RandomizedControlledTrialDescription";
 import KruskalWallis from "../../../components/stepComponents/KruskalWallis";
 import FriedmansTest from "../../../components/stepComponents/FriedmansTest";
+import OneWayANOVA from "../../../components/stepComponents/OneWayANOVA";
 
 import { COMPARISON_OF_3_OR_MORE_GROUPS } from "../ids";
 import * as ids from "./ids";
@@ -69,9 +70,9 @@ let tree = {
 
   [ids.ANOVA]: {
     type: "statement",
-    title: "ANOVA",
+    title: "One-way ANOVA",
     flowChartTitle: "Randomized\nClinical Trial",
-    component: RandomizedControlledTrialDescription,
+    component: OneWayANOVA,
     color: "blue-darken-2",
     inputs: [ids],
   },
