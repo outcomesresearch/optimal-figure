@@ -2,6 +2,7 @@ import ExperimentalStudyDescription from "../../../components/stepComponents/Exp
 import RandomAllocationDescription from "../../../components/stepComponents/RandomAllocationDescription";
 import RandomizedControlledTrialDescription from "../../../components/stepComponents/RandomizedControlledTrialDescription";
 import KruskalWallis from "../../../components/stepComponents/KruskalWallis";
+import FriedmansTest from "../../../components/stepComponents/FriedmansTest";
 
 import { COMPARISON_OF_3_OR_MORE_GROUPS } from "../ids";
 import * as ids from "./ids";
@@ -97,7 +98,7 @@ let tree = {
     type: "statement",
     title: "Friedman’s test",
     flowChartTitle: "Randomized\nClinical Trial",
-    component: RandomizedControlledTrialDescription,
+    component: FriedmansTest,
     color: "blue-darken-2",
     inputs: [ids],
   },
