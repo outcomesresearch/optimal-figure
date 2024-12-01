@@ -2,6 +2,7 @@ import ExperimentalStudyDescription from "../../../components/stepComponents/Exp
 import RandomAllocationDescription from "../../../components/stepComponents/RandomAllocationDescription";
 import RandomizedControlledTrialDescription from "../../../components/stepComponents/RandomizedControlledTrialDescription";
 import PoissonRegression from "../../../components/stepComponents/PoissonRegression";
+import NegativeBinomial from "../../../components/stepComponents/NegativeBinomial";
 
 import { MULTIVARIABLE_ANALYSIS } from "../ids";
 import * as ids from "./ids";
@@ -86,7 +87,7 @@ let tree = {
     type: "statement",
     title: "Negative Binomial",
     flowChartTitle: "Randomized\nClinical Trial",
-    component: RandomizedControlledTrialDescription,
+    component: NegativeBinomial,
     color: "blue-darken-2",
     inputs: [ids],
   },
