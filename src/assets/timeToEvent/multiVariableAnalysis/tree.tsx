@@ -1,6 +1,7 @@
 import ExperimentalStudyDescription from "../../../components/stepComponents/ExperimentalStudyDescription";
 import RandomizedControlledTrialDescription from "../../../components/stepComponents/RandomizedControlledTrialDescription";
 import CoxRegressionTimedependent from "../../../components/stepComponents/CoxRegressionTimedependent";
+import CountProcessAnalysis from "../../../components/stepComponents/CountProcessAnalysis";
 
 import { MULTIVARIABLE_ANALYSIS } from "../ids";
 import * as ids from "./ids";
@@ -43,7 +44,7 @@ let tree = {
 
   [ids.COX_REGRESSION_TIMEDEPENDENT]: {
     type: "statement",
-    title: "Cox regression with time-dependent covariate",
+    title: "Cox Regression with time-dependent covariate",
     flowChartTitle: "Randomized\nClinical Trial",
     component: CoxRegressionTimedependent,
     color: "blue-darken-2",
@@ -52,9 +53,9 @@ let tree = {
 
   [ids.COUNT_PROCESS_ANALYSIS]: {
     type: "statement",
-    title: "Count process analysis",
+    title: "Count Process Analysis",
     flowChartTitle: "Randomized\nClinical Trial",
-    component: RandomizedControlledTrialDescription,
+    component: CountProcessAnalysis,
     color: "blue-darken-2",
     inputs: [ids],
   },
