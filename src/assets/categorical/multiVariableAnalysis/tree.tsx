@@ -4,6 +4,7 @@ import RandomizedControlledTrialDescription from "../../../components/stepCompon
 import PoissonRegression from "../../../components/stepComponents/PoissonRegression";
 import NegativeBinomial from "../../../components/stepComponents/NegativeBinomial";
 import Multinomial from "../../../components/stepComponents/MultinomialRegression";
+import OrdinalCategorical from "../../../components/stepComponents/OrdinalCategorical";
 
 import { MULTIVARIABLE_ANALYSIS } from "../ids";
 import * as ids from "./ids";
@@ -37,7 +38,7 @@ let tree = {
     type: "statement",
     title: "Ordinal Regression",
     flowChartTitle: "Randomized\nClinical Trial",
-    component: RandomizedControlledTrialDescription,
+    component: OrdinalCategorical,
     color: "blue-darken-2",
     inputs: [ids],
   },
