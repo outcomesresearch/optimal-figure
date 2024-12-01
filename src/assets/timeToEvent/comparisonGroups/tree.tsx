@@ -17,7 +17,7 @@ let tree = {
         next: ids.KAPLAN_MEIER,
       },
       {
-        answer: "Life table analysis with Wilcoxon-Gihan test",
+        answer: "Life Table Analysis with Wilcoxon-Gehan test",
         next: ids.LIFE_WILCOXON,
       },
       {
@@ -40,7 +40,7 @@ let tree = {
 
   [ids.LIFE_WILCOXON]: {
     type: "statement",
-    title: "Life table analysis with Wilcoxon-Gihan test",
+    title: "Life Table Analysis with Wilcoxon-Gehan test",
     flowChartTitle: "Randomized\nClinical Trial",
     component: LifeTable,
     color: "blue-darken-2",
