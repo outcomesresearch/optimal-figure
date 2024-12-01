@@ -21,7 +21,7 @@ let rootTree = {
     inputs: [],
     choices: [
       {
-        answer: "Continuous",
+        answer: "Continous",
         next: ids.CONTINUOUS,
         option_description:
           "A continuous outcome measure is a type of outcome measure used in clinical studies to quantify changes in a continuous variable such as blood pressure, weight, or height. It is typically analyzed using statistical methods such a mean, median, or regression analysis.",

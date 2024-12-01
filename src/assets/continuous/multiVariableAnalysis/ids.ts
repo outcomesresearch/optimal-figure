@@ -9,8 +9,8 @@ export const NON_INDEPENDENT_OBSERVATIONS =
 export const INDEPENDENT_OBSERVATIONS =
   " opposite of non-independent continuous";
 
-export const LINEAR_REGRESSION = "linear regression ";
-export const POISSON_REGRESSION = "poisson regression";
-export const ORDINAL_REGRESSION = "orginal regression";
+export const LINEAR_REGRESSION = "linear regression continuous";
+export const POISSON_REGRESSION = "poisson regression continuous";
+export const ORDINAL_REGRESSION = "orginal regression continuous";
 
 export const MIXED_LINEAR_MODEL = "mixed linear model";

@@ -93,7 +93,7 @@ let tree = {
 
   [ids.POISSON_REGRESSION]: {
     type: "statement",
-    title: "Poisson regression",
+    title: "Poisson Regression",
     flowChartTitle: "Randomized\nClinical Trial",
     component: PoissonRegression,
     color: "blue-darken-2",
