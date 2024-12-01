@@ -1,6 +1,7 @@
 import ExperimentalStudyDescription from "../../../components/stepComponents/ExperimentalStudyDescription";
 import RandomAllocationDescription from "../../../components/stepComponents/RandomAllocationDescription";
 import RandomizedControlledTrialDescription from "../../../components/stepComponents/RandomizedControlledTrialDescription";
+import PearsonCoefficient from "../../../components/stepComponents/PearsonCoefficient";
 
 import { CORRELATION_WITH_CONTINUOUS_VARIABLE } from "../ids";
 import * as ids from "./ids";
@@ -53,7 +54,7 @@ let tree = {
   [ids.PEARSONS_CORRELATION_COEFFICIENT]: {
     type: "statement",
     title: "Pearson Correlation Coefficient r",
-    component: ExperimentalStudyDescription,
+    component: PearsonCoefficient,
     color: "blue-lighten-2",
     inputs: [ids.ROOT],
   },
