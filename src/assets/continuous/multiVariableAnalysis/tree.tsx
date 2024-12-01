@@ -1,6 +1,7 @@
 import ExperimentalStudyDescription from "../../../components/stepComponents/ExperimentalStudyDescription";
 import RandomAllocationDescription from "../../../components/stepComponents/RandomAllocationDescription";
 import RandomizedControlledTrialDescription from "../../../components/stepComponents/RandomizedControlledTrialDescription";
+import MixedLinearModel from "../../../components/stepComponents/MixedLinearModel";
 
 import { MULTIVARIABLE_ANALYSIS } from "../ids";
 import * as ids from "./ids";
@@ -77,7 +78,7 @@ let tree = {
     type: "statement",
     title: "Mixed Linear Model",
     flowChartTitle: "Randomized\nClinical Trial",
-    component: RandomizedControlledTrialDescription,
+    component: MixedLinearModel,
     color: "blue-darken-2",
     inputs: [ids],
   },
