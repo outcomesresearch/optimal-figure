@@ -1,5 +1,6 @@
 import ExperimentalStudyDescription from "../../../components/stepComponents/ExperimentalStudyDescription";
 import RandomizedControlledTrialDescription from "../../../components/stepComponents/RandomizedControlledTrialDescription";
+import LifeTable from "../../../components/stepComponents/LifeTable";
 
 import { COMPARISON_OF_GROUPS_CATEGORICAL } from "../ids";
 import * as ids from "./ids";
@@ -15,8 +16,8 @@ let tree = {
         next: ids.KAPLAN_MEIER,
       },
       {
-        answer: "Life table analysis +Wilcoxon-Gihan test",
-        next: ids.LIFE_WHITNEY,
+        answer: "Life table analysis with Wilcoxon-Gihan test",
+        next: ids.LIFE_WILCOXON,
       },
       {
         answer: "Cox regression",
@@ -36,11 +37,11 @@ let tree = {
     inputs: [ids],
   },
 
-  [ids.LIFE_WHITNEY]: {
+  [ids.LIFE_WILCOXON]: {
     type: "statement",
-    title: "Life table analysis +Wilcoxon-Gihan test",
+    title: "Life table analysis with Wilcoxon-Gihan test",
     flowChartTitle: "Randomized\nClinical Trial",
-    component: RandomizedControlledTrialDescription,
+    component: LifeTable,
     color: "blue-darken-2",
     inputs: [ids],
   },
