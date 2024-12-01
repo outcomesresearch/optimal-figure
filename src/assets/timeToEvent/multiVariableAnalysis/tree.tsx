@@ -1,5 +1,5 @@
 import ExperimentalStudyDescription from "../../../components/stepComponents/ExperimentalStudyDescription";
-import RandomizedControlledTrialDescription from "../../../components/stepComponents/RandomizedControlledTrialDescription";
+import CoxPHRegression from "../../../components/stepComponents/CoxPHRegression";
 import CoxRegressionTimedependent from "../../../components/stepComponents/CoxRegressionTimedependent";
 import CountProcessAnalysis from "../../../components/stepComponents/CountProcessAnalysis";
 import CompetingRiskAnalysis from "../../../components/stepComponents/CompetingRiskAnalysis";
@@ -36,9 +36,9 @@ let tree = {
 
   [ids.COX_PH_REGRESSION]: {
     type: "statement",
-    title: "Cox PH Regression",
+    title: "Cox Proportional Hazards (PH) Regression",
     flowChartTitle: "Randomized\nClinical Trial",
-    component: RandomizedControlledTrialDescription,
+    component: CoxPHRegression,
     color: "blue-darken-2",
     inputs: [ids],
   },
