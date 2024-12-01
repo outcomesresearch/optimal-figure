@@ -1,6 +1,8 @@
 import ExperimentalStudyDescription from "../../../components/stepComponents/ExperimentalStudyDescription";
 import RandomAllocationDescription from "../../../components/stepComponents/RandomAllocationDescription";
 import RandomizedControlledTrialDescription from "../../../components/stepComponents/RandomizedControlledTrialDescription";
+import McNemarTest from "../../../components/stepComponents/McNemarTest";
+import CochransQ from "../../../components/stepComponents/CochransQ";
 
 import { COMPARISON_OF_2_GROUPS } from "../ids";
 import * as ids from "./ids";
@@ -88,7 +90,7 @@ let tree = {
     type: "statement",
     title: "McNemar test",
     flowChartTitle: "Randomized\nClinical Trial",
-    component: RandomizedControlledTrialDescription,
+    component: McNemarTest,
     color: "blue-darken-2",
     inputs: [ids],
   },
@@ -97,7 +99,7 @@ let tree = {
     type: "statement",
     title: "Cochran’s Q Test",
     flowChartTitle: "Randomized\nClinical Trial",
-    component: RandomizedControlledTrialDescription,
+    component: CochransQ,
     color: "blue-darken-2",
     inputs: [ids],
   },
