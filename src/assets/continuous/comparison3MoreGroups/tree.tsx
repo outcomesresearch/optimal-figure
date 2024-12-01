@@ -1,6 +1,7 @@
 import ExperimentalStudyDescription from "../../../components/stepComponents/ExperimentalStudyDescription";
 import RandomAllocationDescription from "../../../components/stepComponents/RandomAllocationDescription";
 import RandomizedControlledTrialDescription from "../../../components/stepComponents/RandomizedControlledTrialDescription";
+import KruskalWallis from "../../../components/stepComponents/KruskalWallis";
 
 import { COMPARISON_OF_3_OR_MORE_GROUPS } from "../ids";
 import * as ids from "./ids";
@@ -76,9 +77,9 @@ let tree = {
 
   [ids.KRUSKAL_WALLIS]: {
     type: "statement",
-    title: "Kruskal-Wallis test(non-parametric)",
+    title: "Kruskal-Wallis test (non-parametric)",
     flowChartTitle: "Randomized\nClinical Trial",
-    component: RandomizedControlledTrialDescription,
+    component: KruskalWallis,
     color: "blue-darken-2",
     inputs: [ids],
   },
