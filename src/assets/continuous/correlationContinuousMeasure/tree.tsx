@@ -2,6 +2,7 @@ import ExperimentalStudyDescription from "../../../components/stepComponents/Exp
 import RandomAllocationDescription from "../../../components/stepComponents/RandomAllocationDescription";
 import RandomizedControlledTrialDescription from "../../../components/stepComponents/RandomizedControlledTrialDescription";
 import PearsonCoefficient from "../../../components/stepComponents/PearsonCoefficient";
+import SpearmanCorrelation from "../../../components/stepComponents/SpearmanCorrelation";
 
 import { CORRELATION_WITH_CONTINUOUS_VARIABLE } from "../ids";
 import * as ids from "./ids";
@@ -63,7 +64,7 @@ let tree = {
     type: "statement",
     title: "Spearman’s rho (non-parametric)",
     flowChartTitle: "Randomized\nClinical Trial",
-    component: RandomizedControlledTrialDescription,
+    component: SpearmanCorrelation,
     color: "blue-darken-2",
     inputs: [ids.ASSOCIATIONS_LINEAR_YES],
   },
