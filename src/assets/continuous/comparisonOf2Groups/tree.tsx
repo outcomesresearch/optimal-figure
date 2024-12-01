@@ -1,6 +1,7 @@
 import ExperimentalStudyDescription from "../../../components/stepComponents/ExperimentalStudyDescription";
 import RandomAllocationDescription from "../../../components/stepComponents/RandomAllocationDescription";
 import RandomizedControlledTrialDescription from "../../../components/stepComponents/RandomizedControlledTrialDescription";
+import MannWhitneyUTest from "../../../components/stepComponents/MannWhitneyUTest";
 
 import { COMPARISON_OF_2_GROUPS } from "../ids";
 import * as ids from "./ids";
@@ -80,7 +81,7 @@ let tree = {
     type: "statement",
     title: "Mann-Whitney U test (non-parametric)",
     flowChartTitle: "Randomized\nClinical Trial",
-    component: RandomizedControlledTrialDescription,
+    component: MannWhitneyUTest,
     color: "blue-darken-2",
     inputs: [ids],
   },

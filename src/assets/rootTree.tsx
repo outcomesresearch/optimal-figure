@@ -45,4 +45,10 @@ let rootTree = {
   ...timeToEventStudyTree,
 };
 
+console.log(
+  Object.values(rootTree)
+    .filter((entry) => !entry.choices)
+    .map((entry) => entry.title)
+);
+
 export default addIds(rootTree);
