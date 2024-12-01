@@ -1,6 +1,7 @@
 import ExperimentalStudyDescription from "../../../components/stepComponents/ExperimentalStudyDescription";
 import RandomizedControlledTrialDescription from "../../../components/stepComponents/RandomizedControlledTrialDescription";
 import LifeTable from "../../../components/stepComponents/LifeTable";
+import KaplanMeier from "../../../components/stepComponents/KaplanMeier";
 
 import { COMPARISON_OF_GROUPS_CATEGORICAL } from "../ids";
 import * as ids from "./ids";
@@ -12,7 +13,7 @@ let tree = {
     component: ExperimentalStudyDescription,
     choices: [
       {
-        answer: "Kaplan-Meier Analysis +Log Rank test",
+        answer: "Kaplan-Meier Analysis with Log Rank test",
         next: ids.KAPLAN_MEIER,
       },
       {
@@ -30,9 +31,9 @@ let tree = {
 
   [ids.KAPLAN_MEIER]: {
     type: "statement",
-    title: "Kaplan-Meier Analysis +Log Rank test",
+    title: "Kaplan-Meier Analysis with Log Rank test",
     flowChartTitle: "Randomized\nClinical Trial",
-    component: RandomizedControlledTrialDescription,
+    component: KaplanMeier,
     color: "blue-darken-2",
     inputs: [ids],
   },
