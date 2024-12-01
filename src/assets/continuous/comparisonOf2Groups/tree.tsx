@@ -2,6 +2,7 @@ import ExperimentalStudyDescription from "../../../components/stepComponents/Exp
 import RandomAllocationDescription from "../../../components/stepComponents/RandomAllocationDescription";
 import RandomizedControlledTrialDescription from "../../../components/stepComponents/RandomizedControlledTrialDescription";
 import MannWhitneyUTest from "../../../components/stepComponents/MannWhitneyUTest";
+import WilcoxonTest from "../../../components/stepComponents/WilcoxonTest";
 
 import { COMPARISON_OF_2_GROUPS } from "../ids";
 import * as ids from "./ids";
@@ -99,7 +100,7 @@ let tree = {
     type: "statement",
     title: "Wilcoxon Signed Rank test",
     flowChartTitle: "Randomized\nClinical Trial",
-    component: RandomizedControlledTrialDescription,
+    component: WilcoxonTest,
     color: "blue-darken-2",
     inputs: [ids],
   },

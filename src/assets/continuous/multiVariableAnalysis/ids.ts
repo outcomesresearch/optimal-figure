@@ -1,5 +1,13 @@
-export const INDEPENDENT = "independent 3 more groups continuou";
-export const RELATED = "observations related 3 more groups continuou";
+export const INDEPENDENT = "independent 3 more groups continuous";
+export const RELATED = "observations related 3 more groups continuous";
+export const ANOVA = "is_parametric  3 more groups continuous";
+
+export const LINEAR_ASSUMPTIONS_NOTMET =
+  "are linear assumptions met? continuous";
+export const NON_INDEPENDENT_OBSERVATIONS =
+  "nonindependent observations? continuous";
+export const INDEPENDENT_OBSERVATIONS =
+  " opposite of non-independent continuous";
 
 export const LINEAR_REGRESSION = "linear regression ";
 export const POISSON_REGRESSION = "poisson regression";

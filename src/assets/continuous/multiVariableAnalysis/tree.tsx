@@ -27,18 +27,18 @@ let tree = {
 
   [ids.NON_INDEPENDENT_OBSERVATIONS]: {
     type: "question",
-    title: "Are observations non-independent?",
+    title: "Are observations independent?",
     component: RandomAllocationDescription,
     choices: [
       {
         answer: "Yes",
-        next: ids.MIXED_LINEAR_MODEL,
-        option_description: "Observations are non-independent",
+        next: ids.INDEPENDENT_OBSERVATIONS,
+        option_description: "Independent observations",
       },
       {
         answer: "No",
-        next: ids.INDEPENDENT_OBSERVATIONS,
-        // option_description: "",
+        next: ids.MIXED_LINEAR_MODEL,
+        option_description: "Non-independent observations",
       },
     ],
     inputs: [ids],
