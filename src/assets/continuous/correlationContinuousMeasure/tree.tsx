@@ -1,8 +1,8 @@
 import ExperimentalStudyDescription from "../../../components/stepComponents/ExperimentalStudyDescription";
 import RandomAllocationDescription from "../../../components/stepComponents/RandomAllocationDescription";
-import RandomizedControlledTrialDescription from "../../../components/stepComponents/RandomizedControlledTrialDescription";
 import PearsonCoefficient from "../../../components/stepComponents/PearsonCoefficient";
 import SpearmanCorrelation from "../../../components/stepComponents/SpearmanCorrelation";
+import KendallsTau from "../../../components/stepComponents/KendallsTau";
 
 import { CORRELATION_WITH_CONTINUOUS_VARIABLE } from "../ids";
 import * as ids from "./ids";
@@ -43,7 +43,7 @@ let tree = {
       },
       {
         answer: "Kendall’s Tau (non-parametric)",
-        next: ids.KENDALLS_TAO,
+        next: ids.KENDALLS_TAU,
         // option_description:
         //   "Associations not linear, or parametric assumptions are not met",
       },
@@ -69,11 +69,11 @@ let tree = {
     inputs: [ids.ASSOCIATIONS_LINEAR_YES],
   },
 
-  [ids.KENDALLS_TAO]: {
+  [ids.KENDALLS_TAU]: {
     type: "statement",
     title: "Kendall’s Tau (non-parametric)",
     flowChartTitle: "Randomized\nClinical Trial",
-    component: RandomizedControlledTrialDescription,
+    component: KendallsTau,
     color: "blue-darken-2",
     inputs: [ids.ASSOCIATIONS_LINEAR_YES],
   },

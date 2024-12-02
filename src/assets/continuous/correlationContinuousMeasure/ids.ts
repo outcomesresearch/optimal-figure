@@ -8,4 +8,4 @@ export const ASSOCIATIONS_LINEAR_NO =
 export const PEARSONS_CORRELATION_COEFFICIENT =
   "Pearson Correlation Coefficient r";
 export const SPEARMANS_RHO = "spearman's rho";
-export const KENDALLS_TAO = "kendalls";
+export const KENDALLS_TAU = "kendalls";
