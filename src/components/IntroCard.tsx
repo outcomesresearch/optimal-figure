@@ -6,39 +6,34 @@ const IntroCard = () => {
     <Stack>
       <Group justify="space-between">
         <Title order={3} fw={400}>
-          Selecting the Correct Effect Size Measurement{" "}
+          Selecting the Correct Statistical Analysis Approach
         </Title>
       </Group>
 
       <Stack>
         <Text c="dark">
-          Effect size is a critical measurement used in clinical studies to
-          evaluate the impact of an intervention on the outcome of interest. It
-          quantifies the magnitude of the treatment effect, allowing researchers
-          to determine whether the intervention is clinically significant or
-          not. Choosing the correct effect size measurement is crucial as it
-          directly impacts the power of the study, which in turn affects the
-          study's ability to detect a true treatment effect.
+          Inferential statistics are essential in clinical and research studies
+          for making conclusions about populations based on sample data. These
+          methods allow researchers to assess whether observed effects are
+          likely due to the intervention or if they occurred by chance.
+          Selecting the correct statistical test is critical because it impacts
+          the validity of the study’s conclusions and the ability to detect a
+          true effect when it exists.
         </Text>
         <Text c="dark">
-          There are several effect size measurements available, each with its
-          own strengths and weaknesses. Selecting the appropriate effect size
-          measurement requires careful consideration of the study design, the
-          research question, and the data being collected. The choice of effect
-          size can have a significant impact on the study's interpretation, and
-          incorrect selection can lead to underpowered studies or erroneous
-          conclusions.
+          There are numerous inferential statistical tests available, each
+          suited to specific study designs, data types, and research questions.
+          The choice of statistical method depends on factors such as the scale
+          of the data (nominal, ordinal, continuous), the number of groups being
+          compared, and whether the data meet certain assumptions (e.g.,
+          normality, homogeneity of variance). Choosing the wrong test can
+          result in misleading conclusions or underpowered studies that fail to
+          detect meaningful effects.
         </Text>
         <Text c="dark">
-          There are several effect size measurements available, each with its
-          own strengths and weaknesses. Selecting the appropriate effect size
-          measurement requires careful consideration of the study design, the
-          research question, and the data being collected. The choice of effect
-          size can have a significant impact on the study's interpretation, and
-          incorrect selection can lead to underpowered studies or erroneous
-          conclusions. This wizard-based web tool helps investigators select the
-          appropriate effect size measurement for planning and reporting the
-          results of their research.
+          This tool assists researchers in selecting the most appropriate
+          inferential statistical test based on their data and research
+          objectives, helping to ensure accurate and reliable results.
         </Text>
       </Stack>
       <NavLink to="/decision-tree" style={{ marginLeft: "auto" }}>
