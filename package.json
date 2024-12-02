@@ -2,14 +2,16 @@
   "name": "inferential-statistics-wizard",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://outcomesresearch.github.io/inferential-statistics/",
   "type": "module",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
-    "build": "tsc -b && vite build",
+    "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
-  "homepage": "https://outcomesresearch.github.io/inferential-statistics/",
   "dependencies": {
     "@mantine/core": "^7.13.4",
     "@mantine/hooks": "^7.13.4",
@@ -26,6 +28,7 @@
     "eslint": "^9.13.0",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.14",
+    "gh-pages": "^6.2.0",
     "globals": "^15.11.0",
     "postcss": "^8.4.47",
     "postcss-preset-mantine": "^1.17.0",
