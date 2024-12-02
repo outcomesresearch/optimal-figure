@@ -34,7 +34,7 @@ export function findLongestPath(currentNode, steps) {
 export function findPreviousSteps(currentStepName) {
   const currentNode = rootTree[currentStepName];
   if (!currentNode) {
-    console.error("Invalid step name:", currentStepName);
+    console.error("Invalid step name:::", currentStepName);
     return [];
   }
 
