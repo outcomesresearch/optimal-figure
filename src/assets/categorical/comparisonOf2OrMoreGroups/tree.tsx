@@ -3,6 +3,7 @@ import RandomAllocationDescription from "../../../components/stepComponents/Rand
 import RandomizedControlledTrialDescription from "../../../components/stepComponents/RandomizedControlledTrialDescription";
 import McNemarTest from "../../../components/stepComponents/McNemarTest";
 import CochransQ from "../../../components/stepComponents/CochransQ";
+import FishersExact from "../../../components/stepComponents/FishersExact";
 
 import { COMPARISON_OF_2_GROUPS } from "../ids";
 import * as ids from "./ids";
@@ -81,7 +82,7 @@ let tree = {
     type: "statement",
     title: "Fisher's Exact test",
     flowChartTitle: "Randomized\nClinical Trial",
-    component: RandomizedControlledTrialDescription,
+    component: FishersExact,
     color: "blue-darken-2",
     inputs: [ids],
   },
