@@ -4,6 +4,7 @@ import OneWayANOVA from "../../../components/stepComponents/OneWayANOVA";
 import RepeatedMeasuresAnova from "../../../components/stepComponents/RepeatedMeasuresAnova";
 
 import { COMPARISON_OF_3_OR_MORE_GROUPS } from "../ids";
+import { CONTINUOUS } from "../../ids";
 import * as ids from "./ids";
 
 let tree = {
@@ -24,7 +25,7 @@ let tree = {
         option_description: "Observations are related (repeated measures)",
       },
     ],
-    inputs: [ids],
+    inputs: [CONTINUOUS],
   },
 
   [ids.INDEPENDENT]: {
@@ -44,7 +45,7 @@ let tree = {
         option_description: "Assumptions are not met",
       },
     ],
-    inputs: [ids],
+    inputs: [COMPARISON_OF_3_OR_MORE_GROUPS],
   },
 
   [ids.RELATED]: {
@@ -65,7 +66,7 @@ let tree = {
       },
     ],
     color: "blue-lighten-2",
-    inputs: [ids],
+    inputs: [COMPARISON_OF_3_OR_MORE_GROUPS],
   },
 
   [ids.ANOVA]: {
@@ -74,7 +75,7 @@ let tree = {
     flowChartTitle: "Randomized\nClinical Trial",
     component: OneWayANOVA,
     color: "blue-darken-2",
-    inputs: [ids],
+    inputs: [ids.INDEPENDENT],
   },
 
   [ids.KRUSKAL_WALLIS]: {
@@ -83,7 +84,7 @@ let tree = {
     flowChartTitle: "Randomized\nClinical Trial",
     component: KruskalWallis,
     color: "blue-darken-2",
-    inputs: [ids],
+    inputs: [ids.INDEPENDENT],
   },
 
   [ids.REPEATED_MEASURES_ANOVA]: {
@@ -92,7 +93,7 @@ let tree = {
     flowChartTitle: "Randomized\nClinical Trial",
     component: RepeatedMeasuresAnova,
     color: "blue-darken-2",
-    inputs: [ids],
+    inputs: [ids.RELATED],
   },
 
   [ids.FRIEDMANS_TEST]: {
@@ -101,7 +102,7 @@ let tree = {
     flowChartTitle: "Randomized\nClinical Trial",
     component: FriedmansTest,
     color: "blue-darken-2",
-    inputs: [ids],
+    inputs: [ids.RELATED],
   },
 };
 

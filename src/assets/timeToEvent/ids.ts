@@ -1,9 +1,9 @@
 export const CORRELATION_WITH_CONTINUOUS_VARIABLE =
-  "Correlation with continuous variable tte";
+  "correlation_with_continuous_variable_tte";
 
-export const COMPARISON_OF_GROUPS_CATEGORICAL = "Comparison of 2 groups tte";
+export const COMPARISON_OF_GROUPS = "comparison_of_2_groups_tte";
 
 export const COMPARISON_OF_3_OR_MORE_GROUPS =
-  "Comparison of 3 or more groups tte";
+  "comparison_of_3_or_more_groups_tte";
 
-export const MULTIVARIABLE_ANALYSIS = "Multivariable Analysis tte";
+export const MULTIVARIABLE_ANALYSIS = "multivariable_analysis_tte";

@@ -4,6 +4,7 @@ import CochransQ from "../../../components/stepComponents/CochransQ";
 import FishersExact from "../../../components/stepComponents/FishersExact";
 
 import { COMPARISON_OF_2_GROUPS } from "../ids";
+import { CATEGORICAL } from "../../ids";
 import * as ids from "./ids";
 
 let tree = {
@@ -25,7 +26,7 @@ let tree = {
           "Groups are linked or paired in some way, influencing one another",
       },
     ],
-    inputs: [ids],
+    inputs: [CATEGORICAL],
   },
 
   [ids.INDEPENDENT]: {
@@ -45,7 +46,7 @@ let tree = {
         option_description: "Assumptions are not met",
       },
     ],
-    inputs: [ids],
+    inputs: [COMPARISON_OF_2_GROUPS],
   },
 
   [ids.RELATED]: {
@@ -63,7 +64,7 @@ let tree = {
       },
     ],
     color: "blue-lighten-2",
-    inputs: [ids],
+    inputs: [COMPARISON_OF_2_GROUPS],
   },
 
   [ids.CHI_SQUARE_TEST]: {
@@ -72,7 +73,7 @@ let tree = {
     flowChartTitle: "Randomized\nClinical Trial",
     component: ChiSquare,
     color: "blue-darken-2",
-    inputs: [ids],
+    inputs: [ids.INDEPENDENT],
   },
 
   [ids.FISHERS_EXACT_TEST]: {
@@ -81,7 +82,7 @@ let tree = {
     flowChartTitle: "Randomized\nClinical Trial",
     component: FishersExact,
     color: "blue-darken-2",
-    inputs: [ids],
+    inputs: [ids.INDEPENDENT],
   },
 
   [ids.MCNEMAR_TEST]: {
@@ -90,7 +91,7 @@ let tree = {
     flowChartTitle: "Randomized\nClinical Trial",
     component: McNemarTest,
     color: "blue-darken-2",
-    inputs: [ids],
+    inputs: [ids.RELATED],
   },
 
   [ids.COCHRANS_Q_TEST]: {
@@ -99,7 +100,7 @@ let tree = {
     flowChartTitle: "Randomized\nClinical Trial",
     component: CochransQ,
     color: "blue-darken-2",
-    inputs: [ids],
+    inputs: [ids.RELATED],
   },
 };
 

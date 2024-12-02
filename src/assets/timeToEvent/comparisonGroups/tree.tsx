@@ -2,11 +2,12 @@ import CoxRegression from "../../../components/stepComponents/CoxRegression";
 import LifeTable from "../../../components/stepComponents/LifeTable";
 import KaplanMeier from "../../../components/stepComponents/KaplanMeier";
 
-import { COMPARISON_OF_GROUPS_CATEGORICAL } from "../ids";
+import { COMPARISON_OF_GROUPS } from "../ids";
+import { TTE } from "../../ids";
 import * as ids from "./ids";
 
 let tree = {
-  [COMPARISON_OF_GROUPS_CATEGORICAL]: {
+  [COMPARISON_OF_GROUPS]: {
     type: "question",
     title: "Select the desired survival analysis method",
     component: () =>
@@ -32,7 +33,7 @@ let tree = {
       },
     ],
     color: "blue-lighten-2",
-    inputs: [ids],
+    inputs: [TTE],
   },
 
   [ids.KAPLAN_MEIER]: {
@@ -41,7 +42,7 @@ let tree = {
     flowChartTitle: "Randomized\nClinical Trial",
     component: KaplanMeier,
     color: "blue-darken-2",
-    inputs: [ids],
+    inputs: [COMPARISON_OF_GROUPS],
   },
 
   [ids.LIFE_WILCOXON]: {
@@ -50,7 +51,7 @@ let tree = {
     flowChartTitle: "Randomized\nClinical Trial",
     component: LifeTable,
     color: "blue-darken-2",
-    inputs: [ids],
+    inputs: [COMPARISON_OF_GROUPS],
   },
 
   [ids.COX_REGRESSION]: {
@@ -59,7 +60,7 @@ let tree = {
     flowChartTitle: "Randomized\nClinical Trial",
     component: CoxRegression,
     color: "blue-darken-2",
-    inputs: [ids],
+    inputs: [COMPARISON_OF_GROUPS],
   },
 };
 

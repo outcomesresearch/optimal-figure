@@ -1,10 +1,11 @@
-export const INDEPENDENT = "independent 3 more groups";
-export const RELATED = "observations related 3 more groups";
+export const INDEPENDENT =
+  "independent_comparison_three_or_more_groups_categorical";
+export const RELATED = "related_observations_three_or_more_groups_categorical";
 
-export const DICHOTOMOUS = "dichotomous cat";
-export const MULTINOMINAL = "multinominal cat";
-export const ORDINAL = "ordinal regression cat";
+export const DICHOTOMOUS = "dichotomous_categorical";
+export const MULTINOMINAL = "multinomial_categorical";
+export const ORDINAL = "ordinal_regression_categorical";
 
-export const POISSON_REGRESSION = "poisson regression cat";
-export const NEGATIVE_BINOMIAL = "orginal regression cat";
-export const BINARY_LOGISTIC = "binary logistic cat";
+export const POISSON_REGRESSION = "poisson_regression_categorical";
+export const NEGATIVE_BINOMIAL = "negative_binomial_regression_categorical";
+export const BINARY_LOGISTIC = "binary_logistic_regression_categorical";

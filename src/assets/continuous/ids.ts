@@ -1,9 +1,9 @@
 export const CORRELATION_WITH_CONTINUOUS_VARIABLE =
-  "Correlation with continuous variable continuous";
+  "correlation_with_continuous_variable_continuous";
 
-export const COMPARISON_OF_2_GROUPS = "Comparison of 2 groups continuous";
+export const COMPARISON_OF_2_GROUPS = "comparison_of_2_groups_continuous";
 
 export const COMPARISON_OF_3_OR_MORE_GROUPS =
-  "Comparison of 3 or more groups continuous";
+  "comparison_of_3_or_more_groups_continuous";
 
-export const MULTIVARIABLE_ANALYSIS = "Multivariable Analysis continuous";
+export const MULTIVARIABLE_ANALYSIS = "multivariable_analysis_continuous";

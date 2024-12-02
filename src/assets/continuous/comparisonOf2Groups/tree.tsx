@@ -4,6 +4,7 @@ import WilcoxonTest from "../../../components/stepComponents/WilcoxonTest";
 import IndependentSamples from "../../../components/stepComponents/IndependentSamples";
 
 import { COMPARISON_OF_2_GROUPS } from "../ids";
+import { CONTINUOUS } from "../../ids";
 import * as ids from "./ids";
 
 let tree = {
@@ -24,7 +25,7 @@ let tree = {
         option_description: "Observations are paired",
       },
     ],
-    inputs: [ids],
+    inputs: [CONTINUOUS],
   },
 
   [ids.INDEPENDENT]: {
@@ -44,7 +45,7 @@ let tree = {
         option_description: "Assumptions are not met",
       },
     ],
-    inputs: [ids],
+    inputs: [COMPARISON_OF_2_GROUPS],
   },
 
   [ids.PAIRED]: {
@@ -65,7 +66,7 @@ let tree = {
       },
     ],
     color: "blue-lighten-2",
-    inputs: [ids],
+    inputs: [COMPARISON_OF_2_GROUPS],
   },
 
   [ids.INDEPENDENT_SAMPLES_T_TEST]: {
@@ -74,7 +75,7 @@ let tree = {
     flowChartTitle: "Randomized\nClinical Trial",
     component: IndependentSamples,
     color: "blue-darken-2",
-    inputs: [ids],
+    inputs: [ids.INDEPENDENT],
   },
 
   [ids.MANN_WHITNEY_U_TEST]: {
@@ -83,7 +84,7 @@ let tree = {
     flowChartTitle: "Randomized\nClinical Trial",
     component: MannWhitneyUTest,
     color: "blue-darken-2",
-    inputs: [ids],
+    inputs: [ids.INDEPENDENT],
   },
 
   [ids.PAIRED_SAMPLES_TTEST]: {
@@ -92,7 +93,7 @@ let tree = {
     flowChartTitle: "Randomized\nClinical Trial",
     component: PairedSamples,
     color: "blue-darken-2",
-    inputs: [ids],
+    inputs: [ids.PAIRED],
   },
 
   [ids.WILCOXON_SIGNED_RANK_TEST]: {
@@ -101,7 +102,7 @@ let tree = {
     flowChartTitle: "Randomized\nClinical Trial",
     component: WilcoxonTest,
     color: "blue-darken-2",
-    inputs: [ids],
+    inputs: [ids.PAIRED],
   },
 };
 

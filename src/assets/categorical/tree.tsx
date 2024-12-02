@@ -4,7 +4,7 @@ import correlationContinuousMeasureTree from "./correlationContinuousMeasure/tre
 import comparisonOfTwoGroupsTree from "./comparisonOf2OrMoreGroups/tree";
 import multiVariableAnalysisTree from "./multiVariableAnalysis/tree";
 
-import { CATEGORICAL } from "../ids";
+import { CATEGORICAL, ROOT } from "../ids";
 import * as ids from "./ids";
 
 const tree = {
@@ -15,7 +15,7 @@ const tree = {
     choices: [
       {
         answer: "Correlation with continuous measure",
-        next: ids.CORRELATION_WITH_CONTINUOUS_VARIABLE,
+        next: ids.CORRELATION_WITH_CONTINUOUS_MEASURE,
         option_description:
           "Studying the relationship between continuous variables",
       },
@@ -31,7 +31,7 @@ const tree = {
           "Analyzing the effect of multiple variables on an outcome",
       },
     ],
-    inputs: [ids],
+    inputs: [ROOT],
   },
   ...correlationContinuousMeasureTree,
   ...comparisonOfTwoGroupsTree,

@@ -1,11 +1,10 @@
-export const ASSOCIATIONS_LINEAR =
-  "are associations linear + parametric assumptions met";
-export const ASSOCIATIONS_LINEAR_YES =
-  "are associations linear + parametric assumptions yes met";
-export const ASSOCIATIONS_LINEAR_NO =
-  "are associations linear + parametric assumptions not met";
+export const ASSOCIATIONS_NONLINEAR =
+  "are_associations_linear_parametric_assumptions_met";
 
 export const PEARSONS_CORRELATION_COEFFICIENT =
-  "Pearson Correlation Coefficient r";
-export const SPEARMANS_RHO = "spearman's rho";
-export const KENDALLS_TAU = "kendalls";
+  "pearsons_correlation_coefficient_r";
+export const SPEARMANS_RHO = "spearmans_rho";
+export const KENDALLS_TAU = "kendalls_tau";
+
+export const CORRELATION_CONTINUOUS_MEASURE_WITH_CONTINUOUS =
+  "correlation_continuous_with_continuous_measure";

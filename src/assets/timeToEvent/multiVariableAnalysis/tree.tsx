@@ -48,7 +48,7 @@ let tree = {
     flowChartTitle: "Randomized\nClinical Trial",
     component: CoxPHRegression,
     color: "blue-darken-2",
-    inputs: [ids],
+    inputs: [MULTIVARIABLE_ANALYSIS],
   },
 
   [ids.COX_REGRESSION_TIMEDEPENDENT]: {
@@ -57,7 +57,7 @@ let tree = {
     flowChartTitle: "Randomized\nClinical Trial",
     component: CoxRegressionTimedependent,
     color: "blue-darken-2",
-    inputs: [ids],
+    inputs: [MULTIVARIABLE_ANALYSIS],
   },
 
   [ids.COUNT_PROCESS_ANALYSIS]: {
@@ -66,15 +66,16 @@ let tree = {
     flowChartTitle: "Randomized\nClinical Trial",
     component: CountProcessAnalysis,
     color: "blue-darken-2",
-    inputs: [ids],
+    inputs: [MULTIVARIABLE_ANALYSIS],
   },
+
   [ids.COMPETING_RISK]: {
     type: "statement",
     title: "Competing Risk Analysis",
     flowChartTitle: "Randomized\nClinical Trial",
     component: CompetingRiskAnalysis,
     color: "blue-darken-2",
-    inputs: [ids],
+    inputs: [MULTIVARIABLE_ANALYSIS],
   },
 };
 

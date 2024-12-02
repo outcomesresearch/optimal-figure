@@ -5,6 +5,7 @@ import Multinomial from "../../../components/stepComponents/MultinomialRegressio
 import OrdinalCategorical from "../../../components/stepComponents/OrdinalCategorical";
 
 import { MULTIVARIABLE_ANALYSIS } from "../ids";
+import { CATEGORICAL } from "../../ids";
 import * as ids from "./ids";
 
 let tree = {
@@ -31,7 +32,7 @@ let tree = {
           "Dependent variable has ordered categories with more than two levels",
       },
     ],
-    inputs: [ids],
+    inputs: [CATEGORICAL],
   },
 
   [ids.ORDINAL]: {
@@ -40,7 +41,7 @@ let tree = {
     flowChartTitle: "Randomized\nClinical Trial",
     component: OrdinalCategorical,
     color: "blue-darken-2",
-    inputs: [ids],
+    inputs: [MULTIVARIABLE_ANALYSIS],
   },
   [ids.MULTINOMINAL]: {
     type: "statement",
@@ -48,7 +49,7 @@ let tree = {
     flowChartTitle: "Randomized\nClinical Trial",
     component: Multinomial,
     color: "blue-darken-2",
-    inputs: [ids],
+    inputs: [MULTIVARIABLE_ANALYSIS],
   },
 
   [ids.DICHOTOMOUS]: {
@@ -75,7 +76,7 @@ let tree = {
       },
     ],
     color: "blue-lighten-2",
-    inputs: [ids],
+    inputs: [MULTIVARIABLE_ANALYSIS],
   },
 
   [ids.BINARY_LOGISTIC]: {
@@ -84,7 +85,7 @@ let tree = {
     flowChartTitle: "Randomized\nClinical Trial",
     component: BinaryLogistic,
     color: "blue-darken-2",
-    inputs: [ids],
+    inputs: [ids.DICHOTOMOUS],
   },
 
   [ids.NEGATIVE_BINOMIAL]: {
@@ -93,7 +94,7 @@ let tree = {
     flowChartTitle: "Randomized\nClinical Trial",
     component: NegativeBinomial,
     color: "blue-darken-2",
-    inputs: [ids],
+    inputs: [ids.DICHOTOMOUS],
   },
 
   [ids.POISSON_REGRESSION]: {
@@ -102,7 +103,7 @@ let tree = {
     flowChartTitle: "Randomized\nClinical Trial",
     component: PoissonRegression,
     color: "blue-darken-2",
-    inputs: [ids],
+    inputs: [ids.DICHOTOMOUS],
   },
 };
 

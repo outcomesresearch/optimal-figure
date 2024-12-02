@@ -5,7 +5,7 @@ import comparisonOfTwoGroupsTree from "./comparisonOf2Groups/tree";
 import comparisonOf3MoreGroupsTree from "./comparison3MoreGroups/tree";
 import multiVariableAnalysisTree from "./multiVariableAnalysis/tree";
 
-import { CONTINUOUS } from "../ids";
+import { CONTINUOUS, ROOT } from "../ids";
 import * as ids from "./ids";
 
 const tree = {
@@ -37,7 +37,7 @@ const tree = {
           "Analyzing the effect of multiple variables on an outcome",
       },
     ],
-    inputs: [ids],
+    inputs: [ROOT],
   },
   ...correlationContinuousMeasureTree,
   ...comparisonOfTwoGroupsTree,

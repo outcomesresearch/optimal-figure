@@ -5,6 +5,7 @@ import { ROOT } from "../assets/ids";
 import ChoiceCard from "../components/ChoiceCard";
 import { Link } from "react-router";
 import { useParams } from "react-router";
+import { findPreviousSteps } from "../utils";
 
 const buttonProps = {
   variant: "subtle",
@@ -27,7 +28,8 @@ const StepperWrapper = () => {
       console.log(currentStep);
       setCurrentlySelectedChoice(undefined);
       setCurrentConfig(rootTree[currentStep]);
-      // setPath(findPreviousSteps(rootTree[currentStep].inputs[0]));
+      console.log(findPreviousSteps(rootTree[currentStep].inputs[0]));
+      setPath(findPreviousSteps(rootTree[currentStep].inputs[0]));
     }
   }, [currentStep]);
 

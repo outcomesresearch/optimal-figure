@@ -1,9 +1,9 @@
-import { CORRELATION_WITH_CONTINUOUS_VARIABLE } from "../ids";
+import { CORRELATION_WITH_CONTINUOUS_MEASURE } from "../ids";
 import { CATEGORICAL } from "../../ids";
 import PointBiserial from "../../../components/stepComponents/PointBiserial";
 
 let tree = {
-  [CORRELATION_WITH_CONTINUOUS_VARIABLE]: {
+  [CORRELATION_WITH_CONTINUOUS_MEASURE]: {
     type: "statement",
     title: "Point Bi-serial Correlation",
     flowChartTitle: "Randomized\nClinical Trial",

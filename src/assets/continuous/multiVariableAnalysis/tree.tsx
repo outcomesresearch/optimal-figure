@@ -4,6 +4,7 @@ import PoissonRegression from "../../../components/stepComponents/PoissonRegress
 import OrdinalContinuous from "../../../components/stepComponents/OrdinalContinuous";
 
 import { MULTIVARIABLE_ANALYSIS } from "../ids";
+import { CONTINUOUS } from "../../ids";
 import * as ids from "./ids";
 
 let tree = {
@@ -20,14 +21,14 @@ let tree = {
       },
       {
         answer: "No",
-        next: ids.NON_INDEPENDENT_OBSERVATIONS,
+        next: ids.ARE_OBSEVATIONS_INDEPENDENT,
         option_description: "Linear assumptions are not met",
       },
     ],
-    inputs: [ids],
+    inputs: [CONTINUOUS],
   },
 
-  [ids.NON_INDEPENDENT_OBSERVATIONS]: {
+  [ids.ARE_OBSEVATIONS_INDEPENDENT]: {
     type: "question",
     title: "Are observations independent?",
     component: () =>
@@ -44,7 +45,7 @@ let tree = {
         option_description: "Observations may influence one another",
       },
     ],
-    inputs: [ids],
+    inputs: [MULTIVARIABLE_ANALYSIS],
   },
 
   [ids.INDEPENDENT_OBSERVATIONS]: {
@@ -65,7 +66,7 @@ let tree = {
       },
     ],
     color: "blue-lighten-2",
-    inputs: [ids],
+    inputs: [ids.ARE_OBSEVATIONS_INDEPENDENT],
   },
 
   [ids.LINEAR_REGRESSION]: {
@@ -74,7 +75,7 @@ let tree = {
     flowChartTitle: "Randomized\nClinical Trial",
     component: LinearRegression,
     color: "blue-darken-2",
-    inputs: [ids],
+    inputs: [MULTIVARIABLE_ANALYSIS],
   },
 
   [ids.MIXED_LINEAR_MODEL]: {
@@ -83,7 +84,7 @@ let tree = {
     flowChartTitle: "Randomized\nClinical Trial",
     component: MixedLinearModel,
     color: "blue-darken-2",
-    inputs: [ids],
+    inputs: [ids.ARE_OBSEVATIONS_INDEPENDENT],
   },
 
   [ids.POISSON_REGRESSION]: {
@@ -92,7 +93,7 @@ let tree = {
     flowChartTitle: "Randomized\nClinical Trial",
     component: PoissonRegression,
     color: "blue-darken-2",
-    inputs: [ids],
+    inputs: [ids.INDEPENDENT_OBSERVATIONS],
   },
 
   [ids.ORDINAL_REGRESSION]: {
@@ -101,7 +102,7 @@ let tree = {
     flowChartTitle: "Randomized\nClinical Trial",
     component: OrdinalContinuous,
     color: "blue-darken-2",
-    inputs: [ids],
+    inputs: [ids.INDEPENDENT_OBSERVATIONS],
   },
 };
 

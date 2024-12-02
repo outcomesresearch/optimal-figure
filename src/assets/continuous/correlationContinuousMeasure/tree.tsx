@@ -3,6 +3,7 @@ import SpearmanCorrelation from "../../../components/stepComponents/SpearmanCorr
 import KendallsTau from "../../../components/stepComponents/KendallsTau";
 
 import { CORRELATION_WITH_CONTINUOUS_VARIABLE } from "../ids";
+import { CONTINUOUS } from "../../ids";
 import * as ids from "./ids";
 
 let tree = {
@@ -21,15 +22,15 @@ let tree = {
       },
       {
         answer: "No",
-        next: ids.ASSOCIATIONS_LINEAR_NO,
+        next: ids.ASSOCIATIONS_NONLINEAR,
         option_description:
           "Associations are not linear, or parametric assumptions are not met",
       },
     ],
-    inputs: [CORRELATION_WITH_CONTINUOUS_VARIABLE],
+    inputs: [CONTINUOUS],
   },
 
-  [ids.ASSOCIATIONS_LINEAR_NO]: {
+  [ids.ASSOCIATIONS_NONLINEAR]: {
     type: "question",
     title: "Choose a method for non-parametric analysis",
     component: () =>
@@ -49,7 +50,7 @@ let tree = {
       },
     ],
     color: "blue-lighten-2",
-    inputs: [ids.ROOT],
+    inputs: [CORRELATION_WITH_CONTINUOUS_VARIABLE],
   },
 
   [ids.PEARSONS_CORRELATION_COEFFICIENT]: {
@@ -57,7 +58,7 @@ let tree = {
     title: "Pearson Correlation Coefficient r",
     component: PearsonCoefficient,
     color: "blue-lighten-2",
-    inputs: [ids.ROOT],
+    inputs: [CORRELATION_WITH_CONTINUOUS_VARIABLE],
   },
 
   [ids.SPEARMANS_RHO]: {
@@ -66,7 +67,7 @@ let tree = {
     flowChartTitle: "Randomized\nClinical Trial",
     component: SpearmanCorrelation,
     color: "blue-darken-2",
-    inputs: [ids.ASSOCIATIONS_LINEAR_YES],
+    inputs: [ids.ASSOCIATIONS_NONLINEAR],
   },
 
   [ids.KENDALLS_TAU]: {
@@ -75,7 +76,7 @@ let tree = {
     flowChartTitle: "Randomized\nClinical Trial",
     component: KendallsTau,
     color: "blue-darken-2",
-    inputs: [ids.ASSOCIATIONS_LINEAR_YES],
+    inputs: [ids.ASSOCIATIONS_NONLINEAR],
   },
 };
 
