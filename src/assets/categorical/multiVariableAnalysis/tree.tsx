@@ -1,6 +1,6 @@
 import ExperimentalStudyDescription from "../../../components/stepComponents/ExperimentalStudyDescription";
 import RandomAllocationDescription from "../../../components/stepComponents/RandomAllocationDescription";
-import RandomizedControlledTrialDescription from "../../../components/stepComponents/RandomizedControlledTrialDescription";
+import BinaryLogistic from "../../../components/stepComponents/BinaryLogistic";
 import PoissonRegression from "../../../components/stepComponents/PoissonRegression";
 import NegativeBinomial from "../../../components/stepComponents/NegativeBinomial";
 import Multinomial from "../../../components/stepComponents/MultinomialRegression";
@@ -80,7 +80,7 @@ let tree = {
     type: "statement",
     title: "Binary Logistic Regression",
     flowChartTitle: "Randomized\nClinical Trial",
-    component: RandomizedControlledTrialDescription,
+    component: BinaryLogistic,
     color: "blue-darken-2",
     inputs: [ids],
   },
