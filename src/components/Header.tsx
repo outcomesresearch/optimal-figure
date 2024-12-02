@@ -6,7 +6,7 @@ const Header = () => {
     <WidthContainer backgroundColor="washu.9">
       <Box h={48} py="sm" maw="100%">
         <img
-          src="src/assets/washuLogo.svg"
+          src="/washuLogo.svg"
           style={{ margin: "auto", height: "100%", maxWidth: "100%" }}
         />
       </Box>
