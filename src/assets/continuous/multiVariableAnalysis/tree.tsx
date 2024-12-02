@@ -1,6 +1,6 @@
 import ExperimentalStudyDescription from "../../../components/stepComponents/ExperimentalStudyDescription";
 import RandomAllocationDescription from "../../../components/stepComponents/RandomAllocationDescription";
-import RandomizedControlledTrialDescription from "../../../components/stepComponents/RandomizedControlledTrialDescription";
+import LinearRegression from "../../../components/stepComponents/LinearRegression";
 import MixedLinearModel from "../../../components/stepComponents/MixedLinearModel";
 import PoissonRegression from "../../../components/stepComponents/PoissonRegression";
 import OrdinalContinuous from "../../../components/stepComponents/OrdinalContinuous";
@@ -71,7 +71,7 @@ let tree = {
     type: "statement",
     title: "Linear Regression",
     flowChartTitle: "Randomized\nClinical Trial",
-    component: RandomizedControlledTrialDescription,
+    component: LinearRegression,
     color: "blue-darken-2",
     inputs: [ids],
   },
