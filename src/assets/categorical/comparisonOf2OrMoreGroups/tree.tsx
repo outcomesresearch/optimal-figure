@@ -1,6 +1,6 @@
 import ExperimentalStudyDescription from "../../../components/stepComponents/ExperimentalStudyDescription";
 import RandomAllocationDescription from "../../../components/stepComponents/RandomAllocationDescription";
-import RandomizedControlledTrialDescription from "../../../components/stepComponents/RandomizedControlledTrialDescription";
+import ChiSquare from "../../../components/stepComponents/ChiSquare";
 import McNemarTest from "../../../components/stepComponents/McNemarTest";
 import CochransQ from "../../../components/stepComponents/CochransQ";
 import FishersExact from "../../../components/stepComponents/FishersExact";
@@ -73,7 +73,7 @@ let tree = {
     type: "statement",
     title: "Chi Square Test",
     flowChartTitle: "Randomized\nClinical Trial",
-    component: RandomizedControlledTrialDescription,
+    component: ChiSquare,
     color: "blue-darken-2",
     inputs: [ids],
   },
