@@ -4,6 +4,7 @@ import CountProcessAnalysis from "../../../components/stepComponents/CountProces
 import CompetingRiskAnalysis from "../../../components/stepComponents/CompetingRiskAnalysis";
 
 import { MULTIVARIABLE_ANALYSIS } from "../ids";
+import { TTE } from "../../ids";
 import * as ids from "./ids";
 
 let tree = {
@@ -39,7 +40,7 @@ let tree = {
       },
     ],
     color: "blue-lighten-2",
-    inputs: [ids],
+    inputs: [TTE],
   },
 
   [ids.COX_PH_REGRESSION]: {

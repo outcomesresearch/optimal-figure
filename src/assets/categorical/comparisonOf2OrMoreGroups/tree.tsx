@@ -52,15 +52,19 @@ let tree = {
   [ids.RELATED]: {
     type: "question",
     title: "How many groups does the study compare?",
-    component: () => "",
+    component: () =>
+      "The number of groups influences the selection of the appropriate statistical test and the methodology used to assess differences.",
     choices: [
       {
         answer: "Two",
         next: ids.MCNEMAR_TEST,
+        option_description: "Comparing two related groups",
       },
       {
         answer: "More than two",
         next: ids.COCHRANS_Q_TEST,
+        option_description:
+          "Comparing three or more related groups",
       },
     ],
     color: "blue-lighten-2",

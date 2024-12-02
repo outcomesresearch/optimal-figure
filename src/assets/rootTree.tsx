@@ -1,6 +1,5 @@
 import * as ids from "./ids";
 
-import OutcomeMeasure from "../components/stepComponents/AssignExposures";
 import continuousStudyTree from "./continuous/tree";
 import categoricalStudyTree from "./categorical/tree";
 import timeToEventStudyTree from "./timeToEvent/tree";
@@ -14,10 +13,11 @@ const addIds = (tree) => {
 
 let rootTree = {
   [ids.ROOT]: {
-    title: "Outcome Meaure",
+    title: "Outcome Measure",
     flowChartTitle:
-      "Select the type of outcome variable being analyzed or compared ",
-    component: OutcomeMeasure,
+      "Select the type of outcome variable being analyzed or compared.",
+    component: () =>
+      "Select the type of outcome variable being analyzed or compared.",
     inputs: [],
     choices: [
       {
@@ -44,11 +44,5 @@ let rootTree = {
   ...categoricalStudyTree,
   ...timeToEventStudyTree,
 };
-
-console.log(
-  Object.values(rootTree)
-    .filter((entry) => !entry.choices)
-    .map((entry) => entry.title)
-);
 
 export default addIds(rootTree);

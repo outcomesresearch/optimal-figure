@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import { Stack, Title, Button, Group } from "@mantine/core";
+import { Stack, Title, Button, Group, Progress, Card } from "@mantine/core";
 import rootTree from "../assets/rootTree";
 import { ROOT } from "../assets/ids";
 import ChoiceCard from "../components/ChoiceCard";
 import { Link } from "react-router";
 import { useParams } from "react-router";
-import { findPreviousSteps } from "../utils";
+import { findLongestPath, findPreviousSteps } from "../utils";
 
 const buttonProps = {
   variant: "subtle",
@@ -14,6 +14,7 @@ const buttonProps = {
 };
 
 const StepperWrapper = () => {
+  const [progress, setProgress] = useState(0);
   const { step: currentStep } = useParams();
   const [path, setPath] = useState<string[]>([]);
   const [currentlySelectedChoice, setCurrentlySelectedChoice] =
@@ -23,14 +24,24 @@ const StepperWrapper = () => {
   );
 
   useEffect(() => {
+    let effectiveStep = currentStep || ROOT;
+
     // When url param is available, initialize the current step and path sequence
-    if (currentStep) {
-      console.log(currentStep);
-      setCurrentlySelectedChoice(undefined);
-      setCurrentConfig(rootTree[currentStep]);
-      console.log(findPreviousSteps(rootTree[currentStep].inputs[0]));
-      setPath(findPreviousSteps(rootTree[currentStep].inputs[0]));
-    }
+
+    const current = rootTree[effectiveStep];
+    const path = current.inputs.length
+      ? findPreviousSteps(current.inputs[0])
+      : [];
+
+    setCurrentlySelectedChoice(undefined);
+    setCurrentConfig(current);
+    setPath(path);
+
+    // Calculate progress
+    let longestNextPath = findLongestPath(effectiveStep, rootTree) - 1;
+    let totalPathLength = longestNextPath + path.length;
+    let pathDoneSoFar = path.length;
+    setProgress((pathDoneSoFar / totalPathLength) * 100);
   }, [currentStep]);
 
   // can be either Back, Back To Intro
@@ -38,7 +49,7 @@ const StepperWrapper = () => {
     // Back
     if (path.length > 0) {
       return (
-        <Link to={`/decision-tree/${path.pop()}`}>
+        <Link to={`/decision-tree/${path[path.length - 1]}`}>
           <Button {...buttonProps}>Back</Button>
         </Link>
       );
@@ -84,12 +95,22 @@ const StepperWrapper = () => {
     }
   }
 
+  if (!currentConfig) return;
+
   return (
-    <>
+    <Card
+      shadow="sm"
+      padding="lg"
+      my={{ base: "lg", md: "48px" }}
+      radius="md"
+      withBorder
+    >
+      <Card.Section pb="md">
+        <Progress value={progress} w="100%" radius={0} />
+      </Card.Section>
       <Group justify="center">
         <Stack>
           <Title order={4}>{currentConfig.title}</Title>
-
           <DynamicComponent component={currentConfig.component} />
           <Group justify="space-between">
             {currentConfig?.choices ? (
@@ -114,7 +135,7 @@ const StepperWrapper = () => {
           </Group>
         </Stack>
       </Group>
-    </>
+    </Card>
   );
 };
 

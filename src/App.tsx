@@ -8,7 +8,6 @@ import {
   MantineProvider,
   Group,
   Stack,
-  Card,
 } from "@mantine/core";
 import Stepper from "./components/Stepper";
 import Footer from "./components/Footer";
@@ -48,8 +47,6 @@ export default function App() {
     },
   });
 
-  console.log({ theme });
-
   return (
     <MantineProvider theme={theme}>
       <AppShell header={{ height: 48 }}>
@@ -63,25 +60,14 @@ export default function App() {
             <Group styles={{ root: { flexGrow: 1 } }} align="start">
               <WidthContainer>
                 <Group maw="1185px" mx="auto" mt={0} justify="center">
-                  <Card
-                    shadow="sm"
-                    padding="lg"
-                    my={{ base: "lg", md: "48px" }}
-                    radius="md"
-                    withBorder
-                  >
-                    <BrowserRouter>
-                      <Routes>
-                        <Route path="/intro" Component={IntroCard} />
-                        <Route
-                          path="/decision-tree/:step"
-                          Component={Stepper}
-                        />
-                        <Route path="/decision-tree/" Component={Stepper} />
-                        <Route path="*" Component={IntroCard} />
-                      </Routes>
-                    </BrowserRouter>
-                  </Card>
+                  <BrowserRouter>
+                    <Routes>
+                      <Route path="/intro" Component={IntroCard} />
+                      <Route path="/decision-tree/:step" Component={Stepper} />
+                      <Route path="/decision-tree/" Component={Stepper} />
+                      <Route path="*" Component={IntroCard} />
+                    </Routes>
+                  </BrowserRouter>
                 </Group>
               </WidthContainer>
             </Group>
