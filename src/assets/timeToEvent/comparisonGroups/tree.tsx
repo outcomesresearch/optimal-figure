@@ -1,5 +1,5 @@
 import ExperimentalStudyDescription from "../../../components/stepComponents/ExperimentalStudyDescription";
-import RandomizedControlledTrialDescription from "../../../components/stepComponents/RandomizedControlledTrialDescription";
+import CoxRegression from "../../../components/stepComponents/CoxRegression";
 import LifeTable from "../../../components/stepComponents/LifeTable";
 import KaplanMeier from "../../../components/stepComponents/KaplanMeier";
 
@@ -51,7 +51,7 @@ let tree = {
     type: "statement",
     title: "Cox regression",
     flowChartTitle: "Randomized\nClinical Trial",
-    component: RandomizedControlledTrialDescription,
+    component: CoxRegression,
     color: "blue-darken-2",
     inputs: [ids],
   },
