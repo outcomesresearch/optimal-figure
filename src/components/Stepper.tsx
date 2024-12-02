@@ -112,23 +112,21 @@ const StepperWrapper = () => {
         <Stack>
           <Title order={4}>{currentConfig.title}</Title>
           <DynamicComponent component={currentConfig.component} />
-          <Group justify="space-between">
-            {currentConfig?.choices ? (
-              <Group>
-                {currentConfig?.choices.map((choice) => (
-                  <ChoiceCard
-                    key={choice.answer}
-                    title={choice.answer}
-                    description={choice.option_description}
-                    isSelected={currentlySelectedChoice === choice.next}
-                    onClick={() => {
-                      setCurrentlySelectedChoice(choice.next);
-                    }}
-                  />
-                ))}
-              </Group>
-            ) : null}
-          </Group>
+          {currentConfig?.choices ? (
+            <Group justify="center">
+              {currentConfig?.choices.map((choice) => (
+                <ChoiceCard
+                  key={choice.answer}
+                  title={choice.answer}
+                  description={choice.option_description}
+                  isSelected={currentlySelectedChoice === choice.next}
+                  onClick={() => {
+                    setCurrentlySelectedChoice(choice.next);
+                  }}
+                />
+              ))}
+            </Group>
+          ) : null}
           <Group justify="space-between">
             {getBackButton()}
             {getForwardButton()}
