@@ -56,7 +56,7 @@ export default function App() {
             <Group styles={{ root: { flexGrow: 1 } }} align="start">
               <WidthContainer>
                 <Group maw="1185px" mx="auto" mt={0} justify="center">
-                  <BrowserRouter basename="/inferential-statistics">
+                  <BrowserRouter basename={import.meta.env.BASE_URL}>
                     <Routes>
                       <Route path="/intro" Component={IntroCard} />
                       <Route path="/decision-tree/:step" Component={Stepper} />
