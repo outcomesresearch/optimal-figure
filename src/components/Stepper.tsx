@@ -3,11 +3,11 @@ import { Stack, Title, Button, Group } from "@mantine/core";
 import rootTree from "../assets/rootTree";
 import { ROOT } from "../assets/ids";
 import ChoiceCard from "../components/ChoiceCard";
+import { NavLink } from "react-router";
 
 const buttonProps = {
   variant: "subtle",
   color: "gray",
-  size: "compact-sm",
   tt: "uppercase" as const,
 };
 
@@ -40,14 +40,9 @@ const StepperWrapper = () => {
 
     return (
       // Back to Intro
-      <Button
-        {...buttonProps}
-        onClick={() => {
-          console.log("need to set up router to route to intro message");
-        }}
-      >
-        Back to intro
-      </Button>
+      <NavLink to="/intro">
+        <Button {...buttonProps}>Back to intro</Button>
+      </NavLink>
     );
   }
 

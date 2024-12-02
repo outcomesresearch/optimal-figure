@@ -16,10 +16,9 @@ import NavbarSubtitle from "./components/NavbarSubtitle";
 import WidthContainer from "./components/WidthContainer";
 import Header from "./components/Header";
 import IntroCard from "./components/IntroCard";
-import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router";
 
 export default function App() {
-  const [inStepper, setInStepper] = useState(false);
   const theme = createTheme({
     fontFamily: "Roboto, sans-serif",
     primaryColor: "washu",
@@ -71,11 +70,13 @@ export default function App() {
                     radius="md"
                     withBorder
                   >
-                    {!inStepper ? (
-                      <IntroCard buttonCb={() => setInStepper(true)} />
-                    ) : (
-                      <Stepper />
-                    )}
+                    <BrowserRouter>
+                      <Routes>
+                        <Route path="/intro" Component={IntroCard} />
+                        <Route path="/decision-tree" Component={Stepper} />
+                        <Route path="*" Component={IntroCard} />
+                      </Routes>
+                    </BrowserRouter>
                   </Card>
                 </Group>
               </WidthContainer>

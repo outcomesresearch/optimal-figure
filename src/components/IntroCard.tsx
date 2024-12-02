@@ -1,6 +1,7 @@
 import { Text, Stack, Title, Button, Group } from "@mantine/core";
+import { NavLink } from "react-router";
 
-const IntroCard = ({ buttonCb }: { buttonCb: () => void }) => {
+const IntroCard = () => {
   return (
     <Stack>
       <Group justify="space-between">
@@ -40,16 +41,11 @@ const IntroCard = ({ buttonCb }: { buttonCb: () => void }) => {
           results of their research.
         </Text>
       </Stack>
-      <Button
-        onClick={buttonCb}
-        variant="subtle"
-        color="gray"
-        w="max-content"
-        ml="auto"
-        tt="uppercase"
-      >
-        Begin
-      </Button>
+      <NavLink to="/decision-tree" style={{ marginLeft: "auto" }}>
+        <Button variant="subtle" color="gray" w="max-content" tt="uppercase">
+          Begin
+        </Button>
+      </NavLink>
     </Stack>
   );
 };
