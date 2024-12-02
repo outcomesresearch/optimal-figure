@@ -1,3 +1,4 @@
+// @ts-nocheck
 import * as ids from "./ids";
 
 import continuousStudyTree from "./continuous/tree";

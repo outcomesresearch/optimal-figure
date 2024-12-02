@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useState, useEffect } from "react";
 import { Stack, Title, Button, Group, Progress, Card } from "@mantine/core";
 import rootTree from "../assets/rootTree";

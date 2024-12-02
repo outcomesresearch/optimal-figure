@@ -1,6 +1,16 @@
 import { Text, Card, Title, useMantineTheme } from "@mantine/core";
 
-const ChoiceCard = ({ onClick, title, description, isSelected }) => {
+const ChoiceCard = ({
+  onClick,
+  title,
+  description,
+  isSelected,
+}: {
+  onClick: () => void;
+  title: string;
+  description: string;
+  isSelected: boolean;
+}) => {
   const theme = useMantineTheme();
   return (
     <Card
