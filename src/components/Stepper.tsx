@@ -3,7 +3,8 @@ import { Stack, Title, Button, Group } from "@mantine/core";
 import rootTree from "../assets/rootTree";
 import { ROOT } from "../assets/ids";
 import ChoiceCard from "../components/ChoiceCard";
-import { NavLink } from "react-router";
+import { Link } from "react-router";
+import { useParams } from "react-router";
 
 const buttonProps = {
   variant: "subtle",
@@ -12,16 +13,22 @@ const buttonProps = {
 };
 
 const StepperWrapper = () => {
-  const [currentStep, setCurrentStep] = useState<string>(ROOT);
+  const { step: currentStep } = useParams();
   const [path, setPath] = useState<string[]>([]);
   const [currentlySelectedChoice, setCurrentlySelectedChoice] =
     useState<string>();
-  const [currentConfig, setCurrentConfig] = useState(rootTree[currentStep]);
+  const [currentConfig, setCurrentConfig] = useState(
+    rootTree[currentStep || ROOT]
+  );
 
   useEffect(() => {
-    console.log({ currentStep }, rootTree[currentStep]);
-    setCurrentlySelectedChoice(undefined);
-    setCurrentConfig(rootTree[currentStep]);
+    // When url param is available, initialize the current step and path sequence
+    if (currentStep) {
+      console.log(currentStep);
+      setCurrentlySelectedChoice(undefined);
+      setCurrentConfig(rootTree[currentStep]);
+      // setPath(findPreviousSteps(rootTree[currentStep].inputs[0]));
+    }
   }, [currentStep]);
 
   // can be either Back, Back To Intro
@@ -29,20 +36,17 @@ const StepperWrapper = () => {
     // Back
     if (path.length > 0) {
       return (
-        <Button
-          {...buttonProps}
-          onClick={() => setCurrentStep(path.pop() as string)}
-        >
-          Back
-        </Button>
+        <Link to={`/decision-tree/${path.pop()}`}>
+          <Button {...buttonProps}>Back</Button>
+        </Link>
       );
     }
 
     return (
       // Back to Intro
-      <NavLink to="/intro">
+      <Link to={{ pathname: "/intro" }}>
         <Button {...buttonProps}>Back to intro</Button>
-      </NavLink>
+      </Link>
     );
   }
 
@@ -50,17 +54,11 @@ const StepperWrapper = () => {
   function getForwardButton() {
     if (currentConfig.choices) {
       return (
-        <Button
-          {...buttonProps}
-          disabled={!currentlySelectedChoice}
-          onClick={() => {
-            console.log({ currentlySelectedChoice });
-            setPath([...path, currentStep]); // Save the current step in the path
-            setCurrentStep(currentlySelectedChoice);
-          }}
-        >
-          Next
-        </Button>
+        <Link to={`/decision-tree/${currentlySelectedChoice}`}>
+          <Button {...buttonProps} disabled={!currentlySelectedChoice}>
+            Next
+          </Button>
+        </Link>
       );
     }
 
@@ -69,29 +67,17 @@ const StepperWrapper = () => {
       !currentConfig.next // if no configured next step
     ) {
       return (
-        <Button
-          {...buttonProps}
-          onClick={() => {
-            setCurrentStep(path[0]);
-            setPath([]);
-          }}
-        >
-          Start over
-        </Button>
+        <Link to="/decision-tree">
+          <Button {...buttonProps}>Start over</Button>
+        </Link>
       );
     }
 
     if (currentConfig.type === "statement" && currentConfig.next) {
       return (
-        <Button
-          {...buttonProps}
-          onClick={() => {
-            setPath([...path, currentStep]);
-            setCurrentStep(currentConfig.next);
-          }}
-        >
-          Continue
-        </Button>
+        <Link to={`/decision-tree/${currentConfig.next}`}>
+          <Button {...buttonProps}>Continue</Button>
+        </Link>
       );
     }
   }

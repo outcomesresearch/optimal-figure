@@ -73,7 +73,11 @@ export default function App() {
                     <BrowserRouter>
                       <Routes>
                         <Route path="/intro" Component={IntroCard} />
-                        <Route path="/decision-tree" Component={Stepper} />
+                        <Route
+                          path="/decision-tree/:step"
+                          Component={Stepper}
+                        />
+                        <Route path="/decision-tree/" Component={Stepper} />
                         <Route path="*" Component={IntroCard} />
                       </Routes>
                     </BrowserRouter>
