@@ -1,8 +1,9 @@
 import ExperimentalStudyDescription from "../../../components/stepComponents/ExperimentalStudyDescription";
 import RandomAllocationDescription from "../../../components/stepComponents/RandomAllocationDescription";
-import RandomizedControlledTrialDescription from "../../../components/stepComponents/RandomizedControlledTrialDescription";
+import PairedSamples from "../../../components/stepComponents/PairedSamples";
 import MannWhitneyUTest from "../../../components/stepComponents/MannWhitneyUTest";
 import WilcoxonTest from "../../../components/stepComponents/WilcoxonTest";
+import IndependentSamples from "../../../components/stepComponents/IndependentSamples";
 
 import { COMPARISON_OF_2_GROUPS } from "../ids";
 import * as ids from "./ids";
@@ -73,7 +74,7 @@ let tree = {
     type: "statement",
     title: "Independent Samples t-test",
     flowChartTitle: "Randomized\nClinical Trial",
-    component: RandomizedControlledTrialDescription,
+    component: IndependentSamples,
     color: "blue-darken-2",
     inputs: [ids],
   },
@@ -91,7 +92,7 @@ let tree = {
     type: "statement",
     title: "Paired Samples t-test",
     flowChartTitle: "Randomized\nClinical Trial",
-    component: RandomizedControlledTrialDescription,
+    component: PairedSamples,
     color: "blue-darken-2",
     inputs: [ids],
   },
