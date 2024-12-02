@@ -1,4 +1,4 @@
-import RandomAllocationDescription from "../../components/stepComponents/RandomAllocationDescription";
+import FocusOfAnalysis from "../../components/stepComponents/FocusOfAnalysis";
 
 import correlationContinuousMeasureTree from "./correlationContinuousMeasure/tree";
 import comparisonOfTwoGroupsTree from "./comparisonOf2Groups/tree";
@@ -12,27 +12,29 @@ const tree = {
   [CONTINUOUS]: {
     type: "question",
     title: "What is the focus of analysis?",
-    component: RandomAllocationDescription,
+    component: FocusOfAnalysis,
     choices: [
       {
         answer: "Correlation with continuous measure",
         next: ids.CORRELATION_WITH_CONTINUOUS_VARIABLE,
-        option_description: "Correlation with continuous measure",
+        option_description:
+          "Studying the relationship between continuous variables",
       },
       {
         answer: "Comparison of 2 groups",
         next: ids.COMPARISON_OF_2_GROUPS,
-        option_description: "Comparison of 2 groups",
+        option_description: "Studying differences across two groups",
       },
       {
-        answer: "Comparison of 3 or more groups",
+        answer: "Comparison of >3 groups",
         next: ids.COMPARISON_OF_3_OR_MORE_GROUPS,
-        option_description: "Comparison of 3 or more groups",
+        option_description: "Studying differences across three or more groups",
       },
       {
         answer: "Multivariable analysis",
         next: ids.MULTIVARIABLE_ANALYSIS,
-        option_description: "Multivariable analysis",
+        option_description:
+          "Analyzing the effect of multiple variables on an outcome",
       },
     ],
     inputs: [ids],

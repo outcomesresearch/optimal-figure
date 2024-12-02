@@ -1,5 +1,3 @@
-import ExperimentalStudyDescription from "../../../components/stepComponents/ExperimentalStudyDescription";
-import RandomAllocationDescription from "../../../components/stepComponents/RandomAllocationDescription";
 import PearsonCoefficient from "../../../components/stepComponents/PearsonCoefficient";
 import SpearmanCorrelation from "../../../components/stepComponents/SpearmanCorrelation";
 import KendallsTau from "../../../components/stepComponents/KendallsTau";
@@ -12,7 +10,8 @@ let tree = {
     type: "question",
     title:
       "Is the association linear, and are parametric test assumptions met?",
-    component: RandomAllocationDescription,
+    component: () =>
+      `Understanding whether the relationship between variables is linear and whether the assumptions of parametric tests hold helps determine the most suitable statistical method for the analysis.`,
     choices: [
       {
         answer: "Yes",
@@ -24,7 +23,7 @@ let tree = {
         answer: "No",
         next: ids.ASSOCIATIONS_LINEAR_NO,
         option_description:
-          "Associations not linear, or parametric assumptions are not met",
+          "Associations are not linear, or parametric assumptions are not met",
       },
     ],
     inputs: [CORRELATION_WITH_CONTINUOUS_VARIABLE],
@@ -32,20 +31,21 @@ let tree = {
 
   [ids.ASSOCIATIONS_LINEAR_NO]: {
     type: "question",
-    title: "Either of these work, click for more details",
-    component: ExperimentalStudyDescription,
+    title: "Choose a method for non-parametric analysis",
+    component: () =>
+      "Select the appropriate test based on the nature of your data and the relationship between variables.",
     choices: [
       {
         answer: "Spearman’s rho (non-parametric)",
         next: ids.SPEARMANS_RHO,
-        // option_description:
-        //   "Asssociations are linear and parametric test assumptions are met",
+        option_description:
+          "Measures the strength of a monotonic relationship between two variables",
       },
       {
         answer: "Kendall’s Tau (non-parametric)",
         next: ids.KENDALLS_TAU,
-        // option_description:
-        //   "Associations not linear, or parametric assumptions are not met",
+        option_description:
+          "Assesses the strength of a monotonic relationship, useful for small samples",
       },
     ],
     color: "blue-lighten-2",

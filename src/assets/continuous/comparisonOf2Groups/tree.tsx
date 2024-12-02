@@ -1,5 +1,3 @@
-import ExperimentalStudyDescription from "../../../components/stepComponents/ExperimentalStudyDescription";
-import RandomAllocationDescription from "../../../components/stepComponents/RandomAllocationDescription";
 import PairedSamples from "../../../components/stepComponents/PairedSamples";
 import MannWhitneyUTest from "../../../components/stepComponents/MannWhitneyUTest";
 import WilcoxonTest from "../../../components/stepComponents/WilcoxonTest";
@@ -13,7 +11,7 @@ let tree = {
     type: "question",
     title:
       "Are the groups independent, or instead are the observations paired?",
-    component: RandomAllocationDescription,
+    component: () => "",
     choices: [
       {
         answer: "Independent",
@@ -32,7 +30,8 @@ let tree = {
   [ids.INDEPENDENT]: {
     type: "question",
     title: "Are parametric assumptions met?",
-    component: RandomAllocationDescription,
+    component: () =>
+      "Parametric tests rely on specific assumptions to provide accurate results. If these assumptions are not met, the test may give misleading conclusions, and non-parametric alternatives may be more appropriate.",
     choices: [
       {
         answer: "Yes",
@@ -42,7 +41,7 @@ let tree = {
       {
         answer: "No",
         next: ids.MANN_WHITNEY_U_TEST,
-        option_description: "Non parametric",
+        option_description: "Assumptions are not met",
       },
     ],
     inputs: [ids],
@@ -50,20 +49,19 @@ let tree = {
 
   [ids.PAIRED]: {
     type: "question",
-    title: "Either of these work, click for more details",
-    component: ExperimentalStudyDescription,
+    title: "Choose the appropriate test for paired data",
+    component: () =>
+      "Select the method based on whether parametric assumptions are met for paired samples.",
     choices: [
       {
         answer: "Paired Samples t-test",
         next: ids.PAIRED_SAMPLES_TTEST,
-        // option_description:
-        //   "Asssociations are linear and parametric test assumptions are met",
+        option_description: "Compares means of two related groups (parametric)",
       },
       {
         answer: "Wilcoxon Signed Rank test",
         next: ids.WILCOXON_SIGNED_RANK_TEST,
-        // option_description:
-        //   "Associations not linear, or parametric assumptions are not met",
+        option_description: "Non-parametric test for two related groups",
       },
     ],
     color: "blue-lighten-2",

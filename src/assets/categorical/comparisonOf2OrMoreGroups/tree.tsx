@@ -1,5 +1,3 @@
-import ExperimentalStudyDescription from "../../../components/stepComponents/ExperimentalStudyDescription";
-import RandomAllocationDescription from "../../../components/stepComponents/RandomAllocationDescription";
 import ChiSquare from "../../../components/stepComponents/ChiSquare";
 import McNemarTest from "../../../components/stepComponents/McNemarTest";
 import CochransQ from "../../../components/stepComponents/CochransQ";
@@ -11,18 +9,20 @@ import * as ids from "./ids";
 let tree = {
   [COMPARISON_OF_2_GROUPS]: {
     type: "question",
-    title: "Are the groups independent, or instead are they related?",
-    component: RandomAllocationDescription,
+    title: "Are the groups independent, or are they related?",
+    component: () => "",
     choices: [
       {
         answer: "Independent",
         next: ids.INDEPENDENT,
-        option_description: "Groups are independent",
+        option_description:
+          "Groups are separate and do not influence each other",
       },
       {
         answer: "Related",
         next: ids.RELATED,
-        option_description: "Groups are related",
+        option_description:
+          "Groups are linked or paired in some way, influencing one another",
       },
     ],
     inputs: [ids],
@@ -31,7 +31,8 @@ let tree = {
   [ids.INDEPENDENT]: {
     type: "question",
     title: "Are the assumptions for a Chi-square test met?",
-    component: RandomAllocationDescription,
+    component: () =>
+      "The Chi-square test assumes independent categorical data, with expected frequencies of at least 5 per category and a sufficiently large sample size to ensure reliable results.",
     choices: [
       {
         answer: "Yes",
@@ -50,19 +51,15 @@ let tree = {
   [ids.RELATED]: {
     type: "question",
     title: "How many groups does the study compare?",
-    component: ExperimentalStudyDescription,
+    component: () => "",
     choices: [
       {
         answer: "Two",
         next: ids.MCNEMAR_TEST,
-        // option_description:
-        //   "Asssociations are linear and parametric test assumptions are met",
       },
       {
         answer: "More than two",
         next: ids.COCHRANS_Q_TEST,
-        // option_description:
-        //   "Associations not linear, or parametric assumptions are not met",
       },
     ],
     color: "blue-lighten-2",

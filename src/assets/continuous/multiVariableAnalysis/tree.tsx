@@ -1,5 +1,3 @@
-import ExperimentalStudyDescription from "../../../components/stepComponents/ExperimentalStudyDescription";
-import RandomAllocationDescription from "../../../components/stepComponents/RandomAllocationDescription";
 import LinearRegression from "../../../components/stepComponents/LinearRegression";
 import MixedLinearModel from "../../../components/stepComponents/MixedLinearModel";
 import PoissonRegression from "../../../components/stepComponents/PoissonRegression";
@@ -12,7 +10,8 @@ let tree = {
   [MULTIVARIABLE_ANALYSIS]: {
     type: "question",
     title: "Are the linear assumptions met?",
-    component: RandomAllocationDescription,
+    component: () =>
+      "Linear assumptions require a linear relationship between variables, normally distributed residuals, constant variance of errors, and no multicollinearity. These ensure the validity of linear regression results.",
     choices: [
       {
         answer: "Yes",
@@ -31,17 +30,18 @@ let tree = {
   [ids.NON_INDEPENDENT_OBSERVATIONS]: {
     type: "question",
     title: "Are observations independent?",
-    component: RandomAllocationDescription,
+    component: () =>
+      "Independence of observations implies that each data point is separate and not influenced by others.",
     choices: [
       {
         answer: "Yes",
         next: ids.INDEPENDENT_OBSERVATIONS,
-        option_description: "Independent observations",
+        option_description: "Observations are independent",
       },
       {
         answer: "No",
         next: ids.MIXED_LINEAR_MODEL,
-        option_description: "Non-independent observations",
+        option_description: "Observations may influence one another",
       },
     ],
     inputs: [ids],
@@ -49,18 +49,19 @@ let tree = {
 
   [ids.INDEPENDENT_OBSERVATIONS]: {
     type: "question",
-    title: "ANy of these will work",
-    component: ExperimentalStudyDescription,
+    title: "Choose a regression method",
+    component: () =>
+      "These regression approaches are commonly used in multivariable analysis of a continuous outcome measure to model relationships between data.",
     choices: [
       {
-        answer: "Poisson Regresion",
+        answer: "Poisson Regression",
         next: ids.POISSON_REGRESSION,
-        // option_description: "Parametric assumptions are met",
+        option_description: "Models count data with a constant event rate",
       },
       {
         answer: "Ordinal Regression",
         next: ids.ORDINAL_REGRESSION,
-        // option_description: "Non parametric",
+        option_description: "Analyzing ordered categorical outcomes",
       },
     ],
     color: "blue-lighten-2",

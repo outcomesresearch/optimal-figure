@@ -1,4 +1,4 @@
-import RandomAllocationDescription from "../../components/stepComponents/RandomAllocationDescription";
+import FocusOfAnalysis from "../../components/stepComponents/FocusOfAnalysis";
 
 import correlationContinuousMeasureTree from "./correlationContinuousMeasure/tree";
 import comparisonOfTwoGroupsTree from "./comparisonGroups/tree";
@@ -11,11 +11,13 @@ const tree = {
   [TTE]: {
     type: "question",
     title: "What is the focus of analysis?",
-    component: RandomAllocationDescription,
+    component: FocusOfAnalysis,
     choices: [
       {
         answer: "Correlation with continuous variable",
         next: ids.CORRELATION_WITH_CONTINUOUS_VARIABLE,
+        option_description:
+          "Studying the relationship between continuous variables",
       },
       {
         answer: "Comparison of groups of a categorical level variable",
@@ -24,6 +26,8 @@ const tree = {
       {
         answer: "Multivariable analysis",
         next: ids.MULTIVARIABLE_ANALYSIS,
+        option_description:
+          "Analyzing the effect of multiple variables on an outcome",
       },
     ],
     inputs: [ids],

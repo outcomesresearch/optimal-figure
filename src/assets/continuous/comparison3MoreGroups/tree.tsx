@@ -1,5 +1,3 @@
-import ExperimentalStudyDescription from "../../../components/stepComponents/ExperimentalStudyDescription";
-import RandomAllocationDescription from "../../../components/stepComponents/RandomAllocationDescription";
 import KruskalWallis from "../../../components/stepComponents/KruskalWallis";
 import FriedmansTest from "../../../components/stepComponents/FriedmansTest";
 import OneWayANOVA from "../../../components/stepComponents/OneWayANOVA";
@@ -13,7 +11,7 @@ let tree = {
     type: "question",
     title:
       "Are the groups independent, or instead are the observations related?",
-    component: RandomAllocationDescription,
+    component: () => "",
     choices: [
       {
         answer: "Independent",
@@ -23,7 +21,7 @@ let tree = {
       {
         answer: "Related",
         next: ids.RELATED,
-        option_description: "Observations are related",
+        option_description: "Observations are related (repeated measures)",
       },
     ],
     inputs: [ids],
@@ -32,7 +30,8 @@ let tree = {
   [ids.INDEPENDENT]: {
     type: "question",
     title: "Are parametric assumptions met?",
-    component: RandomAllocationDescription,
+    component: () =>
+      "Parametric tests rely on specific assumptions (like normality and homogeneity of variance) to provide accurate results. If these assumptions are not met, the test may give misleading conclusions, and non-parametric alternatives may be more appropriate.",
     choices: [
       {
         answer: "Yes",
@@ -42,7 +41,7 @@ let tree = {
       {
         answer: "No",
         next: ids.KRUSKAL_WALLIS,
-        option_description: "Non parametric",
+        option_description: "Assumptions are not met",
       },
     ],
     inputs: [ids],
@@ -51,7 +50,8 @@ let tree = {
   [ids.RELATED]: {
     type: "question",
     title: "Are parametric assumptions met?",
-    component: ExperimentalStudyDescription,
+    component: () =>
+      "Parametric tests rely on specific assumptions (like normality and homogeneity of variance) to provide accurate results. If these assumptions are not met, the test may give misleading conclusions, and non-parametric alternatives may be more appropriate.",
     choices: [
       {
         answer: "Yes",
@@ -61,7 +61,7 @@ let tree = {
       {
         answer: "No",
         next: ids.FRIEDMANS_TEST,
-        option_description: "Non parametric",
+        option_description: "Assumptions not met",
       },
     ],
     color: "blue-lighten-2",

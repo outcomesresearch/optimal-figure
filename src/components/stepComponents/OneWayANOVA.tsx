@@ -18,7 +18,7 @@ const Component = () => {
         (data within each group is normally distributed),{" "}
         <Text span fw="600">
           independence
-        </Text>
+        </Text>{" "}
         (observations are independent), and{" "}
         <Text span fw="600">
           homogeneity

@@ -1,5 +1,3 @@
-import ExperimentalStudyDescription from "../../../components/stepComponents/ExperimentalStudyDescription";
-import RandomAllocationDescription from "../../../components/stepComponents/RandomAllocationDescription";
 import BinaryLogistic from "../../../components/stepComponents/BinaryLogistic";
 import PoissonRegression from "../../../components/stepComponents/PoissonRegression";
 import NegativeBinomial from "../../../components/stepComponents/NegativeBinomial";
@@ -13,22 +11,24 @@ let tree = {
   [MULTIVARIABLE_ANALYSIS]: {
     type: "question",
     title: "Which option best describes the dependent variable?",
-    component: RandomAllocationDescription,
+    component: () => "",
     choices: [
       {
         answer: "Dichotomous",
         next: ids.DICHOTOMOUS,
-        option_description: "Dependent variable is dichotomous",
+        option_description: "Dependent variable has two categories",
       },
       {
         answer: "Nominal",
         next: ids.MULTINOMINAL,
-        option_description: "Dependent variable is nominal with >2 categories",
+        option_description:
+          "Dependent variable has more than two categories with no order",
       },
       {
         answer: "Ordinal",
         next: ids.ORDINAL,
-        option_description: "Dependent variable is ordinal with >2 categories",
+        option_description:
+          "Dependent variable has ordered categories with more than two levels",
       },
     ],
     inputs: [ids],
@@ -53,23 +53,25 @@ let tree = {
 
   [ids.DICHOTOMOUS]: {
     type: "question",
-    title: "ANy of these will work",
-    component: ExperimentalStudyDescription,
+    title: "Choose a regression method",
+    component: () =>
+      "These regression methods are used in multivariable analysis to model categorical outcomes. Binary Logistic Regression is used for binary outcomes, while Poisson and Negative Binomial regressions model count data with different distribution assumptions.",
     choices: [
       {
         answer: "Binary Logistic Regression",
         next: ids.BINARY_LOGISTIC,
-        // option_description: "Parametric assumptions are met",
+        option_description:
+          "Models probability of a binary outcome with predictor variables",
       },
       {
         answer: "Negative Binomial",
         next: ids.NEGATIVE_BINOMIAL,
-        // option_description: "Non parametric",
+        option_description: "Models count data with overdispersion",
       },
       {
         answer: "Poisson regression",
         next: ids.POISSON_REGRESSION,
-        // option_description: "Non parametric",
+        option_description: "Models count data with a constant event rate",
       },
     ],
     color: "blue-lighten-2",
