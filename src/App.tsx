@@ -1,7 +1,4 @@
-// Import styles of packages that you've installed.
-// All packages except `@mantine/hooks` require styles imports
 import "@mantine/core/styles.css";
-
 import {
   AppShell,
   createTheme,
@@ -53,7 +50,6 @@ export default function App() {
         <AppShell.Header withBorder={false}>
           <Header />
         </AppShell.Header>
-
         <AppShell.Main w="100vw" pl={0} pr={0} pb={0} h="100%">
           <Stack pt="sm" gap={0} mih="100%">
             <NavbarSubtitle />
