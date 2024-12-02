@@ -25,7 +25,9 @@ const StepperWrapper = () => {
   );
 
   useEffect(() => {
-    let effectiveStep = currentStep || ROOT;
+    let effectiveStep = Object.keys(rootTree).includes(currentStep)
+      ? currentStep
+      : ROOT;
 
     // When url param is available, initialize the current step and path sequence
 
