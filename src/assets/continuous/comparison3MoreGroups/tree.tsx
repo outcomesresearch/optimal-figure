@@ -12,7 +12,8 @@ let tree = {
     type: "question",
     title:
       "Are the groups independent, or instead are the observations related?",
-    component: () => "",
+    component: () =>
+      "The relationship between groups determines whether statistical methods assume independence or account for related observations, such as in repeated measures.",
     choices: [
       {
         answer: "Independent",

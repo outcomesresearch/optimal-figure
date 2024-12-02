@@ -102,15 +102,18 @@ const StepperWrapper = () => {
       shadow="sm"
       padding="lg"
       my={{ base: "lg", md: "48px" }}
+      w="100%"
       radius="md"
       withBorder
     >
       <Card.Section pb="md">
         <Progress value={progress} w="100%" radius={0} />
       </Card.Section>
-      <Group justify="center">
-        <Stack>
-          <Title order={4}>{currentConfig.title}</Title>
+      <Group justify="center" w="100%">
+        <Stack w="100%">
+          <Title order={4} mr="auto">
+            {currentConfig.title}
+          </Title>
           <DynamicComponent component={currentConfig.component} />
           {currentConfig?.choices ? (
             <Group justify="center">
@@ -127,7 +130,7 @@ const StepperWrapper = () => {
               ))}
             </Group>
           ) : null}
-          <Group justify="space-between">
+          <Group justify="space-between" w="100%">
             {getBackButton()}
             {getForwardButton()}
           </Group>
