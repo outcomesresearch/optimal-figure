@@ -40,7 +40,9 @@ const IntroCard = () => {
           <Text c="dark">
             This tool assists researchers in selecting the most appropriate
             inferential statistical test based on their data and research
-            objectives, helping to ensure accurate and reliable results.
+            objectives, helping to ensure accurate and reliable results. Please
+            note that this wizard only presents the most commonly used
+            statistics in clinical research.
           </Text>
         </Stack>
         <NavLink to="/decision-tree" style={{ marginLeft: "auto" }}>
