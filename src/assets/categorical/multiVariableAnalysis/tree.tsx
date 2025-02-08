@@ -7,8 +7,9 @@ import OrdinalCategorical from "../../../components/stepComponents/OrdinalCatego
 import { MULTIVARIABLE_ANALYSIS } from "../ids";
 import { CATEGORICAL } from "../../ids";
 import * as ids from "./ids";
+import { TreeNode } from "../../types";
 
-let tree = {
+const tree: Record<string, TreeNode> = {
   [MULTIVARIABLE_ANALYSIS]: {
     type: "question",
     title: "Which option best describes the dependent variable?",
@@ -38,7 +39,7 @@ let tree = {
   [ids.ORDINAL]: {
     type: "statement",
     title: "Ordinal Regression",
-    flowChartTitle: "Randomized\nClinical Trial",
+    flowChartTitle: "Ordinal Regression",
     component: OrdinalCategorical,
     color: "blue-darken-2",
     inputs: [MULTIVARIABLE_ANALYSIS],
@@ -46,7 +47,7 @@ let tree = {
   [ids.MULTINOMINAL]: {
     type: "statement",
     title: "Multinomial Regression",
-    flowChartTitle: "Randomized\nClinical Trial",
+    flowChartTitle: "Multinomial Regression",
     component: Multinomial,
     color: "blue-darken-2",
     inputs: [MULTIVARIABLE_ANALYSIS],
@@ -82,7 +83,7 @@ let tree = {
   [ids.BINARY_LOGISTIC]: {
     type: "statement",
     title: "Binary Logistic Regression",
-    flowChartTitle: "Randomized\nClinical Trial",
+    flowChartTitle: "Binary Logistic Regression",
     component: BinaryLogistic,
     color: "blue-darken-2",
     inputs: [ids.DICHOTOMOUS],
@@ -91,7 +92,7 @@ let tree = {
   [ids.NEGATIVE_BINOMIAL]: {
     type: "statement",
     title: "Negative Binomial",
-    flowChartTitle: "Randomized\nClinical Trial",
+    flowChartTitle: "Negative Binomial",
     component: NegativeBinomial,
     color: "blue-darken-2",
     inputs: [ids.DICHOTOMOUS],
@@ -100,7 +101,7 @@ let tree = {
   [ids.POISSON_REGRESSION]: {
     type: "statement",
     title: "Poisson Regression",
-    flowChartTitle: "Randomized\nClinical Trial",
+    flowChartTitle: "Poisson Regression",
     component: PoissonRegression,
     color: "blue-darken-2",
     inputs: [ids.DICHOTOMOUS],

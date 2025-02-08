@@ -6,8 +6,9 @@ import CompetingRiskAnalysis from "../../../components/stepComponents/CompetingR
 import { MULTIVARIABLE_ANALYSIS } from "../ids";
 import { TTE } from "../../ids";
 import * as ids from "./ids";
+import { TreeNode } from "../../types";
 
-let tree = {
+const tree: Record<string, TreeNode> = {
   [MULTIVARIABLE_ANALYSIS]: {
     type: "question",
     title: "Choose a suitable regression or analysis method",
@@ -46,7 +47,7 @@ let tree = {
   [ids.COX_PH_REGRESSION]: {
     type: "statement",
     title: "Cox Proportional Hazards (PH) Regression",
-    flowChartTitle: "Randomized\nClinical Trial",
+    flowChartTitle: "Cox Proportional Hazards (PH) Regression",
     component: CoxPHRegression,
     color: "blue-darken-2",
     inputs: [MULTIVARIABLE_ANALYSIS],
@@ -55,7 +56,7 @@ let tree = {
   [ids.COX_REGRESSION_TIMEDEPENDENT]: {
     type: "statement",
     title: "Cox Regression with time-dependent covariate",
-    flowChartTitle: "Randomized\nClinical Trial",
+    flowChartTitle: "Cox Regression with time-dependent covariate",
     component: CoxRegressionTimedependent,
     color: "blue-darken-2",
     inputs: [MULTIVARIABLE_ANALYSIS],
@@ -64,7 +65,7 @@ let tree = {
   [ids.COUNT_PROCESS_ANALYSIS]: {
     type: "statement",
     title: "Count Process Analysis",
-    flowChartTitle: "Randomized\nClinical Trial",
+    flowChartTitle: "Count Process Analysis",
     component: CountProcessAnalysis,
     color: "blue-darken-2",
     inputs: [MULTIVARIABLE_ANALYSIS],
@@ -73,7 +74,7 @@ let tree = {
   [ids.COMPETING_RISK]: {
     type: "statement",
     title: "Competing Risk Analysis",
-    flowChartTitle: "Randomized\nClinical Trial",
+    flowChartTitle: "Competing Risk Analysis",
     component: CompetingRiskAnalysis,
     color: "blue-darken-2",
     inputs: [MULTIVARIABLE_ANALYSIS],

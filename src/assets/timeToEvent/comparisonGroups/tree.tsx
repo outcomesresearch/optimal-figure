@@ -5,8 +5,9 @@ import KaplanMeier from "../../../components/stepComponents/KaplanMeier";
 import { COMPARISON_OF_GROUPS } from "../ids";
 import { TTE } from "../../ids";
 import * as ids from "./ids";
+import { TreeNode } from "../../types";
 
-let tree = {
+const tree: Record<string, TreeNode> = {
   [COMPARISON_OF_GROUPS]: {
     type: "question",
     title: "Select the desired survival analysis method",
@@ -39,7 +40,7 @@ let tree = {
   [ids.KAPLAN_MEIER]: {
     type: "statement",
     title: "Kaplan-Meier Analysis with Log Rank test",
-    flowChartTitle: "Randomized\nClinical Trial",
+    flowChartTitle: "Kaplan-Meier Analysis with Log Rank test",
     component: KaplanMeier,
     color: "blue-darken-2",
     inputs: [COMPARISON_OF_GROUPS],
@@ -48,7 +49,7 @@ let tree = {
   [ids.LIFE_WILCOXON]: {
     type: "statement",
     title: "Life Table Analysis with Wilcoxon-Gehan test",
-    flowChartTitle: "Randomized\nClinical Trial",
+    flowChartTitle: "Life Table Analysis with Wilcoxon-Gehan test",
     component: LifeTable,
     color: "blue-darken-2",
     inputs: [COMPARISON_OF_GROUPS],
@@ -57,7 +58,7 @@ let tree = {
   [ids.COX_REGRESSION]: {
     type: "statement",
     title: "Cox regression",
-    flowChartTitle: "Randomized\nClinical Trial",
+    flowChartTitle: "Cox regression",
     component: CoxRegression,
     color: "blue-darken-2",
     inputs: [COMPARISON_OF_GROUPS],

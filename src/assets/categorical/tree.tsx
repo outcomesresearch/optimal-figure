@@ -6,8 +6,9 @@ import multiVariableAnalysisTree from "./multiVariableAnalysis/tree";
 
 import { CATEGORICAL, ROOT } from "../ids";
 import * as ids from "./ids";
+import { TreeNode } from "../types.ts";
 
-const tree = {
+const tree: Record<string, TreeNode> = {
   [CATEGORICAL]: {
     type: "question",
     title: "What is the focus of analysis?",

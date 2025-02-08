@@ -6,8 +6,9 @@ import IndependentSamples from "../../../components/stepComponents/IndependentSa
 import { COMPARISON_OF_2_GROUPS } from "../ids";
 import { CONTINUOUS } from "../../ids";
 import * as ids from "./ids";
+import { TreeNode } from "../../types";
 
-let tree = {
+const tree: Record<string, TreeNode> = {
   [COMPARISON_OF_2_GROUPS]: {
     type: "question",
     title:
@@ -72,7 +73,7 @@ let tree = {
   [ids.INDEPENDENT_SAMPLES_T_TEST]: {
     type: "statement",
     title: "Independent Samples t-test",
-    flowChartTitle: "Randomized\nClinical Trial",
+    flowChartTitle: "Independent Samples t-test",
     component: IndependentSamples,
     color: "blue-darken-2",
     inputs: [ids.INDEPENDENT],
@@ -81,7 +82,7 @@ let tree = {
   [ids.MANN_WHITNEY_U_TEST]: {
     type: "statement",
     title: "Mann-Whitney U test (non-parametric)",
-    flowChartTitle: "Randomized\nClinical Trial",
+    flowChartTitle: "Mann-Whitney U test (non-parametric)",
     component: MannWhitneyUTest,
     color: "blue-darken-2",
     inputs: [ids.INDEPENDENT],
@@ -90,7 +91,7 @@ let tree = {
   [ids.PAIRED_SAMPLES_TTEST]: {
     type: "statement",
     title: "Paired Samples t-test",
-    flowChartTitle: "Randomized\nClinical Trial",
+    flowChartTitle: "Paired Samples t-test",
     component: PairedSamples,
     color: "blue-darken-2",
     inputs: [ids.PAIRED],
@@ -99,7 +100,7 @@ let tree = {
   [ids.WILCOXON_SIGNED_RANK_TEST]: {
     type: "statement",
     title: "Wilcoxon Signed Rank test",
-    flowChartTitle: "Randomized\nClinical Trial",
+    flowChartTitle: "Wilcoxon Signed Rank test",
     component: WilcoxonTest,
     color: "blue-darken-2",
     inputs: [ids.PAIRED],

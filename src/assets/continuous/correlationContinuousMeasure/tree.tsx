@@ -5,8 +5,9 @@ import KendallsTau from "../../../components/stepComponents/KendallsTau";
 import { CORRELATION_WITH_CONTINUOUS_VARIABLE } from "../ids";
 import { CONTINUOUS } from "../../ids";
 import * as ids from "./ids";
+import { TreeNode } from "../../types";
 
-let tree = {
+const tree: Record<string, TreeNode> = {
   [CORRELATION_WITH_CONTINUOUS_VARIABLE]: {
     type: "question",
     title:
@@ -29,7 +30,6 @@ let tree = {
     ],
     inputs: [CONTINUOUS],
   },
-
   [ids.ASSOCIATIONS_NONLINEAR]: {
     type: "question",
     title: "Choose a method for non-parametric analysis",
@@ -52,10 +52,10 @@ let tree = {
     color: "blue-lighten-2",
     inputs: [CORRELATION_WITH_CONTINUOUS_VARIABLE],
   },
-
   [ids.PEARSONS_CORRELATION_COEFFICIENT]: {
     type: "statement",
     title: "Pearson Correlation Coefficient r",
+    flowChartTitle: "Pearson Correlation Coefficient r",
     component: PearsonCoefficient,
     color: "blue-lighten-2",
     inputs: [CORRELATION_WITH_CONTINUOUS_VARIABLE],
@@ -64,7 +64,7 @@ let tree = {
   [ids.SPEARMANS_RHO]: {
     type: "statement",
     title: "Spearman’s rho (non-parametric)",
-    flowChartTitle: "Randomized\nClinical Trial",
+    flowChartTitle: "Spearman’s rho (non-parametric)",
     component: SpearmanCorrelation,
     color: "blue-darken-2",
     inputs: [ids.ASSOCIATIONS_NONLINEAR],
@@ -73,7 +73,7 @@ let tree = {
   [ids.KENDALLS_TAU]: {
     type: "statement",
     title: "Kendall’s Tau (non-parametric)",
-    flowChartTitle: "Randomized\nClinical Trial",
+    flowChartTitle: "Kendall’s Tau (non-parametric)",
     component: KendallsTau,
     color: "blue-darken-2",
     inputs: [ids.ASSOCIATIONS_NONLINEAR],

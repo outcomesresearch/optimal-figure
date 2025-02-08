@@ -2,12 +2,13 @@ import CoxPHRegression from "../../../components/stepComponents/CoxPHRegression"
 
 import { CORRELATION_WITH_CONTINUOUS_VARIABLE } from "../ids";
 import { TTE } from "../../ids";
+import { TreeNode } from "../../types";
 
-let tree = {
+const tree: Record<string, TreeNode> = {
   [CORRELATION_WITH_CONTINUOUS_VARIABLE]: {
     type: "statement",
     title: "Cox Proportional Hazards (PH) Regression",
-    flowChartTitle: "Randomized\nClinical Trial",
+    flowChartTitle: "Cox Proportional Hazards (PH) Regression",
     component: CoxPHRegression,
     color: "blue-darken-2",
     inputs: [TTE],

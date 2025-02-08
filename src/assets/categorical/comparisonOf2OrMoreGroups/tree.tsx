@@ -6,8 +6,9 @@ import FishersExact from "../../../components/stepComponents/FishersExact";
 import { COMPARISON_OF_2_GROUPS } from "../ids";
 import { CATEGORICAL } from "../../ids";
 import * as ids from "./ids";
+import { TreeNode } from "../../types";
 
-let tree = {
+const tree: Record<string, TreeNode> = {
   [COMPARISON_OF_2_GROUPS]: {
     type: "question",
     title: "Are the groups independent, or are they related?",
@@ -63,8 +64,7 @@ let tree = {
       {
         answer: "More than two",
         next: ids.COCHRANS_Q_TEST,
-        option_description:
-          "Comparing three or more related groups",
+        option_description: "Comparing three or more related groups",
       },
     ],
     color: "blue-lighten-2",

@@ -6,8 +6,9 @@ import OrdinalContinuous from "../../../components/stepComponents/OrdinalContinu
 import { MULTIVARIABLE_ANALYSIS } from "../ids";
 import { CONTINUOUS } from "../../ids";
 import * as ids from "./ids";
+import { TreeNode } from "../../types";
 
-let tree = {
+const tree: Record<string, TreeNode> = {
   [MULTIVARIABLE_ANALYSIS]: {
     type: "question",
     title: "Are the linear assumptions met?",
@@ -72,7 +73,7 @@ let tree = {
   [ids.LINEAR_REGRESSION]: {
     type: "statement",
     title: "Linear Regression",
-    flowChartTitle: "Randomized\nClinical Trial",
+    flowChartTitle: "Linear Regression",
     component: LinearRegression,
     color: "blue-darken-2",
     inputs: [MULTIVARIABLE_ANALYSIS],
@@ -81,7 +82,7 @@ let tree = {
   [ids.MIXED_LINEAR_MODEL]: {
     type: "statement",
     title: "Mixed Linear Model",
-    flowChartTitle: "Randomized\nClinical Trial",
+    flowChartTitle: "Mixed Linear Model",
     component: MixedLinearModel,
     color: "blue-darken-2",
     inputs: [ids.ARE_OBSEVATIONS_INDEPENDENT],
@@ -90,7 +91,7 @@ let tree = {
   [ids.POISSON_REGRESSION]: {
     type: "statement",
     title: "Poisson Regression",
-    flowChartTitle: "Randomized\nClinical Trial",
+    flowChartTitle: "Poisson Regression",
     component: PoissonRegression,
     color: "blue-darken-2",
     inputs: [ids.INDEPENDENT_OBSERVATIONS],
@@ -99,7 +100,7 @@ let tree = {
   [ids.ORDINAL_REGRESSION]: {
     type: "statement",
     title: "Ordinal Regression",
-    flowChartTitle: "Randomized\nClinical Trial",
+    flowChartTitle: "Ordinal Regression",
     component: OrdinalContinuous,
     color: "blue-darken-2",
     inputs: [ids.INDEPENDENT_OBSERVATIONS],

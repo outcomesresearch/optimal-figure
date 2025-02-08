@@ -6,8 +6,9 @@ import multiVariableAnalysisTree from "./multiVariableAnalysis/tree";
 
 import { ROOT, TTE } from "../ids";
 import * as ids from "./ids";
+import { TreeNode } from "../types";
 
-const tree = {
+const tree: Record<string, TreeNode> = {
   [TTE]: {
     type: "question",
     title: "What is the focus of analysis?",
@@ -22,6 +23,7 @@ const tree = {
       {
         answer: "Comparison of groups of a categorical level variable",
         next: ids.COMPARISON_OF_GROUPS,
+        option_description: "",
       },
       {
         answer: "Multivariable analysis",

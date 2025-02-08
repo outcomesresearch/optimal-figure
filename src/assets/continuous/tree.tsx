@@ -7,8 +7,9 @@ import multiVariableAnalysisTree from "./multiVariableAnalysis/tree";
 
 import { CONTINUOUS, ROOT } from "../ids";
 import * as ids from "./ids";
+import { TreeNode } from "../types";
 
-const tree = {
+const tree: Record<string, TreeNode> = {
   [CONTINUOUS]: {
     type: "question",
     title: "What is the focus of analysis?",

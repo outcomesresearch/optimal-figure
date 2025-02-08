@@ -6,8 +6,9 @@ import RepeatedMeasuresAnova from "../../../components/stepComponents/RepeatedMe
 import { COMPARISON_OF_3_OR_MORE_GROUPS } from "../ids";
 import { CONTINUOUS } from "../../ids";
 import * as ids from "./ids";
+import { TreeNode } from "../../types";
 
-let tree = {
+const tree: Record<string, TreeNode> = {
   [COMPARISON_OF_3_OR_MORE_GROUPS]: {
     type: "question",
     title:
@@ -73,7 +74,7 @@ let tree = {
   [ids.ANOVA]: {
     type: "statement",
     title: "One-way ANOVA",
-    flowChartTitle: "Randomized\nClinical Trial",
+    flowChartTitle: "One-way ANOVA",
     component: OneWayANOVA,
     color: "blue-darken-2",
     inputs: [ids.INDEPENDENT],
@@ -82,7 +83,7 @@ let tree = {
   [ids.KRUSKAL_WALLIS]: {
     type: "statement",
     title: "Kruskal-Wallis test (non-parametric)",
-    flowChartTitle: "Randomized\nClinical Trial",
+    flowChartTitle: "Kruskal-Wallis test (non-parametric)",
     component: KruskalWallis,
     color: "blue-darken-2",
     inputs: [ids.INDEPENDENT],
@@ -91,7 +92,7 @@ let tree = {
   [ids.REPEATED_MEASURES_ANOVA]: {
     type: "statement",
     title: "Repeated Measures ANOVA",
-    flowChartTitle: "Randomized\nClinical Trial",
+    flowChartTitle: "Repeated Measures ANOVA",
     component: RepeatedMeasuresAnova,
     color: "blue-darken-2",
     inputs: [ids.RELATED],
@@ -100,7 +101,7 @@ let tree = {
   [ids.FRIEDMANS_TEST]: {
     type: "statement",
     title: "Friedman’s test",
-    flowChartTitle: "Randomized\nClinical Trial",
+    flowChartTitle: "Friedman’s test",
     component: FriedmansTest,
     color: "blue-darken-2",
     inputs: [ids.RELATED],
