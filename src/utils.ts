@@ -9,6 +9,8 @@ export function findLongestPath(currentNode, steps) {
     return 0;
   }
 
+  console.log({ currentNode });
+
   let maxLength = 0;
 
   // Loop through each option in the current node
