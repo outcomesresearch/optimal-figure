@@ -4,6 +4,7 @@ import * as ids from "./ids";
 import continuousStudyTree from "./continuous/tree";
 import categoricalStudyTree from "./categorical/tree";
 import dichotomousStudyRootTree from "./dichotomous/tree";
+import metaanalysisStudyRootTree from "./meta-analysis/tree";
 
 const addIds = (tree) => {
   return Object.entries(tree).reduce((acc, [key, value]) => {
@@ -39,11 +40,18 @@ let rootTree = {
         option_description:
           "A dichotomous outcome measure is a type of variable with only two possible categories, such as presence or absence of a condition, success or failure, or yes/no responses. It is commonly used in clinical trials and research to compare proportions between groups.",
       },
+      {
+        answer: "Meta-analysis",
+        next: ids.META_ANALYSIS,
+        option_description:
+          "In meta-analysis the outcome represents the pooled effect size derived from combining results of multiple studies. It quantifies the overall effect of an intervention or relationship by synthesizing data across studies, reducing individual study variability, and providing a more generalizable estimate of the true effect.",
+      },
     ],
   },
   ...continuousStudyTree,
   ...categoricalStudyTree,
   ...dichotomousStudyRootTree,
+  ...metaanalysisStudyRootTree,
 };
 
 export default addIds(rootTree);
