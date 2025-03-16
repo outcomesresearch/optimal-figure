@@ -4,6 +4,7 @@ import * as ids from "./ids";
 import continuousStudyTree from "./continuous/tree";
 import categoricalStudyTree from "./categorical/tree";
 import dichotomousStudyRootTree from "./dichotomous/tree";
+import nominalStudyTree from "./nominal/tree";
 import metaanalysisStudyRootTree from "./meta-analysis/tree";
 
 const addIds = (tree) => {
@@ -41,6 +42,12 @@ let rootTree = {
           "A dichotomous outcome measure is a type of variable with only two possible categories, such as presence or absence of a condition, success or failure, or yes/no responses. It is commonly used in clinical trials and research to compare proportions between groups.",
       },
       {
+        answer: "Nominal",
+        next: ids.NOMINAL,
+        option_description:
+          "A nominal variable is a type of categorical variable that has distinct labels or names but no inherent order or ranking. Examples include blood type, country of origin, marital status, and species classification.",
+      },
+      {
         answer: "Meta-analysis",
         next: ids.META_ANALYSIS,
         option_description:
@@ -51,6 +58,7 @@ let rootTree = {
   ...continuousStudyTree,
   ...categoricalStudyTree,
   ...dichotomousStudyRootTree,
+  ...nominalStudyTree,
   ...metaanalysisStudyRootTree,
 };
 
