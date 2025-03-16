@@ -4,15 +4,15 @@ import TabLayout from "../layout/TabLayout";
 const Component = () => {
   return (
     <TabLayout
-      description="The Stacked Bar Graph (Stacked Column Chart) uses stacked bars to show the composition of categories within a total. It is useful for comparing part-to-whole relationships across multiple categories."
+      description="The Mosaic Plot uses tiles to represent the relative sizes of categories and their relationships. It is useful for visualizing the relationship between two or more categorical variables."
       tabsConfiguration={[
         {
           key: "characteristics",
           label: "Characteristics",
           content: (
             <Text>
-              Uses stacked bars to show the composition of categories within a
-              total.
+              Uses tiles to represent the relative sizes of categories and their
+              relationships.
             </Text>
           ),
         },
@@ -21,8 +21,8 @@ const Component = () => {
           label: "Purpose",
           content: (
             <Text>
-              To compare the composition of different categories and show
-              part-to-whole relationships.
+              To show the relationship between two or more categorical
+              variables.
             </Text>
           ),
         },
@@ -31,8 +31,8 @@ const Component = () => {
           label: "When to Use",
           content: (
             <Text>
-              Best for visualizing how different components contribute to a
-              total across multiple categories.
+              Best for analyzing relationships between multiple categorical
+              variables in a visual format.
             </Text>
           ),
         },
@@ -41,16 +41,17 @@ const Component = () => {
           label: "Variables",
           content: (
             <Text>
-              <strong>Independent Variable:</strong> Continuous (Single-level,
-              Two-level, More than Two-level). <br />
-              <strong>Dependent Variable:</strong> Categorical.
+              <strong>Independent Variable:</strong> Categorical (Single-level,
+              Two-level, More than Two-level), Nominal (Single-level, Two-level,
+              More than Two-level), Dichotomous. <br />
+              <strong>Dependent Variable:</strong> Nominal.
             </Text>
           ),
         },
         {
           key: "datasetSize",
           label: "Study Size",
-          content: <Text>Medium to Large (more than 30 subjects).</Text>,
+          content: <Text>Any size.</Text>,
         },
         {
           key: "strengths",
@@ -58,12 +59,12 @@ const Component = () => {
           content: (
             <Stack>
               <Text>
-                <strong>Composition Analysis:</strong> Shows composition within
-                categories.
+                <strong>Multivariable Relationships:</strong> Shows
+                relationships between multiple categorical variables.
               </Text>
               <Text>
-                <strong>Part-to-Whole Visualization:</strong> Effective for
-                understanding part-to-whole relationships.
+                <strong>Visual Appeal:</strong> Engaging and visually appealing
+                for exploring categorical data.
               </Text>
             </Stack>
           ),
@@ -78,8 +79,8 @@ const Component = () => {
                 interpret with many categories.
               </Text>
               <Text>
-                <strong>Limited Effectiveness for Small Data:</strong> Less
-                effective for small datasets.
+                <strong>Less Effective for Small Data:</strong> Not as useful
+                for small datasets.
               </Text>
             </Stack>
           ),

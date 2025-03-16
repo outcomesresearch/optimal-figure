@@ -2,21 +2,10 @@ import IconArray from "../../components/figures/IconArray";
 import VerticalBarGraph from "../../components/figures/VerticalBarGraph";
 import StackedBarGraph from "../../components/figures/StackedBarGraph";
 import HorizontalBarGraph from "../../components/figures/HorizontalBarGraph";
+import MosaicPlot from "../../components/figures/MosaicPlot";
 import * as ids from "./ids";
 import { TreeNode } from "../types.ts";
 import { CATEGORICAL, ROOT } from "../ids.ts";
-
-// This tree assumes a categorical dependent variable.
-// We ask only for the independent variable type (categorical/dichotomous vs. continuous)
-// and for the dataset size, which then determines the recommended figure.
-// For independent categorical (or dichotomous) variables:
-//    • ≤ 30  → Icon Array
-//    • > 30 and ≤ 100 → Vertical Bar Graph
-//    • > 100 → Stacked Bar Graph
-// For independent continuous variables:
-//    • ≤ 30  → Horizontal Bar Graph
-//    • > 30 and ≤ 100 → Stacked Bar Graph
-// (The >100 option for continuous is not specified.)
 
 const tree: Record<string, TreeNode> = {
   [CATEGORICAL]: {
@@ -46,21 +35,80 @@ const tree: Record<string, TreeNode> = {
     choices: [
       {
         answer: "≤ 30",
-        next: ids.FIG_ICON_ARRAY,
+        next: ids.CHOOSE_SMALL_CAT,
         option_description: "Few data points (small dataset).",
       },
       {
         answer: "> 30 and ≤ 100",
-        next: ids.FIG_VERTICAL_BAR,
+        next: ids.CHOOSE_MEDIUM_CAT,
         option_description: "Moderate number of data points.",
       },
       {
         answer: "> 100",
-        next: ids.FIG_STACKED_BAR,
+        next: ids.CHOOSE_LARGE_CAT,
         option_description: "Large dataset with many data points.",
       },
     ],
   },
+
+  [ids.CHOOSE_SMALL_CAT]: {
+    type: "question",
+    title: "Choose between the following visualizations:",
+    inputs: [ids.INDEPENDENT_CAT],
+    component: () => "",
+    choices: [
+      {
+        answer: "Icon Array",
+        next: ids.FIG_ICON_ARRAY,
+        option_description: "An icon-based visualization for small datasets.",
+      },
+      {
+        answer: "Mosaic Plot",
+        next: ids.FIG_MOSAIC_PLOT,
+        option_description:
+          "A visualization showing relationships between categories.",
+      },
+    ],
+  },
+  [ids.CHOOSE_MEDIUM_CAT]: {
+    type: "question",
+    title: "Choose between the following visualizations:",
+    inputs: [ids.INDEPENDENT_CAT],
+    component: () => "",
+    choices: [
+      {
+        answer: "Vertical Bar Graph",
+        next: ids.FIG_VERTICAL_BAR,
+        option_description: "A bar chart comparing different categories.",
+      },
+      {
+        answer: "Mosaic Plot",
+        next: ids.FIG_MOSAIC_PLOT,
+        option_description:
+          "A visualization showing relationships between categories.",
+      },
+    ],
+  },
+  [ids.CHOOSE_LARGE_CAT]: {
+    type: "question",
+    title: "Choose between the following visualizations:",
+    inputs: [ids.INDEPENDENT_CAT],
+    component: () => "",
+    choices: [
+      {
+        answer: "Stacked Bar Graph",
+        next: ids.FIG_STACKED_BAR,
+        option_description: "A stacked bar graph showing category composition.",
+      },
+      {
+        answer: "Mosaic Plot",
+        next: ids.FIG_MOSAIC_PLOT,
+        option_description:
+          "A visualization showing relationships between categories.",
+      },
+    ],
+  },
+
   [ids.INDEPENDENT_CONT]: {
     type: "question",
     title: "What is the dataset size?",
@@ -77,29 +125,29 @@ const tree: Record<string, TreeNode> = {
         next: ids.FIG_STACKED_BAR,
         option_description: "Moderate number of data points.",
       },
-      // Additional dataset size ranges for continuous variables could be added if needed.
     ],
   },
+
   [ids.FIG_ICON_ARRAY]: {
     type: "statement",
     title: "Icon Array",
     flowChartTitle: "Icon Array",
     component: IconArray,
-    inputs: [ids.INDEPENDENT_CAT],
+    inputs: [ids.CHOOSE_SMALL_CAT],
   },
   [ids.FIG_VERTICAL_BAR]: {
     type: "statement",
     title: "Vertical Bar Graph",
     flowChartTitle: "Vertical Bar Graph",
     component: VerticalBarGraph,
-    inputs: [ids.INDEPENDENT_CAT],
+    inputs: [ids.CHOOSE_MEDIUM_CAT],
   },
   [ids.FIG_STACKED_BAR]: {
     type: "statement",
     title: "Stacked Bar Graph",
     flowChartTitle: "Stacked Bar Graph",
     component: StackedBarGraph,
-    inputs: [ids.INDEPENDENT_CAT, ids.INDEPENDENT_CONT],
+    inputs: [ids.CHOOSE_LARGE_CAT, ids.INDEPENDENT_CONT],
   },
   [ids.FIG_HORIZONTAL_BAR]: {
     type: "statement",
@@ -107,6 +155,13 @@ const tree: Record<string, TreeNode> = {
     flowChartTitle: "Horizontal Bar Graph",
     component: HorizontalBarGraph,
     inputs: [ids.INDEPENDENT_CONT],
+  },
+  [ids.FIG_MOSAIC_PLOT]: {
+    type: "statement",
+    title: "Mosaic Plot",
+    flowChartTitle: "Mosaic Plot",
+    component: MosaicPlot,
+    inputs: [ids.CHOOSE_SMALL_CAT, ids.CHOOSE_MEDIUM_CAT, ids.CHOOSE_LARGE_CAT],
   },
 };
 
