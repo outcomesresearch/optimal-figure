@@ -1,24 +1,78 @@
-import { Text } from "@mantine/core";
+import { Stack, Text } from "@mantine/core";
+import TabLayout from "../layout/TabLayout";
 
 const Component = () => {
   return (
-    <>
-      <Text>
-        <Text fw="600" span>
-          Binary logistic regression
-        </Text>{" "}
-        is used when the outcome variable has only two categories or levels. It
-        models the probability or likelihood of an event occurring based on the
-        predictor variables.
-      </Text>
-
-      <Text>
-        For example, it can be used to predict the likelihood of a patient
-        having a disease (presence/absence) based on their age, gender, and
-        other relevant factors. The outcome variable is encoded as 0 or 1,
-        representing the absence or presence of the event, respectively.
-      </Text>
-    </>
+    <TabLayout
+      description="The Diagram is a visualization tool that illustrates concepts or theories. It is useful for explaining abstract ideas and relationships."
+      tabsConfiguration={[
+        {
+          key: "characteristics",
+          label: "Characteristics",
+          content: (
+            <Text>
+              Visually represents concepts, processes, or relationships, making
+              abstract ideas easier to understand and communicate.
+            </Text>
+          ),
+        },
+        {
+          key: "purpose",
+          label: "Purpose",
+          content: <Text>Illustrate a concept or theory.</Text>,
+        },
+        {
+          key: "whenToUse",
+          label: "When to Use",
+          content: (
+            <Stack>
+              <Text>
+                <strong>Independent Variable:</strong> Any type.
+              </Text>
+              <Text>
+                <strong>Dataset Size:</strong> Suitable for all sizes.
+              </Text>
+              <Text>
+                <strong>Example:</strong> Diagram showing the infection
+                transmission pathway.
+              </Text>
+            </Stack>
+          ),
+        },
+        {
+          key: "strengths",
+          label: "Strengths",
+          content: (
+            <Stack>
+              <Text>
+                <strong>Theoretical Representation:</strong> Ideal for
+                theoretical and conceptual visualization.
+              </Text>
+              <Text>
+                <strong>Customization:</strong> Customizable to suit specific
+                needs and concepts.
+              </Text>
+            </Stack>
+          ),
+        },
+        {
+          key: "weaknesses",
+          label: "Weaknesses",
+          content: (
+            <Stack>
+              <Text>
+                <strong>Limited for Quantitative Data:</strong> Less effective
+                for quantitative data representation.
+              </Text>
+              <Text>
+                <strong>Design Dependency:</strong> Can be subjective and
+                dependent on design quality.
+              </Text>
+            </Stack>
+          ),
+        },
+      ]}
+    />
   );
 };
 
