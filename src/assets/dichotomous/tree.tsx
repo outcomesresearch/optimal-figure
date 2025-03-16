@@ -8,10 +8,8 @@ import GroupedBarChart from "../../components/figures/GroupedBarChart";
 import HeatMap from "../../components/figures/HeatMap.tsx";
 import Histogram from "../../components/figures/Histogram";
 import LineGraph from "../../components/figures/LineGraph";
-import MultipleBoxPlots from "../../components/figures/MultipleBoxPlots";
+import GroupedBoxPlots from "../../components/figures/BoxWhiskerPlot";
 import ScatterPlot from "../../components/figures/ScatterPlot.tsx";
-import ScatterPlotWithTrendLines from "../../components/figures/ScatterPlotWithTrendLines";
-import SideBySideBoxPlot from "../../components/figures/SideBySideBoxPlot";
 import StackedBarGraph from "../../components/figures/StackedBarGraph";
 import ViolinPlot from "../../components/figures/ViolinPlot";
 import * as ids from "./ids";
@@ -315,7 +313,7 @@ const tree: Record<string, TreeNode> = {
     type: "statement",
     title: "Side-by-Side Box Plot",
     flowChartTitle: "Side-by-Side Box Plot",
-    component: SideBySideBoxPlot,
+    component: BoxWhiskerPlot,
     inputs: [ids.CHOOSE_COMPARE_TWO_GROUPS],
   },
   [ids.STATEMENT_GROUPED_BAR_CHART]: {
@@ -329,7 +327,7 @@ const tree: Record<string, TreeNode> = {
     type: "statement",
     title: "Multiple Box Plots",
     flowChartTitle: "Multiple Box Plots",
-    component: MultipleBoxPlots,
+    component: GroupedBoxPlots,
     inputs: [ids.CHOOSE_COMPARE_MORE_THAN_TWO],
   },
   [ids.STATEMENT_STACKED_BAR_CHART]: {
@@ -343,7 +341,7 @@ const tree: Record<string, TreeNode> = {
     type: "statement",
     title: "Scatter Plot with Trend Lines",
     flowChartTitle: "Scatter Plot with Trend Lines",
-    component: ScatterPlotWithTrendLines,
+    component: ScatterPlot,
     inputs: [DICHOTOMOUS],
   },
   [ids.STATEMENT_HEAT_MAP]: {
