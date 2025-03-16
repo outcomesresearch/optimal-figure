@@ -70,12 +70,12 @@ const tree: Record<string, TreeNode> = {
       {
         answer: "≤ 30",
         next: ids.FIG_HORIZONTAL_BAR,
-        option_description: "Small dataset – use a horizontal bar graph.",
+        option_description: "Few data points (small dataset).",
       },
       {
         answer: "> 30 and ≤ 100",
         next: ids.FIG_STACKED_BAR,
-        option_description: "Moderate dataset – use a stacked bar graph.",
+        option_description: "Moderate number of data points.",
       },
       // Additional dataset size ranges for continuous variables could be added if needed.
     ],
