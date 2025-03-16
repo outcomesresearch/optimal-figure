@@ -1,24 +1,76 @@
-import { Text } from "@mantine/core";
+import { Stack, Text } from "@mantine/core";
+import TabLayout from "../layout/TabLayout";
 
 const Component = () => {
   return (
-    <>
-      <Text>
-        <Text fw="600" span>
-          Binary logistic regression
-        </Text>{" "}
-        is used when the outcome variable has only two categories or levels. It
-        models the probability or likelihood of an event occurring based on the
-        predictor variables.
-      </Text>
-
-      <Text>
-        For example, it can be used to predict the likelihood of a patient
-        having a disease (presence/absence) based on their age, gender, and
-        other relevant factors. The outcome variable is encoded as 0 or 1,
-        representing the absence or presence of the event, respectively.
-      </Text>
-    </>
+    <TabLayout
+      description="A Map provides a geographical representation of data, making it effective for visualizing spatial relationships and trends."
+      tabsConfiguration={[
+        {
+          key: "characteristics",
+          label: "Characteristics",
+          content: <Text>Geographical representation of data.</Text>,
+        },
+        {
+          key: "purpose",
+          label: "Purpose",
+          content: <Text>Demonstrate change in data over space.</Text>,
+        },
+        {
+          key: "whenToUse",
+          label: "When to Use",
+          content: (
+            <Stack>
+              <Text>
+                <strong>Independent Variable:</strong> Categorical
+                (Single-level, Two-level, More than Two-level), Nominal
+                (Single-level, Two-level, More than Two-level).
+              </Text>
+              <Text>
+                <strong>Dataset Size:</strong> Suitable for all sizes, depending
+                on the granularity of spatial data.
+              </Text>
+              <Text>
+                <strong>Example:</strong> Mapping the spread of an infection
+                across different regions.
+              </Text>
+            </Stack>
+          ),
+        },
+        {
+          key: "strengths",
+          label: "Strengths",
+          content: (
+            <Stack>
+              <Text>
+                <strong>Visual Appeal:</strong> Provides an engaging
+                representation of geographical data.
+              </Text>
+              <Text>
+                <strong>Spatial Insights:</strong> Effective for showing spatial
+                relationships and trends.
+              </Text>
+            </Stack>
+          ),
+        },
+        {
+          key: "weaknesses",
+          label: "Weaknesses",
+          content: (
+            <Stack>
+              <Text>
+                <strong>Interpretation Challenges:</strong> Can be difficult to
+                interpret without clear legends and scales.
+              </Text>
+              <Text>
+                <strong>Resolution Limitations:</strong> Effectiveness depends
+                on the granularity of spatial data.
+              </Text>
+            </Stack>
+          ),
+        },
+      ]}
+    />
   );
 };
 
