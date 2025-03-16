@@ -1,24 +1,81 @@
-import { Text } from "@mantine/core";
+import { Stack, Text } from "@mantine/core";
+import TabLayout from "../layout/TabLayout";
 
 const Component = () => {
   return (
-    <>
-      <Text>
-        <Text fw="600" span>
-          Binary logistic regression
-        </Text>{" "}
-        is used when the outcome variable has only two categories or levels. It
-        models the probability or likelihood of an event occurring based on the
-        predictor variables.
-      </Text>
-
-      <Text>
-        For example, it can be used to predict the likelihood of a patient
-        having a disease (presence/absence) based on their age, gender, and
-        other relevant factors. The outcome variable is encoded as 0 or 1,
-        representing the absence or presence of the event, respectively.
-      </Text>
-    </>
+    <TabLayout
+      description="A Box Plot, also known as a box-and-whiskers plot, visualizes data distribution using a five-number summary, helping to compare distributions across groups."
+      tabsConfiguration={[
+        {
+          key: "characteristics",
+          label: "Characteristics",
+          content: (
+            <Text>
+              Box and whiskers plot showing the distribution of data based on a
+              five-number summary.
+            </Text>
+          ),
+        },
+        {
+          key: "purpose",
+          label: "Purpose",
+          content: (
+            <Stack>
+              <Text>Compare distribution across two groups.</Text>
+              <Text>Compare distribution across more than two groups.</Text>
+            </Stack>
+          ),
+        },
+        {
+          key: "whenToUse",
+          label: "When to Use",
+          content: (
+            <Stack>
+              <Text>
+                <strong>Independent Variable:</strong> Categorical
+                (Single-level, Two-level, More than Two-level).
+              </Text>
+              <Text>
+                <strong>Dataset Size:</strong> Suitable for Small, Moderate, and
+                Large datasets.
+              </Text>
+            </Stack>
+          ),
+        },
+        {
+          key: "strengths",
+          label: "Strengths",
+          content: (
+            <Stack>
+              <Text>
+                <strong>Visual Summary:</strong> Provides a visual summary of
+                data distribution.
+              </Text>
+              <Text>
+                <strong>Key Statistics:</strong> Highlights median, quartiles,
+                and outliers effectively.
+              </Text>
+            </Stack>
+          ),
+        },
+        {
+          key: "weaknesses",
+          label: "Weaknesses",
+          content: (
+            <Stack>
+              <Text>
+                <strong>Small Dataset Limitation:</strong> Less effective for
+                small datasets.
+              </Text>
+              <Text>
+                <strong>Limited Distribution Detail:</strong> Does not show the
+                full shape of the distribution for each group.
+              </Text>
+            </Stack>
+          ),
+        },
+      ]}
+    />
   );
 };
 

@@ -1,20 +1,19 @@
 import AreaChart from "../../components/figures/AreaChart";
 import BarChart from "../../components/figures/BarChart.tsx";
-import BarChartWithErrorBars from "../../components/figures/BarChartWithErrorBars.tsx";
-import BoxPlot from "../../components/figures/BoxPlot.tsx";
-import CustomVisualization from "../../components/figures/CustomVisualization.tsx";
+import BoxWhiskerPlot from "../../components/figures/BoxWhiskerPlot";
+import CustomVisualization from "../../components/figures/CustomVisualization";
 import DotPlot from "../../components/figures/DotPlot.tsx";
 import GeographicMap from "../../components/figures/GeographicMap";
 import GroupedBarChart from "../../components/figures/GroupedBarChart";
 import HeatMap from "../../components/figures/HeatMap.tsx";
 import Histogram from "../../components/figures/Histogram";
 import LineGraph from "../../components/figures/LineGraph";
-import MultipleBoxPlots from "../../components/figures/MultipleBoxPlots.tsx";
+import MultipleBoxPlots from "../../components/figures/MultipleBoxPlots";
 import ScatterPlot from "../../components/figures/ScatterPlot.tsx";
-import ScatterPlotWithTrendLines from "../../components/figures/ScatterPlotWithTrendLines.tsx";
-import SideBySideBoxPlot from "../../components/figures/SideBySideBoxPlot.tsx";
+import ScatterPlotWithTrendLines from "../../components/figures/ScatterPlotWithTrendLines";
+import SideBySideBoxPlot from "../../components/figures/SideBySideBoxPlot";
 import StackedBarGraph from "../../components/figures/StackedBarGraph";
-import ViolinPlot from "../../components/figures/ViolinPlot.tsx";
+import ViolinPlot from "../../components/figures/ViolinPlot";
 import * as ids from "./ids";
 import { TreeNode } from "../types.ts";
 import { DICHOTOMOUS, ROOT } from "../ids.ts";
@@ -267,14 +266,14 @@ const tree: Record<string, TreeNode> = {
     type: "statement",
     title: "Bar Chart with Error Bars",
     flowChartTitle: "Bar Chart with Error Bars",
-    component: BarChartWithErrorBars,
+    component: BoxWhiskerPlot,
     inputs: [ids.CHOOSE_HIGHLIGHT_MODERATE_LARGE],
   },
   [ids.STATEMENT_BOX_PLOT]: {
     type: "statement",
     title: "Box Plot",
     flowChartTitle: "Box Plot",
-    component: BoxPlot,
+    component: BoxWhiskerPlot,
     inputs: [ids.CHOOSE_HIGHLIGHT_MODERATE_LARGE],
   },
   [ids.STATEMENT_LINE_GRAPH]: {

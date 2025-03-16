@@ -3,7 +3,6 @@ import DotPlot from "../../components/figures/DotPlot";
 import ScatterPlot from "../../components/figures/ScatterPlot";
 import LineGraph from "../../components/figures/LineGraph";
 import StemLeafPlot from "../../components/figures/StemLeafPlot";
-import BoxPlot from "../../components/figures/BoxPlot";
 import ScatterMatrix from "../../components/figures/ScatterMatrix";
 import Scatter3D from "../../components/figures/Scatter3D";
 import GroupedBoxPlot from "../../components/figures/GroupedBoxPlot";
@@ -154,7 +153,7 @@ const tree: Record<string, TreeNode> = {
     type: "statement",
     title: "Box-and-Whisker Plot",
     flowChartTitle: "Box-and-Whisker Plot",
-    component: BoxPlot,
+    component: BoxWhiskerPlot,
     color: "blue-darken-2",
     inputs: [ids.COMPARE_WITHIN_GROUP],
   },
