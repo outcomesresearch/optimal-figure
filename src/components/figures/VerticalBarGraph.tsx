@@ -1,24 +1,88 @@
-import { Text } from "@mantine/core";
+import { Stack, Text } from "@mantine/core";
+import TabLayout from "../layout/TabLayout";
 
 const Component = () => {
   return (
-    <>
-      <Text>
-        <Text fw="600" span>
-          Binary logistic regression
-        </Text>{" "}
-        is used when the outcome variable has only two categories or levels. It
-        models the probability or likelihood of an event occurring based on the
-        predictor variables.
-      </Text>
-
-      <Text>
-        For example, it can be used to predict the likelihood of a patient
-        having a disease (presence/absence) based on their age, gender, and
-        other relevant factors. The outcome variable is encoded as 0 or 1,
-        representing the absence or presence of the event, respectively.
-      </Text>
-    </>
+    <TabLayout
+      description="The Vertical Bar Graph (Column Chart) uses vertical bars to represent data values for different categories, making it an effective tool for comparing quantities across categories."
+      tabsConfiguration={[
+        {
+          key: "characteristics",
+          label: "Characteristics",
+          content: (
+            <Text>
+              Uses vertical bars to represent data values for different
+              categories.
+            </Text>
+          ),
+        },
+        {
+          key: "purpose",
+          label: "Purpose",
+          content: (
+            <Text>To compare quantities across different categories.</Text>
+          ),
+        },
+        {
+          key: "whenToUse",
+          label: "When to Use",
+          content: (
+            <Text>
+              Best used for visualizing and comparing data values across
+              multiple categories.
+            </Text>
+          ),
+        },
+        {
+          key: "variables",
+          label: "Variables",
+          content: (
+            <Text>
+              <strong>Independent Variable:</strong> Categorical (Single-level,
+              Two-level, More than Two-level), Nominal (Single-level, Two-level,
+              More than Two-level), Dichotomous. <br />
+              <strong>Dependent Variable:</strong> Categorical.
+            </Text>
+          ),
+        },
+        {
+          key: "datasetSize",
+          label: "Study Size",
+          content: <Text>Medium to Large (more than 30 subjects).</Text>,
+        },
+        {
+          key: "strengths",
+          label: "Strengths",
+          content: (
+            <Stack>
+              <Text>
+                <strong>Clear Comparison:</strong> Provides a clear comparison
+                of categories.
+              </Text>
+              <Text>
+                <strong>Scalability:</strong> Handles large datasets well.
+              </Text>
+            </Stack>
+          ),
+        },
+        {
+          key: "weaknesses",
+          label: "Weaknesses",
+          content: (
+            <Stack>
+              <Text>
+                <strong>Cluttered Display:</strong> Can become cluttered with
+                too many categories.
+              </Text>
+              <Text>
+                <strong>Less Effective for Small Data:</strong> Not ideal for
+                small datasets.
+              </Text>
+            </Stack>
+          ),
+        },
+      ]}
+    />
   );
 };
 
