@@ -1,5 +1,5 @@
 import BarChart from "../../components/figures/BarChart";
-import StackedBarChart from "../../components/figures/StackedBarChart";
+import Graph from "../../components/figures/StackedBarGraph";
 import LineChart from "../../components/figures/LineGraph";
 import MosaicPlot from "../../components/figures/MosaicPlot";
 import GroupedBarChart from "../../components/figures/GroupedBarChart";
@@ -96,7 +96,7 @@ const tree: Record<string, TreeNode> = {
       },
       {
         answer: "Moderate or Large",
-        next: ids.FIG_STACKED_BAR_CHART,
+        next: ids.FIG_STACKED_BAR_GRAPH,
         option_description: "Moderate or large number of data points.",
       },
     ],
@@ -167,11 +167,11 @@ const tree: Record<string, TreeNode> = {
     component: BarChart,
     inputs: [ids.INDEPENDENT_NOMINAL],
   },
-  [ids.FIG_STACKED_BAR_CHART]: {
+  [ids.FIG_STACKED_BAR_GRAPH]: {
     type: "statement",
-    title: "Stacked Bar Chart",
-    flowChartTitle: "Stacked Bar Chart",
-    component: StackedBarChart,
+    title: "Stacked Bar Graph",
+    flowChartTitle: "Stacked Bar Graph",
+    component: Graph,
     inputs: [ids.NOMINAL_DISTRIBUTION],
   },
   [ids.FIG_LINE_CHART]: {

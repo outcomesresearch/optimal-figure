@@ -13,7 +13,7 @@ import MultipleBoxPlots from "../../components/figures/MultipleBoxPlots.tsx";
 import ScatterPlot from "../../components/figures/ScatterPlot.tsx";
 import ScatterPlotWithTrendLines from "../../components/figures/ScatterPlotWithTrendLines.tsx";
 import SideBySideBoxPlot from "../../components/figures/SideBySideBoxPlot.tsx";
-import StackedBarChart from "../../components/figures/StackedBarChart";
+import StackedBarGraph from "../../components/figures/StackedBarGraph";
 import ViolinPlot from "../../components/figures/ViolinPlot.tsx";
 import * as ids from "./ids";
 import { TreeNode } from "../types.ts";
@@ -335,9 +335,9 @@ const tree: Record<string, TreeNode> = {
   },
   [ids.STATEMENT_STACKED_BAR_CHART]: {
     type: "statement",
-    title: "Stacked Bar Chart",
-    flowChartTitle: "Stacked Bar Chart",
-    component: StackedBarChart,
+    title: "Stacked Bar Graph",
+    flowChartTitle: "Stacked Bar Graph",
+    component: StackedBarGraph,
     inputs: [ids.CHOOSE_COMPARE_MORE_THAN_TWO],
   },
   [ids.STATEMENT_SCATTER_PLOT_WITH_TREND_LINES]: {
