@@ -1,24 +1,94 @@
-import { Text } from "@mantine/core";
+import { Stack, Text } from "@mantine/core";
+import TabLayout from "../layout/TabLayout";
 
 const Component = () => {
   return (
-    <>
-      <Text>
-        <Text fw="600" span>
-          Binary logistic regression
-        </Text>{" "}
-        is used when the outcome variable has only two categories or levels. It
-        models the probability or likelihood of an event occurring based on the
-        predictor variables.
-      </Text>
-
-      <Text>
-        For example, it can be used to predict the likelihood of a patient
-        having a disease (presence/absence) based on their age, gender, and
-        other relevant factors. The outcome variable is encoded as 0 or 1,
-        representing the absence or presence of the event, respectively.
-      </Text>
-    </>
+    <TabLayout
+      description="The Icon Array uses icons to represent units or proportions, grouped and colored to show categories or outcomes. It provides a simple and intuitive way to visualize part-to-whole relationships."
+      tabsConfiguration={[
+        {
+          key: "characteristics",
+          label: "Characteristics",
+          content: (
+            <Text>
+              Uses icons to represent units or proportions, grouped and colored
+              to show categories or outcomes.
+            </Text>
+          ),
+        },
+        {
+          key: "purpose",
+          label: "Purpose",
+          content: (
+            <Text>
+              To visually represent proportions and part-to-whole relationships
+              in a straightforward and intuitive manner.
+            </Text>
+          ),
+        },
+        {
+          key: "whenToUse",
+          label: "When to Use",
+          content: (
+            <Text>
+              Suitable for visually representing categorical proportions in an
+              easy-to-interpret format.
+            </Text>
+          ),
+        },
+        {
+          key: "variables",
+          label: "Variables",
+          content: (
+            <Text>
+              <strong>Independent Variable:</strong> Categorical (Single-level,
+              Two-level, More than Two-level), Nominal (Single-level, Two-level,
+              More than Two-level), Dichotomous. <br />
+              <strong>Dependent Variable:</strong> Categorical.
+            </Text>
+          ),
+        },
+        {
+          key: "datasetSize",
+          label: "Study Size",
+          content: <Text>Small (up to 30 subjects).</Text>,
+        },
+        {
+          key: "strengths",
+          label: "Strengths",
+          content: (
+            <Stack>
+              <Text>
+                <strong>Intuitive:</strong> Easy to understand and interpret.
+              </Text>
+              <Text>
+                <strong>Visual Appeal:</strong> Engaging and visually appealing.
+              </Text>
+            </Stack>
+          ),
+        },
+        {
+          key: "weaknesses",
+          label: "Weaknesses",
+          content: (
+            <Stack>
+              <Text>
+                <strong>Limited Precision:</strong> May not be precise for
+                detailed quantitative analysis.
+              </Text>
+              <Text>
+                <strong>Clutter:</strong> Can become cluttered with many
+                categories.
+              </Text>
+              <Text>
+                <strong>Space Consumption:</strong> Requires more space compared
+                to other visualizations.
+              </Text>
+            </Stack>
+          ),
+        },
+      ]}
+    />
   );
 };
 
