@@ -3,7 +3,7 @@ import BarChart from "../../components/figures/BarChart.tsx";
 import BoxWhiskerPlot from "../../components/figures/BoxWhiskerPlot";
 import CustomVisualization from "../../components/figures/CustomVisualization";
 import DotPlot from "../../components/figures/DotPlot.tsx";
-import GeographicMap from "../../components/figures/GeographicMap";
+import MapFigure from "../../components/figures/MapFigure";
 import GroupedBarChart from "../../components/figures/GroupedBarChart";
 import HeatMap from "../../components/figures/HeatMap.tsx";
 import Histogram from "../../components/figures/Histogram";
@@ -357,7 +357,7 @@ const tree: Record<string, TreeNode> = {
     type: "statement",
     title: "Geographic Map",
     flowChartTitle: "Geographic Map",
-    component: GeographicMap,
+    component: MapFigure,
     inputs: [ids.CHOOSE_CHANGE_OVER_SPACE],
   },
   [ids.STATEMENT_CUSTOM_VISUALIZATION]: {
