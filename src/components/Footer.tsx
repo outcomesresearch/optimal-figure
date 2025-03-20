@@ -82,7 +82,7 @@ export default function Footer() {
           <Divider />
         </Box>
         <Text size="14px" ff="'Source Sans 3'" pb={0} mb={0}>
-          Copyright © 2020 Washington University School of Medicine, St. Louis,
+          Copyright © 2025 Washington University School of Medicine, St. Louis,
           Missouri
         </Text>
       </Stack>
