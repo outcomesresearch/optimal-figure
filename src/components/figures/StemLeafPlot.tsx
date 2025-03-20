@@ -9,7 +9,7 @@ export default function StemLeafPlotTabs() {
       divided into a stem (leading digit(s)) and a leaf (trailing digit(s)).
       Stems are listed vertically in ascending order, and leaves are displayed
       horizontally next to their respective stems."
-      imageLink="https://www.softschools.com/math/topics../../../images/stem_leaf_plant_img_11.jpg"
+      imageLink="https://www.softschools.com/math/topics/images/stem_leaf_plant_img_11.jpg"
       tabsConfiguration={[
         {
           key: "characteristics",
