@@ -22,9 +22,14 @@ type TabConfiguration = {
 type Props = {
   description: string;
   tabsConfiguration: TabConfiguration[];
+  imageLink?: string;
 };
 
-export default function CardLayout({ description, tabsConfiguration }: Props) {
+export default function CardLayout({
+  description,
+  tabsConfiguration,
+  imageLink,
+}: Props) {
   const isMobile = useMediaQuery("(max-width: 700px)");
 
   return (
@@ -66,7 +71,10 @@ export default function CardLayout({ description, tabsConfiguration }: Props) {
 
         <Box w={isMobile ? "100%" : "50%"}>
           <Image
-            src="https://pocket-syndicated-images.s3.amazonaws.com/67a6a905cf34e365412125.jpg"
+            src={
+              imageLink ||
+              "https://pocket-syndicated-images.s3.amazonaws.com/67a6a905cf34e365412125.jpg"
+            }
             w="100%"
             height="auto"
           />

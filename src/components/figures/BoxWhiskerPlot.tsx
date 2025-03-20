@@ -4,7 +4,8 @@ import TabLayout from "../layout/TabLayout";
 const Component = () => {
   return (
     <TabLayout
-      description="A Box Plot, also known as a box-and-whiskers plot, visualizes data distribution using a five-number summary, helping to compare distributions across groups."
+      description="A box plot, also known as a box-and-whiskers plot, visualizes data distribution using a five-number summary, helping to compare distributions across groups."
+      imageLink="https://archive.cdc.gov/www_cdc_gov/csels/dsepd/ss1978/lesson4/section4_html_files/Figure4.30.jpg"
       tabsConfiguration={[
         {
           key: "characteristics",

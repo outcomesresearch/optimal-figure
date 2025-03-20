@@ -4,7 +4,7 @@ import TabLayout from "../layout/TabLayout";
 const Component = () => {
   return (
     <TabLayout
-      description="An Area Chart is used to represent trends over time or comparisons between categories by filling the space below a line graph, emphasizing volume or magnitude."
+      description="An area chart is used to represent trends over time or comparisons between categories by filling the space below a line graph, emphasizing volume or magnitude."
       tabsConfiguration={[
         {
           key: "characteristics",

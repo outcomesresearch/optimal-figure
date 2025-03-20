@@ -9,6 +9,7 @@ export default function LineGraphTabs() {
         comparisons of continuous data points. For example, they can be used to
         show changes in patient vital signs over time or response to different
         treatment regimens."
+      imageLink="/images/lineGraph.png"
       tabsConfiguration={[
         {
           key: "characteristics",

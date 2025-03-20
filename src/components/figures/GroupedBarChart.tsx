@@ -4,7 +4,8 @@ import TabLayout from "../layout/TabLayout";
 const Component = () => {
   return (
     <TabLayout
-      description="The Grouped Bar Chart is a visualization that compares multiple categories within groups. It is useful for comparing distributions across two groups."
+      description="The grouped bar chart is a visualization that compares multiple categories within groups. It is useful for comparing distributions across two groups."
+      imageLink="/images/groupedBarChart.png"
       tabsConfiguration={[
         {
           key: "characteristics",

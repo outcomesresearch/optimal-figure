@@ -4,7 +4,8 @@ import TabLayout from "../layout/TabLayout";
 const Component = () => {
   return (
     <TabLayout
-      description="The Icon Array uses icons to represent units or proportions, grouped and colored to show categories or outcomes. It provides a simple and intuitive way to visualize part-to-whole relationships."
+      description="An icon array uses icons to represent units or proportions, grouped and colored to show categories or outcomes. It provides a simple and intuitive way to visualize part-to-whole relationships."
+      imageLink="https://www.cdc.gov/ncird/whats-new/images/identical-population-level-vax-rate.png"
       tabsConfiguration={[
         {
           key: "characteristics",

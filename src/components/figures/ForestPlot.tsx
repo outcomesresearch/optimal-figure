@@ -4,7 +4,8 @@ import TabLayout from "../layout/TabLayout";
 const Component = () => {
   return (
     <TabLayout
-      description="The Forest Plot is a key tool in meta-analysis, providing a visual summary of the results from multiple studies. It helps in comparing individual study estimates and the overall pooled estimate."
+      description="The forest plot is a key tool in meta-analysis, providing a visual summary of the results from multiple studies. It helps in comparing individual study estimates and the overall pooled estimate."
+      imageLink="https://www.cdc.gov/pcd/issues/2022/images/21_0228_02.gif?_=26526"
       tabsConfiguration={[
         {
           key: "characteristics",

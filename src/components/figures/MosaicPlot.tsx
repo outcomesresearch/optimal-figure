@@ -4,7 +4,8 @@ import TabLayout from "../layout/TabLayout";
 const Component = () => {
   return (
     <TabLayout
-      description="The Mosaic Plot uses tiles to represent the relative sizes of categories and their relationships. It is useful for visualizing the relationship between two or more categorical variables."
+      description="A mosaic plot uses tiles to represent the relative sizes of categories and their relationships. It is useful for visualizing the relationship between two or more categorical variables."
+      imageLink="/images/mosaic.png"
       tabsConfiguration={[
         {
           key: "characteristics",

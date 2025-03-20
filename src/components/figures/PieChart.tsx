@@ -4,7 +4,8 @@ import TabLayout from "../layout/TabLayout";
 const Component = () => {
   return (
     <TabLayout
-      description="A Pie Chart visually represents parts of a whole, making it easy to interpret proportions within a group."
+      description="A pie chart visually represents parts of a whole, making it easy to interpret proportions within a group."
+      imageLink="/images/pieChart.png"
       tabsConfiguration={[
         {
           key: "characteristics",

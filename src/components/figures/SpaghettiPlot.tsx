@@ -5,6 +5,7 @@ export default function SpaghettiPlotTabs() {
   return (
     <TabLayout
       description="A spaghetti plot is a data visualization technique used for displaying individual trajectories or trends over time, often in longitudinal or repeated measures data. Each individual's data is represented by a separate line or curve on the same graph, resulting in a 'tangle' of lines resembling spaghetti. Spaghetti plots allow for easy visual comparison of patterns and trends across subjects or groups, revealing variability and individual differences in the data. They are valuable in situations with multiple observations per individual, such as clinical studies."
+      imageLink="/images/spaghettiPlot.png"
       tabsConfiguration={[
         {
           key: "characteristics",

@@ -4,7 +4,7 @@ import TabLayout from "../layout/TabLayout";
 const Component = () => {
   return (
     <TabLayout
-      description="The Diagram is a visualization tool that illustrates concepts or theories. It is useful for explaining abstract ideas and relationships."
+      description="The diagram is a visualization tool that illustrates concepts or theories. It is useful for explaining abstract ideas and relationships."
       tabsConfiguration={[
         {
           key: "characteristics",

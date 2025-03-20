@@ -4,7 +4,8 @@ import TabLayout from "../layout/TabLayout";
 export default function GroupedBoxPlotsTabs() {
   return (
     <TabLayout
-      description="Grouped box plots, also known as side-by-side box plots, are graphical representations that display the distribution of a continuous variable across different levels of one or more categorical variables. Each group or category has its own box plot, placed side by side for easy comparison."
+      description="Grouped box plot, also known as side-by-side box plots, are graphical representations that display the distribution of a continuous variable across different levels of one or more categorical variables. Each group or category has its own box plot, placed side by side for easy comparison."
+      imageLink="/images/groupedBoxPlot.png"
       tabsConfiguration={[
         {
           key: "characteristics",

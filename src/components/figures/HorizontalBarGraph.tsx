@@ -4,7 +4,7 @@ import TabLayout from "../layout/TabLayout";
 const Component = () => {
   return (
     <TabLayout
-      description="The Horizontal Bar Graph (Row Chart) uses horizontal bars to represent data values for different categories. It is particularly useful when category names are long and need to be displayed clearly."
+      description="The horizontal bar graph (or row chart) uses horizontal bars to represent data values for different categories. It is particularly useful when category names are long and need to be displayed clearly."
       tabsConfiguration={[
         {
           key: "characteristics",
@@ -85,6 +85,7 @@ const Component = () => {
           ),
         },
       ]}
+      imageLink="https://archive.cdc.gov/www_cdc_gov/csels/dsepd/ss1978/lesson4/section4_html_files/figure4.20.jpg"
     />
   );
 };

@@ -10,6 +10,7 @@ export default function ScatterPlotTabs() {
         Scatter plots help assess correlations or associations between
         variables, such as examining the relationship between blood pressure and
         body weight."
+      imageLink="https://wwwnc.cdc.gov/eid/images/14-1394-F2.jpg"
       tabsConfiguration={[
         {
           key: "characteristics",

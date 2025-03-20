@@ -8,6 +8,7 @@ export default function DotPlotTabs() {
         It shows the frequency or distribution of values and is effective at
         highlighting clusters or gaps in the data. Dot plots present data in a
         simple, one-dimensional format with a single variable along an axis."
+      imageLink="/images/dotPlot.png"
       tabsConfiguration={[
         {
           key: "characteristics",

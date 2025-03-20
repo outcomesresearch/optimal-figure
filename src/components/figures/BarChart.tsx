@@ -4,7 +4,8 @@ import TabLayout from "../layout/TabLayout";
 const Component = () => {
   return (
     <TabLayout
-      description="The Bar Chart is a simple and easy-to-read visualization that compares categories, making it ideal for highlighting individual values and comparing distributions within a group."
+      description="The bar chart is a simple and easy-to-read visualization that compares categories, making it ideal for highlighting individual values and comparing distributions within a group."
+      imageLink="/images/barChart.png"
       tabsConfiguration={[
         {
           key: "characteristics",

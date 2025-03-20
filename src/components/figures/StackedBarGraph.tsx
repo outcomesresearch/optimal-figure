@@ -4,7 +4,8 @@ import TabLayout from "../layout/TabLayout";
 const Component = () => {
   return (
     <TabLayout
-      description="The Stacked Bar Graph (Stacked Column Chart) uses stacked bars to show the composition of categories within a total. It is useful for comparing part-to-whole relationships across multiple categories."
+      description="A stacked bar graph (or stacked column chart) uses stacked bars to show the composition of categories within a total. It is useful for comparing part-to-whole relationships across multiple categories."
+      imageLink="https://archive.cdc.gov/www_cdc_gov/csels/dsepd/ss1978/lesson4/section4_html_files/Figure4.23.jpg"
       tabsConfiguration={[
         {
           key: "characteristics",
