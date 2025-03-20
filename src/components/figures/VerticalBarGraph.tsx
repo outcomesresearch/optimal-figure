@@ -5,7 +5,7 @@ const Component = () => {
   return (
     <TabLayout
       description="A vertical bar graph (column chart) uses vertical bars to represent data values for different categories, making it an effective tool for comparing quantities across categories."
-      imageLink="/images/verticalBarGraph.png"
+      imageLink="../../../images/verticalBarGraph.png"
       tabsConfiguration={[
         {
           key: "characteristics",

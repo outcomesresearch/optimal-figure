@@ -5,7 +5,7 @@ export default function ContourPlotTabs() {
   return (
     <TabLayout
       description="A contour plot is a graphical representation where contour lines are used to show the values of a continuous variable across two dimensions. It maps a three-dimensional surface onto a two-dimensional plane, with contours representing levels of the outcome variable."
-      imageLink="/images/contourPlot.png"
+      imageLink="../../../images/contourPlot.png"
       tabsConfiguration={[
         {
           key: "characteristics",

@@ -5,7 +5,7 @@ const Component = () => {
   return (
     <TabLayout
       description="A trim-and-fill plot is a method used in meta-analysis to adjust for publication bias. It helps create a more accurate and symmetrical funnel plot by accounting for missing studies."
-      imageLink="/images/trimAndFill.png"
+      imageLink="../../../images/trimAndFill.png"
       tabsConfiguration={[
         {
           key: "characteristics",

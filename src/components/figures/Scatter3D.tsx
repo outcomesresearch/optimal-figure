@@ -5,7 +5,7 @@ export default function ScatterPlotMatrixTabs() {
   return (
     <TabLayout
       description="A 3D scatter plot extends the traditional scatter plot into a three-dimensional space, enabling the visualization of relationships between three continuous variables."
-      imageLink="/images/3dScatter.png"
+      imageLink="../../../images/3dScatter.png"
       tabsConfiguration={[
         {
           key: "characteristics",
