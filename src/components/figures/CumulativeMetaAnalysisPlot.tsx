@@ -5,7 +5,7 @@ const Component = () => {
   return (
     <TabLayout
       description="The cumulative meta-analysis plot is a technique that sequentially adds studies to show how the cumulative effect size estimate changes over time. It is useful for assessing the stability and trends of the overall effect size."
-      imageLink="../../../images/cumulativeMetaAnalysis.png"
+      imageLink={`${import.meta.env.BASE_URL}images/cumulativeMetaAnalysis.png`}
       tabsConfiguration={[
         {
           key: "characteristics",

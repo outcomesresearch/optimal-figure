@@ -5,7 +5,7 @@ const Component = () => {
   return (
     <TabLayout
       description="A mosaic plot uses tiles to represent the relative sizes of categories and their relationships. It is useful for visualizing the relationship between two or more categorical variables."
-      imageLink="../../../images/mosaic.png"
+      imageLink={`${import.meta.env.BASE_URL}images/mosaic.png`}
       tabsConfiguration={[
         {
           key: "characteristics",

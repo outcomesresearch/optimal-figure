@@ -5,7 +5,7 @@ const Component = () => {
   return (
     <TabLayout
       description="A pie chart visually represents parts of a whole, making it easy to interpret proportions within a group."
-      imageLink="../../../images/pieChart.png"
+      imageLink={`${import.meta.env.BASE_URL}images/pieChart.png`}
       tabsConfiguration={[
         {
           key: "characteristics",
