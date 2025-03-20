@@ -97,7 +97,7 @@ const tree: Record<string, TreeNode> = {
   },
   [ids.CHOOSE_HIGHLIGHT_SMALL]: {
     type: "question",
-    title: "choose between the following",
+    title: "These approaches are suitable:",
     inputs: [ids.DATASET_SIZE_HIGHLIGHT],
     component: () => "",
     choices: [
@@ -115,7 +115,7 @@ const tree: Record<string, TreeNode> = {
   },
   [ids.CHOOSE_HIGHLIGHT_MODERATE_LARGE]: {
     type: "question",
-    title: "choose between the following",
+    title: "These approaches are suitable:",
     inputs: [ids.DATASET_SIZE_HIGHLIGHT],
     component: () => "",
     choices: [
@@ -135,7 +135,7 @@ const tree: Record<string, TreeNode> = {
   },
   [ids.CHOOSE_TRENDS]: {
     type: "question",
-    title: "choose between the following",
+    title: "These approaches are suitable:",
     inputs: [DICHOTOMOUS],
     component: () => "",
     choices: [
@@ -154,7 +154,7 @@ const tree: Record<string, TreeNode> = {
   },
   [ids.CHOOSE_COMPARE_DISTRIBUTION_WITHIN]: {
     type: "question",
-    title: "choose between the following",
+    title: "These approaches are suitable:",
     inputs: [DICHOTOMOUS],
     component: () => "",
     choices: [
@@ -172,7 +172,7 @@ const tree: Record<string, TreeNode> = {
   },
   [ids.CHOOSE_RELATIONSHIP]: {
     type: "question",
-    title: "choose between the following",
+    title: "These approaches are suitable:",
     inputs: [DICHOTOMOUS],
     component: () => "",
     choices: [
@@ -191,7 +191,7 @@ const tree: Record<string, TreeNode> = {
   },
   [ids.CHOOSE_COMPARE_TWO_GROUPS]: {
     type: "question",
-    title: "choose between the following",
+    title: "These approaches are suitable:",
     inputs: [DICHOTOMOUS],
     component: () => "",
     choices: [
@@ -210,7 +210,7 @@ const tree: Record<string, TreeNode> = {
   },
   [ids.CHOOSE_COMPARE_MORE_THAN_TWO]: {
     type: "question",
-    title: "choose between the following",
+    title: "These approaches are suitable:",
     inputs: [DICHOTOMOUS],
     component: () => "",
     choices: [
@@ -229,7 +229,7 @@ const tree: Record<string, TreeNode> = {
   },
   [ids.CHOOSE_CHANGE_OVER_SPACE]: {
     type: "question",
-    title: "choose between the following",
+    title: "These approaches are suitable:",
     inputs: [DICHOTOMOUS],
     component: () => "",
     choices: [

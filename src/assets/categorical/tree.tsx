@@ -53,7 +53,7 @@ const tree: Record<string, TreeNode> = {
 
   [ids.CHOOSE_SMALL_CAT]: {
     type: "question",
-    title: "Choose between the following visualizations:",
+    title: "These approaches are suitable:",
     inputs: [ids.INDEPENDENT_CAT],
     component: () => "",
     choices: [
@@ -72,7 +72,7 @@ const tree: Record<string, TreeNode> = {
   },
   [ids.CHOOSE_MEDIUM_CAT]: {
     type: "question",
-    title: "Choose between the following visualizations:",
+    title: "These approaches are suitable:",
     inputs: [ids.INDEPENDENT_CAT],
     component: () => "",
     choices: [
@@ -91,7 +91,7 @@ const tree: Record<string, TreeNode> = {
   },
   [ids.CHOOSE_LARGE_CAT]: {
     type: "question",
-    title: "Choose between the following visualizations:",
+    title: "These approaches are suitable:",
     inputs: [ids.INDEPENDENT_CAT],
     component: () => "",
     choices: [

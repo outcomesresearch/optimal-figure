@@ -97,8 +97,16 @@ const tree: Record<string, TreeNode> = {
     component: () => "",
     inputs: [CONTINUOUS],
     choices: [
-      { answer: "Small", next: ids.DOT_PLOT },
-      { answer: "Moderate or Large", next: ids.SCATTER_PLOT },
+      {
+        answer: "Small",
+        next: ids.DOT_PLOT,
+        option_description: "Few data points (small dataset).",
+      },
+      {
+        answer: "Moderate or Large",
+        next: ids.SCATTER_PLOT,
+        option_description: "Moderate or large dataset with many data points.",
+      },
     ],
   },
 
@@ -117,7 +125,7 @@ const tree: Record<string, TreeNode> = {
     flowChartTitle: "Scatter Plot",
     component: ScatterPlot,
     color: "blue-darken-2",
-    inputs: [ids.HIGHLIGHT_VALUES],
+    inputs: [ids.SCATTER_OR_MATRIX],
   },
 
   [ids.SHOW_TRENDS]: {
@@ -164,8 +172,18 @@ const tree: Record<string, TreeNode> = {
     component: () => "",
     inputs: [CONTINUOUS],
     choices: [
-      { answer: "Continuous", next: ids.SCATTER_OR_MATRIX },
-      { answer: "Categorical", next: ids.SCATTER_3D },
+      {
+        answer: "Continuous",
+        option_description:
+          "Represents numerical values that can take any value within a range.",
+        next: ids.SCATTER_OR_MATRIX,
+      },
+      {
+        answer: "Categorical",
+        option_description:
+          "Represents distinct groups or categories without a numerical order.",
+        next: ids.SCATTER_3D,
+      },
     ],
   },
 
@@ -173,10 +191,18 @@ const tree: Record<string, TreeNode> = {
     type: "question",
     title: "What is the dataset size?",
     component: () => "",
-    inputs: [CONTINUOUS],
+    inputs: [ids.SHOW_RELATIONSHIPS],
     choices: [
-      { answer: "Small or Moderate", next: ids.SCATTER_PLOT },
-      { answer: "Large", next: ids.SCATTER_MATRIX },
+      {
+        answer: "Small or Moderate",
+        next: ids.SCATTER_PLOT,
+        option_description: "Small or moderate number of data points.",
+      },
+      {
+        answer: "Large",
+        next: ids.SCATTER_MATRIX,
+        option_description: "Many data points (large dataset).",
+      },
     ],
   },
 

@@ -1,33 +1,31 @@
-export const ROOT = "ROOT";
-
 // Independent Variable Types
-export const INDEPENDENT_CONT = "INDEPENDENT_CONT";
-export const INDEPENDENT_CAT = "INDEPENDENT_CAT";
-export const INDEPENDENT_NOMINAL = "INDEPENDENT_NOMINAL";
+export const INDEPENDENT_CONT = "independent-cont";
+export const INDEPENDENT_CAT = "independent-cat";
+export const INDEPENDENT_NOMINAL = "independent-nominal";
 
 // Continuous Variable Decision Paths
-export const CONTINUOUS_DATASET_SIZE = "CONT_RELATIONSHIP";
+export const CONTINUOUS_DATASET_SIZE = "cont-relationship";
 
 // Categorical Variable Decision Paths
-export const CAT_DISTRIBUTION = "CAT_DISTRIBUTION";
-export const CAT_PATTERNS = "CAT_PATTERNS";
+export const CAT_DISTRIBUTION = "cat-distribution";
+export const CAT_PATTERNS = "cat-patterns";
 
 // Nominal Variable Decision Paths
-export const NOMINAL_DISTRIBUTION = "NOMINAL_DISTRIBUTION";
-export const NOMINAL_PATTERNS = "NOMINAL_PATTERNS";
+export const NOMINAL_DISTRIBUTION = "nominal-distribution";
+export const NOMINAL_PATTERNS = "nominal-patterns";
 
 // Figure Types (Terminal Nodes)
-export const FIG_BAR_CHART = "FIG_BAR_CHART";
-export const FIG_STACKED_BAR_GRAPH = "FIG_STACKED_BAR_GRAPH";
-export const FIG_LINE_CHART = "FIG_LINE_CHART";
-export const FIG_GROUPED_BAR_CHART = "FIG_GROUPED_BAR_CHART";
-export const FIG_FACETED_BAR_CHART = "FIG_FACETED_BAR_CHART";
-export const FIG_MAP = "FIG_MAP";
-export const FIG_DIAGRAM = "FIG_DIAGRAM";
-export const FIG_PIE_CHART = "FIG_PIE_CHART";
-export const FIG_INTERACTION_PLOT = "FIG_INTERACTION_PLOT";
-export const FIG_3D_SCATTER_PLOT = "FIG_3D_SCATTER_PLOT";
-export const FIG_CONTOUR_PLOT = "FIG_CONTOUR_PLOT";
-export const FIG_HEATMAP = "FIG_HEATMAP";
-export const FIG_3D_SURFACE_PLOT = "FIG_3D_SURFACE_PLOT";
-export const FIG_MOSAIC_PLOT = "FIG_MOSAIC_PLOT";
+export const FIG_BAR_CHART = "fig-bar-chart";
+export const FIG_STACKED_BAR_GRAPH = "fig-stacked-bar-graph";
+export const FIG_LINE_CHART = "fig-line-chart";
+export const FIG_GROUPED_BAR_CHART = "fig-grouped-bar-chart";
+export const FIG_FACETED_BAR_CHART = "fig-faceted-bar-chart";
+export const FIG_MAP = "fig-map";
+export const FIG_DIAGRAM = "fig-diagram";
+export const FIG_PIE_CHART = "fig-pie-chart";
+export const FIG_INTERACTION_PLOT = "fig-interaction-plot";
+export const FIG_3D_SCATTER_PLOT = "fig-3d-scatter-plot";
+export const FIG_CONTOUR_PLOT = "fig-contour-plot";
+export const FIG_HEATMAP = "fig-heatmap";
+export const FIG_3D_SURFACE_PLOT = "fig-3d-surface-plot";
+export const FIG_MOSAIC_PLOT = "fig-mosaic-plot";

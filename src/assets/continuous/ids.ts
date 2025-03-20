@@ -1,48 +1,48 @@
 // Root question
-export const PURPOSE = "PURPOSE";
+export const PURPOSE = "purpose";
 
 // Highlighting individual values
-export const HIGHLIGHT_VALUES = "HIGHLIGHT_VALUES";
-export const DOT_PLOT = "DOT_PLOT";
-export const SCATTER_PLOT = "SCATTER_PLOT";
+export const HIGHLIGHT_VALUES = "highlight-values";
+export const DOT_PLOT = "dot-plot";
+export const SCATTER_PLOT = "scatter-plot";
 
 // Showing trends over time
-export const SHOW_TRENDS = "SHOW_TRENDS";
+export const SHOW_TRENDS = "show-trends";
 
 // Comparing distribution within a group
-export const COMPARE_WITHIN_GROUP = "COMPARE_WITHIN_GROUP";
-export const STEM_LEAF = "STEM_LEAF";
-export const BOX_PLOT = "BOX_PLOT";
+export const COMPARE_WITHIN_GROUP = "compare-within-group";
+export const STEM_LEAF = "stem-leaf";
+export const BOX_PLOT = "box-plot";
 
 // Showing relationships between variables
-export const SHOW_RELATIONSHIPS = "SHOW_RELATIONSHIPS";
-export const SCATTER_OR_MATRIX = "SCATTER_OR_MATRIX";
-export const SCATTER_MATRIX = "SCATTER_MATRIX";
-export const SCATTER_3D = "SCATTER_3D";
+export const SHOW_RELATIONSHIPS = "show-relationships";
+export const SCATTER_OR_MATRIX = "scatter-or-matrix";
+export const SCATTER_MATRIX = "scatter-matrix";
+export const SCATTER_3D = "scatter-3d";
 
 // Comparing distribution across two groups
-export const COMPARE_TWO_GROUPS = "COMPARE_TWO_GROUPS";
-export const GROUPED_BOX_PLOT = "GROUPED_BOX_PLOT";
+export const COMPARE_TWO_GROUPS = "compare-two-groups";
+export const GROUPED_BOX_PLOT = "grouped-box-plot";
 
 // Comparing distribution across more than two groups
-export const COMPARE_MORE_THAN_TWO_GROUPS = "COMPARE_MORE_THAN_TWO_GROUPS";
-export const VIOLIN_PLOT = "VIOLIN_PLOT";
+export const COMPARE_MORE_THAN_TWO_GROUPS = "compare-more-than-two-groups";
+export const VIOLIN_PLOT = "violin-plot";
 
 // Identifying patterns and outliers
-export const IDENTIFY_PATTERNS = "IDENTIFY_PATTERNS";
+export const IDENTIFY_PATTERNS = "identify-patterns";
 
 // Demonstrating change in data over space
-export const CHANGE_OVER_SPACE = "CHANGE_OVER_SPACE";
-export const CONTOUR_PLOT = "CONTOUR_PLOT";
+export const CHANGE_OVER_SPACE = "change-over-space";
+export const CONTOUR_PLOT = "contour-plot";
 
 // Illustrating a concept or theory
-export const ILLUSTRATE_CONCEPT = "ILLUSTRATE_CONCEPT";
-export const HEAT_MAP = "HEAT_MAP";
+export const ILLUSTRATE_CONCEPT = "illustrate-concept";
+export const HEAT_MAP = "heat-map";
 
 // Showing interactions between factors
-export const SHOW_INTERACTIONS = "SHOW_INTERACTIONS";
-export const INTERACTION_PLOT = "INTERACTION_PLOT";
+export const SHOW_INTERACTIONS = "show-interactions";
+export const INTERACTION_PLOT = "interaction-plot";
 
 // Showing individual trajectories over time
-export const INDIVIDUAL_TRAJECTORIES = "INDIVIDUAL_TRAJECTORIES";
-export const SPAGHETTI_PLOT = "SPAGHETTI_PLOT";
+export const INDIVIDUAL_TRAJECTORIES = "individual-trajectories";
+export const SPAGHETTI_PLOT = "spaghetti-plot";
