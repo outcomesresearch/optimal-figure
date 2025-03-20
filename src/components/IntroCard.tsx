@@ -13,36 +13,30 @@ const IntroCard = () => {
       <Stack>
         <Group justify="space-between">
           <Title order={3} fw={400}>
-            Selecting the correct figure or diagram
+            Finding the best type of figure or diagram for showcasing research
           </Title>
         </Group>
-
         <Stack>
           <Text c="dark">
-            Inferential statistics are essential in clinical and research
-            studies for making conclusions about populations based on sample
-            data. These methods allow researchers to assess whether observed
-            effects are likely due to the intervention or if they occurred by
-            chance. Selecting the correct statistical test is critical because
-            it impacts the validity of the study’s conclusions and the ability
-            to detect a true effect when it exists.
+            Visualizing data effectively is essential for understanding
+            patterns, relationships, and trends in research findings. Choosing
+            the appropriate figure or diagram ensures that key insights are
+            communicated clearly and accurately, making it easier for audiences
+            to interpret the results.
           </Text>
           <Text c="dark">
-            There are numerous inferential statistical tests available, each
-            suited to specific study designs, data types, and research
-            questions. The choice of statistical method depends on factors such
-            as the scale of the data (nominal, ordinal, continuous), the number
-            of groups being compared, and whether the data meet certain
-            assumptions (e.g., normality, homogeneity of variance). Choosing the
-            wrong test can result in misleading conclusions or underpowered
-            studies that fail to detect meaningful effects.
+            This tool is designed to help researchers and analysts determine the
+            most suitable visualization based on their data type, study
+            objective, and the relationships they wish to illustrate. By guiding
+            users through a structured decision-making process, it simplifies
+            the selection of figures such as bar charts, scatter plots, heat
+            maps, and more.
           </Text>
           <Text c="dark">
-            This tool assists researchers in selecting the most appropriate
-            inferential statistical test based on their data and research
-            objectives, helping to ensure accurate and reliable results. Please
-            note that this wizard only presents the most commonly used
-            statistics in clinical research.
+            Whether highlighting distributions, comparing groups, or identifying
+            trends, selecting the right visualization enhances clarity, supports
+            accurate interpretation, and strengthens the overall impact of the
+            analysis.
           </Text>
         </Stack>
         <NavLink to="/decision-tree" style={{ marginLeft: "auto" }}>

@@ -26,7 +26,7 @@ const ChoiceCard = ({
       }}
       color="gray"
       p="xs"
-      maw={220}
+      maw={350}
       onClick={onClick}
       bg={isSelected ? "green.1" : "unset"}
     >
