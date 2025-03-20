@@ -17,7 +17,7 @@ import { ROOT, NOMINAL } from "../ids.ts";
 const tree: Record<string, TreeNode> = {
   [NOMINAL]: {
     type: "question",
-    title: "What is the type of Independent Variable?",
+    title: "What is the type of independent variable?",
     inputs: [ROOT],
     component: () => "",
     choices: [

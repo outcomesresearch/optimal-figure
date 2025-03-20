@@ -10,7 +10,7 @@ import { CATEGORICAL, ROOT } from "../ids.ts";
 const tree: Record<string, TreeNode> = {
   [CATEGORICAL]: {
     type: "question",
-    title: "What is the Independent Variable Type?",
+    title: "What is the type of independent variable?",
     inputs: [ROOT],
     component: () => "",
     choices: [
