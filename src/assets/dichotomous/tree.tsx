@@ -349,13 +349,6 @@ const tree: Record<string, TreeNode> = {
     component: KaplanMeier,
     inputs: [ids.INDEPENDENT_CAT_TRENDS],
   },
-  [ids.AREA_CHART]: {
-    type: "statement",
-    title: "Area Chart",
-    flowChartTitle: "Area Chart",
-    component: AreaChart,
-    inputs: [ids.CHOOSE_TRENDS],
-  },
   [ids.HISTOGRAM]: {
     type: "statement",
     title: "Histogram",
