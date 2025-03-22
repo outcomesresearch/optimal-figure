@@ -213,7 +213,7 @@ const tree: Record<string, TreeNode> = {
         answer: "Heat Map",
         next: ids.HEAT_MAP,
         option_description:
-          "Heat map to illustrate data intensity across regions.",
+          "Heat maps illustrate data intensity across regions.",
       },
       {
         answer: "Geographic Map",
