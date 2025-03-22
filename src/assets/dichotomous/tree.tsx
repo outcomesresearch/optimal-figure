@@ -79,12 +79,12 @@ const tree: Record<string, TreeNode> = {
     component: () => "",
     choices: [
       {
-        answer: "Small",
+        answer: "≤ 30",
         next: ids.CHOOSE_HIGHLIGHT_SMALL,
         option_description: "Few data points (small dataset).",
       },
       {
-        answer: "Moderate or Large",
+        answer: "> 30",
         next: ids.CHOOSE_HIGHLIGHT_MODERATE_LARGE,
         option_description: "Moderate or large dataset with many data points.",
       },
@@ -248,12 +248,12 @@ const tree: Record<string, TreeNode> = {
     component: () => "",
     choices: [
       {
-        answer: "Small",
+        answer: "≤ 30",
         next: ids.SCATTER_PLOT_WITH_TREND_LINES,
         option_description: "Few data points (small dataset).",
       },
       {
-        answer: "Moderate or Large",
+        answer: "> 30",
         next: ids.ROC_CURVE,
         option_description: "Moderate or large dataset with many data points.",
       },
@@ -285,12 +285,12 @@ const tree: Record<string, TreeNode> = {
     component: () => "",
     choices: [
       {
-        answer: "Small",
+        answer: "≤ 30",
         next: ids.LINE_GRAPH,
         option_description: "Few data points (small dataset).",
       },
       {
-        answer: "Moderate or Large",
+        answer: "> 30",
         next: ids.KAPLAN_MEIER,
         option_description: "Moderate or large dataset with many data points.",
       },

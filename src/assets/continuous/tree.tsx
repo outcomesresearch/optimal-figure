@@ -98,14 +98,14 @@ const tree: Record<string, TreeNode> = {
     inputs: [CONTINUOUS],
     choices: [
       {
-        answer: "Small",
+        answer: "≤ 30",
         next: ids.DOT_PLOT,
         option_description: "Few data points (small dataset).",
       },
       {
-        answer: "Moderate or Large",
+        answer: "> 30",
         next: ids.SCATTER_PLOT,
-        option_description: "Moderate or large dataset with many data points.",
+        option_description: "Moderate or large number of data points.",
       },
     ],
   },
@@ -143,8 +143,16 @@ const tree: Record<string, TreeNode> = {
     component: () => "",
     inputs: [CONTINUOUS],
     choices: [
-      { answer: "Small or Moderate", next: ids.STEM_LEAF },
-      { answer: "Large", next: ids.BOX_PLOT },
+      {
+        answer: "> 30 and ≤ 100",
+        next: ids.STEM_LEAF,
+        option_description: "Small or moderate number of data points.",
+      },
+      {
+        answer: "> 100",
+        next: ids.BOX_PLOT,
+        option_description: "Large number of data points.",
+      },
     ],
   },
 
@@ -194,12 +202,12 @@ const tree: Record<string, TreeNode> = {
     inputs: [ids.SHOW_RELATIONSHIPS],
     choices: [
       {
-        answer: "Small or Moderate",
+        answer: "≤ 100",
         next: ids.SCATTER_PLOT,
         option_description: "Small or moderate number of data points.",
       },
       {
-        answer: "Large",
+        answer: "> 100",
         next: ids.SCATTER_MATRIX,
         option_description: "Many data points (large dataset).",
       },

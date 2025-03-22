@@ -90,12 +90,12 @@ const tree: Record<string, TreeNode> = {
     component: () => "",
     choices: [
       {
-        answer: "Small",
+        answer: "≤ 30",
         next: ids.FIG_PIE_CHART,
         option_description: "Few data points (small dataset).",
       },
       {
-        answer: "Moderate or Large",
+        answer: "> 30",
         next: ids.FIG_STACKED_BAR_GRAPH,
         option_description: "Moderate or large number of data points.",
       },
@@ -108,12 +108,12 @@ const tree: Record<string, TreeNode> = {
     component: () => "",
     choices: [
       {
-        answer: "Small or Moderate",
+        answer: "≤ 100",
         next: ids.FIG_MOSAIC_PLOT,
         option_description: "Small or moderate number of data points.",
       },
       {
-        answer: "Large",
+        answer: "> 100",
         next: ids.FIG_HEATMAP,
         option_description: "Large number of data points.",
       },
@@ -148,12 +148,12 @@ const tree: Record<string, TreeNode> = {
     component: () => "",
     choices: [
       {
-        answer: "Small",
+        answer: "≤ 30",
         next: ids.FIG_CONTOUR_PLOT,
         option_description: "Few data points (small dataset).",
       },
       {
-        answer: "Moderate or Large",
+        answer: "> 30",
         next: ids.FIG_3D_SCATTER_PLOT,
         option_description: "Moderate or large number of data points.",
       },
