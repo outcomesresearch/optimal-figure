@@ -3,6 +3,7 @@ import BarChart from "../../components/figures/BarChart.tsx";
 import BoxWhiskerPlot from "../../components/figures/BoxWhiskerPlot";
 import CustomVisualization from "../../components/figures/CustomVisualization";
 import DotPlot from "../../components/figures/DotPlot.tsx";
+import ROCCurve from "../../components/figures/ROCCurve";
 import MapFigure from "../../components/figures/MapFigure";
 import GroupedBarChart from "../../components/figures/GroupedBarChart";
 import HeatMap from "../../components/figures/HeatMap.tsx";
@@ -61,7 +62,7 @@ const tree: Record<string, TreeNode> = {
       },
       {
         answer: "Identify Patterns and Outliers",
-        next: ids.STATEMENT_SCATTER_PLOT_WITH_TREND_LINES,
+        next: ids.CHOOSE_IDENTIFY_OUTLIERS,
         option_description: "Detect trends and anomalies in your data.",
       },
       {
@@ -71,7 +72,7 @@ const tree: Record<string, TreeNode> = {
       },
       {
         answer: "Illustrate a Concept or Theory",
-        next: ids.STATEMENT_CUSTOM_VISUALIZATION,
+        next: ids.CUSTOM_VISUALIZATION,
         option_description:
           "Customize a visualization to explain a specific idea or theory.",
       },
@@ -103,12 +104,12 @@ const tree: Record<string, TreeNode> = {
     choices: [
       {
         answer: "Bar Chart",
-        next: ids.STATEMENT_BAR_CHART,
+        next: ids.BAR_CHART,
         option_description: "A bar chart to compare individual values.",
       },
       {
         answer: "Dot Plot",
-        next: ids.STATEMENT_DOT_PLOT,
+        next: ids.DOT_PLOT,
         option_description: "A dot plot to visualize each data point.",
       },
     ],
@@ -121,13 +122,13 @@ const tree: Record<string, TreeNode> = {
     choices: [
       {
         answer: "Bar Chart with Error Bars",
-        next: ids.STATEMENT_BAR_CHART_WITH_ERROR_BARS,
+        next: ids.BAR_CHART_WITH_ERROR_BARS,
         option_description:
           "Bar chart that includes error bars to show variability.",
       },
       {
         answer: "Box Plot",
-        next: ids.STATEMENT_BOX_PLOT,
+        next: ids.BOX_PLOT,
         option_description:
           "Box plot to summarize distribution and identify outliers.",
       },
@@ -141,12 +142,12 @@ const tree: Record<string, TreeNode> = {
     choices: [
       {
         answer: "Line Graph",
-        next: ids.STATEMENT_LINE_GRAPH,
+        next: ids.LINE_GRAPH,
         option_description: "A line graph to display trends over time.",
       },
       {
         answer: "Area Chart",
-        next: ids.STATEMENT_AREA_CHART,
+        next: ids.AREA_CHART,
         option_description:
           "An area chart to emphasize the magnitude of change over time.",
       },
@@ -160,12 +161,12 @@ const tree: Record<string, TreeNode> = {
     choices: [
       {
         answer: "Histogram",
-        next: ids.STATEMENT_HISTOGRAM,
+        next: ids.HISTOGRAM,
         option_description: "Histogram to show frequency distribution of data.",
       },
       {
         answer: "Violin Plot",
-        next: ids.STATEMENT_VIOLIN_PLOT,
+        next: ids.VIOLIN_PLOT,
         option_description: "Violin plot to show density and distribution.",
       },
     ],
@@ -178,13 +179,13 @@ const tree: Record<string, TreeNode> = {
     choices: [
       {
         answer: "Scatter Plot",
-        next: ids.STATEMENT_SCATTER_PLOT,
+        next: ids.SCATTER_PLOT,
         option_description:
           "Scatter plot to display the correlation between variables.",
       },
       {
         answer: "Line Graph",
-        next: ids.STATEMENT_LINE_GRAPH,
+        next: ids.LINE_GRAPH,
         option_description: "Line graph to illustrate trends in relationships.",
       },
     ],
@@ -197,12 +198,12 @@ const tree: Record<string, TreeNode> = {
     choices: [
       {
         answer: "Side-by-Side Box Plot",
-        next: ids.STATEMENT_SIDE_BY_SIDE_BOX_PLOT,
+        next: ids.SIDE_BY_SIDE_BOX_PLOT,
         option_description: "Box plots displayed side by side for two groups.",
       },
       {
         answer: "Grouped Bar Chart",
-        next: ids.STATEMENT_GROUPED_BAR_CHART,
+        next: ids.GROUPED_BAR_CHART,
         option_description:
           "Bar chart with grouped bars for two distinct groups.",
       },
@@ -216,12 +217,12 @@ const tree: Record<string, TreeNode> = {
     choices: [
       {
         answer: "Multiple Box Plots",
-        next: ids.STATEMENT_MULTIPLE_BOX_PLOTS,
+        next: ids.MULTIPLE_BOX_PLOTS,
         option_description: "Box plots for comparing multiple groups.",
       },
       {
         answer: "Stacked Bar Chart",
-        next: ids.STATEMENT_STACKED_BAR_CHART,
+        next: ids.STACKED_BAR_CHART,
         option_description:
           "Stacked bar chart to show cumulative totals across groups.",
       },
@@ -235,130 +236,181 @@ const tree: Record<string, TreeNode> = {
     choices: [
       {
         answer: "Heat Map",
-        next: ids.STATEMENT_HEAT_MAP,
+        next: ids.HEAT_MAP,
         option_description:
           "Heat map to illustrate data intensity across regions.",
       },
       {
         answer: "Geographic Map",
-        next: ids.STATEMENT_GEOGRAPHIC_MAP,
+        next: ids.GEOGRAPHIC_MAP,
         option_description: "Map-based visualization for spatial data.",
       },
     ],
   },
-  [ids.STATEMENT_BAR_CHART]: {
+  [ids.CHOOSE_IDENTIFY_OUTLIERS]: {
+    type: "question",
+    title: "What is the type of independent variable?",
+    inputs: [DICHOTOMOUS],
+    component: () => "",
+    choices: [
+      {
+        answer: "Categorical or Dichotomous",
+        next: ids.INDEPENDENT_CAT,
+        option_description:
+          "The independent variable is categorical or dichotomous.",
+      },
+      {
+        answer: "Continuous",
+        next: ids.SCATTER_PLOT_WITH_TREND_LINES_2,
+        option_description: "The independent variable is continuous.",
+      },
+    ],
+  },
+  [ids.INDEPENDENT_CAT]: {
+    type: "question",
+    title: "What is the size of the dataset?",
+    inputs: [ids.CHOOSE_IDENTIFY_OUTLIERS],
+    component: () => "",
+    choices: [
+      {
+        answer: "Small",
+        next: ids.SCATTER_PLOT_WITH_TREND_LINES,
+        option_description: "Few data points (small dataset).",
+      },
+      {
+        answer: "Moderate or Large",
+        next: ids.ROC_CURVE,
+        option_description: "Moderate or large dataset with many data points.",
+      },
+    ],
+  },
+  [ids.BAR_CHART]: {
     type: "statement",
     title: "Bar Chart",
     flowChartTitle: "Bar Chart",
     component: BarChart,
     inputs: [ids.CHOOSE_HIGHLIGHT_SMALL],
   },
-  [ids.STATEMENT_DOT_PLOT]: {
+  [ids.ROC_CURVE]: {
+    type: "statement",
+    title: "ROC Curve",
+    flowChartTitle: "ROC Curve",
+    component: ROCCurve,
+    inputs: [ids.INDEPENDENT_CAT],
+  },
+  [ids.DOT_PLOT]: {
     type: "statement",
     title: "Dot Plot",
     flowChartTitle: "Dot Plot",
     component: DotPlot,
     inputs: [ids.CHOOSE_HIGHLIGHT_SMALL],
   },
-  [ids.STATEMENT_BAR_CHART_WITH_ERROR_BARS]: {
+  [ids.BAR_CHART_WITH_ERROR_BARS]: {
     type: "statement",
     title: "Bar Chart with Error Bars",
     flowChartTitle: "Bar Chart with Error Bars",
     component: BoxWhiskerPlot,
     inputs: [ids.CHOOSE_HIGHLIGHT_MODERATE_LARGE],
   },
-  [ids.STATEMENT_BOX_PLOT]: {
+  [ids.BOX_PLOT]: {
     type: "statement",
     title: "Box Plot",
     flowChartTitle: "Box Plot",
     component: BoxWhiskerPlot,
     inputs: [ids.CHOOSE_HIGHLIGHT_MODERATE_LARGE],
   },
-  [ids.STATEMENT_LINE_GRAPH]: {
+  [ids.LINE_GRAPH]: {
     type: "statement",
     title: "Line Graph",
     flowChartTitle: "Line Graph",
     component: LineGraph,
     inputs: [ids.CHOOSE_TRENDS, ids.CHOOSE_RELATIONSHIP],
   },
-  [ids.STATEMENT_AREA_CHART]: {
+  [ids.AREA_CHART]: {
     type: "statement",
     title: "Area Chart",
     flowChartTitle: "Area Chart",
     component: AreaChart,
     inputs: [ids.CHOOSE_TRENDS],
   },
-  [ids.STATEMENT_HISTOGRAM]: {
+  [ids.HISTOGRAM]: {
     type: "statement",
     title: "Histogram",
     flowChartTitle: "Histogram",
     component: Histogram,
     inputs: [ids.CHOOSE_COMPARE_DISTRIBUTION_WITHIN],
   },
-  [ids.STATEMENT_VIOLIN_PLOT]: {
+  [ids.VIOLIN_PLOT]: {
     type: "statement",
     title: "Violin Plot",
     flowChartTitle: "Violin Plot",
     component: ViolinPlot,
     inputs: [ids.CHOOSE_COMPARE_DISTRIBUTION_WITHIN],
   },
-  [ids.STATEMENT_SCATTER_PLOT]: {
+  [ids.SCATTER_PLOT]: {
     type: "statement",
     title: "Scatter Plot",
     flowChartTitle: "Scatter Plot",
     component: ScatterPlot,
     inputs: [ids.CHOOSE_RELATIONSHIP],
   },
-  [ids.STATEMENT_SIDE_BY_SIDE_BOX_PLOT]: {
+  [ids.SIDE_BY_SIDE_BOX_PLOT]: {
     type: "statement",
     title: "Side-by-Side Box Plot",
     flowChartTitle: "Side-by-Side Box Plot",
     component: BoxWhiskerPlot,
     inputs: [ids.CHOOSE_COMPARE_TWO_GROUPS],
   },
-  [ids.STATEMENT_GROUPED_BAR_CHART]: {
+  [ids.GROUPED_BAR_CHART]: {
     type: "statement",
     title: "Grouped Bar Chart",
     flowChartTitle: "Grouped Bar Chart",
     component: GroupedBarChart,
     inputs: [ids.CHOOSE_COMPARE_TWO_GROUPS],
   },
-  [ids.STATEMENT_MULTIPLE_BOX_PLOTS]: {
+  [ids.MULTIPLE_BOX_PLOTS]: {
     type: "statement",
     title: "Multiple Box Plots",
     flowChartTitle: "Multiple Box Plots",
     component: GroupedBoxPlots,
     inputs: [ids.CHOOSE_COMPARE_MORE_THAN_TWO],
   },
-  [ids.STATEMENT_STACKED_BAR_CHART]: {
+  [ids.STACKED_BAR_CHART]: {
     type: "statement",
     title: "Stacked Bar Graph",
     flowChartTitle: "Stacked Bar Graph",
     component: StackedBarGraph,
     inputs: [ids.CHOOSE_COMPARE_MORE_THAN_TWO],
   },
-  [ids.STATEMENT_SCATTER_PLOT_WITH_TREND_LINES]: {
+  [ids.SCATTER_PLOT_WITH_TREND_LINES]: {
     type: "statement",
     title: "Scatter Plot with Trend Lines",
     flowChartTitle: "Scatter Plot with Trend Lines",
     component: ScatterPlot,
-    inputs: [DICHOTOMOUS],
+    inputs: [ids.INDEPENDENT_CAT],
   },
-  [ids.STATEMENT_HEAT_MAP]: {
+  [ids.SCATTER_PLOT_WITH_TREND_LINES_2]: {
+    type: "statement",
+    title: "Scatter Plot with Trend Lines",
+    flowChartTitle: "Scatter Plot with Trend Lines",
+    component: ScatterPlot,
+    inputs: [ids.CHOOSE_IDENTIFY_OUTLIERS],
+  },
+  [ids.HEAT_MAP]: {
     type: "statement",
     title: "Heat Map",
     flowChartTitle: "Heat Map",
     component: HeatMap,
     inputs: [ids.CHOOSE_CHANGE_OVER_SPACE],
   },
-  [ids.STATEMENT_GEOGRAPHIC_MAP]: {
+  [ids.GEOGRAPHIC_MAP]: {
     type: "statement",
     title: "Geographic Map",
     flowChartTitle: "Geographic Map",
     component: MapFigure,
     inputs: [ids.CHOOSE_CHANGE_OVER_SPACE],
   },
-  [ids.STATEMENT_CUSTOM_VISUALIZATION]: {
+  [ids.CUSTOM_VISUALIZATION]: {
     type: "statement",
     title: "Custom Visualization",
     flowChartTitle: "Custom Visualization",
