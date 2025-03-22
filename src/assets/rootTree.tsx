@@ -27,7 +27,7 @@ let rootTree = {
         answer: "Continous",
         next: ids.CONTINUOUS,
         option_description:
-          "A continuous outcome measure is a type of outcome measure used in clinical studies to quantify changes in a continuous variable such as blood pressure, weight, or height. It is typically analyzed using statistical methods such a mean, median, or regression analysis.",
+          "A continuous outcome measure is used in clinical studies to quantify changes in a continuous variable such as blood pressure, weight, or height. It is typically analyzed using statistical methods such a mean, median, or regression analysis.",
       },
       {
         answer: "Categorical",
@@ -51,7 +51,7 @@ let rootTree = {
         answer: "Meta-analysis",
         next: ids.META_ANALYSIS,
         option_description:
-          "In meta-analysis the outcome represents the pooled effect size derived from combining results of multiple studies. It quantifies the overall effect of an intervention or relationship by synthesizing data across studies, reducing individual study variability, and providing a more generalizable estimate of the true effect.",
+          "In meta-analysis, the outcome represents the pooled effect size derived from combining results of multiple studies. It quantifies the overall effect of an intervention or relationship by synthesizing data across studies, reducing individual study variability, and providing a more generalizable estimate of the true effect.",
       },
     ],
   },
