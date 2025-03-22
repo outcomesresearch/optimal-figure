@@ -11,32 +11,52 @@ const Component = () => {
           label: "Characteristics",
           content: (
             <Text>
-              Visually represents concepts, processes, or relationships, making
-              abstract ideas easier to understand and communicate.
+              Diagrams visually represent concepts, processes, or relationships,
+              helping to simplify abstract or theoretical ideas and make them
+              easier to understand.
             </Text>
           ),
         },
         {
           key: "purpose",
           label: "Purpose",
-          content: <Text>Illustrate a concept or theory.</Text>,
+          content: (
+            <Text>
+              Illustrate a concept, theory, or process that may not be
+              data-driven but still requires visual explanation.
+            </Text>
+          ),
         },
         {
           key: "whenToUse",
           label: "When to Use",
           content: (
-            <Stack>
-              <Text>
-                <strong>Independent Variable:</strong> Any type.
-              </Text>
-              <Text>
-                <strong>Dataset Size:</strong> Suitable for all sizes.
-              </Text>
-              <Text>
-                <strong>Example:</strong> Diagram showing the infection
-                transmission pathway.
-              </Text>
-            </Stack>
+            <Text>
+              Use diagrams when your goal is to communicate a framework, causal
+              relationship, mechanism, or process that supports or
+              contextualizes the rest of your findings.
+            </Text>
+          ),
+        },
+        {
+          key: "variables",
+          label: "Independent Variable",
+          content: (
+            <Text>
+              Diagrams are highly flexible — they can incorporate categorical,
+              continuous, nominal, or theoretical constructs depending on the
+              concept being illustrated.
+            </Text>
+          ),
+        },
+        {
+          key: "datasetSize",
+          label: "Dataset Size",
+          content: (
+            <Text>
+              Suitable for all dataset sizes — often used independently of
+              sample size, especially when no raw data is involved.
+            </Text>
           ),
         },
         {
@@ -45,12 +65,16 @@ const Component = () => {
           content: (
             <Stack>
               <Text>
-                <strong>Theoretical Representation:</strong> Ideal for
-                theoretical and conceptual visualization.
+                <strong>Conceptual Clarity:</strong> Helps explain mechanisms,
+                frameworks, and relationships visually.
               </Text>
               <Text>
-                <strong>Customization:</strong> Customizable to suit specific
-                needs and concepts.
+                <strong>Customizability:</strong> Can be adapted to a wide
+                variety of topics and audiences.
+              </Text>
+              <Text>
+                <strong>Non-Data-Driven:</strong> Doesn’t require quantitative
+                data to be effective.
               </Text>
             </Stack>
           ),
@@ -61,12 +85,16 @@ const Component = () => {
           content: (
             <Stack>
               <Text>
-                <strong>Limited for Quantitative Data:</strong> Less effective
-                for quantitative data representation.
+                <strong>Limited for Quantitative Interpretation:</strong> Not
+                suitable for showing numeric trends or comparisons.
               </Text>
               <Text>
-                <strong>Design Dependency:</strong> Can be subjective and
-                dependent on design quality.
+                <strong>Subjectivity:</strong> Design choices can affect clarity
+                and may introduce bias or misinterpretation.
+              </Text>
+              <Text>
+                <strong>Not Standardized:</strong> Interpretation may vary
+                across audiences without clear labeling or guidance.
               </Text>
             </Stack>
           ),

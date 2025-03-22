@@ -21,21 +21,30 @@ const Component = () => {
           key: "whenToUse",
           label: "When to Use",
           content: (
-            <Stack>
-              <Text>
-                <strong>Independent Variable:</strong> Categorical
-                (Single-level, Two-level, More than Two-level), Nominal
-                (Single-level, Two-level, More than Two-level).
-              </Text>
-              <Text>
-                <strong>Dataset Size:</strong> Suitable for all sizes, depending
-                on the granularity of spatial data.
-              </Text>
-              <Text>
-                <strong>Example:</strong> Mapping the spread of an infection
-                across different regions.
-              </Text>
-            </Stack>
+            <Text>
+              Use when you're analyzing or presenting data tied to geographic
+              locations or spatial patterns.
+            </Text>
+          ),
+        },
+        {
+          key: "variables",
+          label: "Independent Variable",
+          content: (
+            <Text>
+              Categorical or nominal — often representing geographic areas like
+              regions, countries, or cities.
+            </Text>
+          ),
+        },
+        {
+          key: "datasetSize",
+          label: "Dataset Size",
+          content: (
+            <Text>
+              Can be used with small or large datasets, though detail and
+              resolution depend on spatial granularity.
+            </Text>
           ),
         },
         {

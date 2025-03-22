@@ -10,31 +10,44 @@ const Component = () => {
         {
           key: "characteristics",
           label: "Characteristics",
-          content: <Text>Shows parts of a whole, easy to read.</Text>,
+          content: (
+            <Text>Shows parts of a whole using slices of a circle.</Text>
+          ),
         },
         {
           key: "purpose",
           label: "Purpose",
-          content: <Text>Compare distribution within a group.</Text>,
+          content: <Text>Compare distribution within a single group.</Text>,
         },
         {
           key: "whenToUse",
           label: "When to Use",
           content: (
-            <Stack>
-              <Text>
-                <strong>Independent Variable:</strong> Categorical
-                (Single-level), Nominal (Single-level), Dichotomous.
-              </Text>
-              <Text>
-                <strong>Dataset Size:</strong> Best for Small datasets due to
-                simplicity.
-              </Text>
-              <Text>
-                <strong>Example:</strong> Proportion of different infection
-                types in a patient population.
-              </Text>
-            </Stack>
+            <Text>
+              Pie charts should be used to show how a whole is divided into
+              categories, and when the comparison between those proportions is
+              simple and clear.
+            </Text>
+          ),
+        },
+        {
+          key: "variables",
+          label: "Independent Variable",
+          content: (
+            <Text>
+              Categorical (single-level), nominal (single-level), or dichotomous
+              variables used to define segments of the pie.
+            </Text>
+          ),
+        },
+        {
+          key: "datasetSize",
+          label: "Dataset Size",
+          content: (
+            <Text>
+              Best for small datasets with a limited number of categories;
+              becomes harder to read with too many segments.
+            </Text>
           ),
         },
         {
@@ -43,12 +56,12 @@ const Component = () => {
           content: (
             <Stack>
               <Text>
-                <strong>Easy Interpretation:</strong> Easy to interpret and
-                visually appealing.
+                <strong>Easy Interpretation:</strong> Intuitive and visually
+                engaging.
               </Text>
               <Text>
-                <strong>Proportional Clarity:</strong> Best for showing
-                proportions and parts of a whole.
+                <strong>Proportional Clarity:</strong> Clearly shows proportions
+                of a whole.
               </Text>
             </Stack>
           ),
@@ -59,12 +72,12 @@ const Component = () => {
           content: (
             <Stack>
               <Text>
-                <strong>Dataset Limitations:</strong> Not suitable for large
-                datasets due to simplicity.
+                <strong>Dataset Limitations:</strong> Not ideal for large
+                numbers of categories.
               </Text>
               <Text>
-                <strong>Comparison Difficulty:</strong> Harder to compare
-                between different groups with too many slices.
+                <strong>Comparison Difficulty:</strong> Difficult to compare
+                slices precisely, especially with similar sizes.
               </Text>
             </Stack>
           ),

@@ -12,33 +12,44 @@ const Component = () => {
           label: "Characteristics",
           content: (
             <Text>
-              Visualizes relationships between three continuous variables.
+              Visualizes relationships between three continuous variables in a
+              three-dimensional space.
             </Text>
           ),
         },
         {
           key: "purpose",
           label: "Purpose",
-          content: <Text>Show relationship between variables.</Text>,
+          content: <Text>Show relationships between variables.</Text>,
         },
         {
           key: "whenToUse",
           label: "When to Use",
           content: (
-            <Stack>
-              <Text>
-                <strong>Independent Variable:</strong> Continuous (Single-level,
-                Two-level, More than Two-level).
-              </Text>
-              <Text>
-                <strong>Dataset Size:</strong> Suitable for Moderate to Large
-                datasets.
-              </Text>
-              <Text>
-                <strong>Example:</strong> Relationship between age, BMI, and
-                cholesterol levels.
-              </Text>
-            </Stack>
+            <Text>
+              3D surface plots are used to present how a continuous outcome
+              changes in response to two continuous predictors.
+            </Text>
+          ),
+        },
+        {
+          key: "variables",
+          label: "Independent Variable",
+          content: (
+            <Text>
+              Two continuous independent variables (e.g., age and BMI) plotted
+              on the x and y axes.
+            </Text>
+          ),
+        },
+        {
+          key: "datasetSize",
+          label: "Dataset Size",
+          content: (
+            <Text>
+              Best suited for moderate to large datasets to ensure a smooth and
+              interpretable surface.
+            </Text>
           ),
         },
         {
@@ -47,12 +58,12 @@ const Component = () => {
           content: (
             <Stack>
               <Text>
-                <strong>Detailed Visualization:</strong> Provides a detailed
-                three-dimensional view of data.
+                <strong>Detailed Visualization:</strong> Provides a detailed 3D
+                view of how variables interact.
               </Text>
               <Text>
-                <strong>Complex Relationship Analysis:</strong> Effective for
-                visualizing complex relationships.
+                <strong>Complex Relationship Analysis:</strong> Great for
+                exploring nonlinear and multivariable relationships.
               </Text>
             </Stack>
           ),
@@ -63,12 +74,12 @@ const Component = () => {
           content: (
             <Stack>
               <Text>
-                <strong>Interpretation Difficulty:</strong> Can be difficult to
-                interpret without interactive tools.
+                <strong>Interpretation Difficulty:</strong> Can be hard to
+                interpret without rotation or interaction.
               </Text>
               <Text>
-                <strong>Obscured Details:</strong> Overlapping surfaces may
-                obscure details.
+                <strong>Obscured Details:</strong> Overlapping or occluded areas
+                may hide important features.
               </Text>
             </Stack>
           ),

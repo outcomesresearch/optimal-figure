@@ -12,8 +12,9 @@ const Component = () => {
           label: "Characteristics",
           content: (
             <Text>
-              Represents data distribution using bars to show frequency within
-              intervals (bins).
+              Represents the distribution of continuous data using vertical
+              bars, where each bar corresponds to the frequency of values within
+              a defined range or bin.
             </Text>
           ),
         },
@@ -21,30 +22,42 @@ const Component = () => {
           key: "purpose",
           label: "Purpose",
           content: (
-            <Text>Examine the spread of data within a single group.</Text>
+            <Text>
+              Examine the shape, center, and spread of data within a group, and
+              identify patterns such as skewness, gaps, or peaks.
+            </Text>
           ),
         },
         {
           key: "whenToUse",
           label: "When to Use",
           content: (
-            <Stack>
-              <Text>
-                <strong>Independent Variable:</strong> Continuous (Single-level,
-                Two-level, More than Two-level).
-              </Text>
-              <Text>
-                <strong>Dependent Variable:</strong> Dichotomous.
-              </Text>
-              <Text>
-                <strong>Dataset Size:</strong> Suitable for Moderate to Large
-                datasets.
-              </Text>
-              <Text>
-                <strong>Example:</strong> Analyzing the distribution of drug
-                dispensing turn around times within a hospital department.
-              </Text>
-            </Stack>
+            <Text>
+              Histograms show how data is distributed across a continuous range,
+              particularly to observe clustering, spread, or potential outliers
+              within a group.
+            </Text>
+          ),
+        },
+        {
+          key: "variables",
+          label: "Independent Variable",
+          content: (
+            <Text>
+              Continuous variables, such as time, age, or measurement values.
+              Histograms are designed to group continuous data into intervals
+              for display.
+            </Text>
+          ),
+        },
+        {
+          key: "datasetSize",
+          label: "Dataset Size",
+          content: (
+            <Text>
+              Most effective with moderate to large datasets. Too few data
+              points can result in an uninformative or misleading distribution.
+            </Text>
           ),
         },
         {
@@ -58,11 +71,11 @@ const Component = () => {
               </Text>
               <Text>
                 <strong>Outlier Detection:</strong> Helps identify unusual
-                values or patterns in the data.
+                values or gaps in the dataset.
               </Text>
               <Text>
-                <strong>Summarization:</strong> Provides an easy-to-understand
-                summary of large datasets.
+                <strong>Summarization:</strong> Condenses large datasets into a
+                format that is easy to interpret.
               </Text>
             </Stack>
           ),
@@ -73,18 +86,17 @@ const Component = () => {
           content: (
             <Stack>
               <Text>
-                <strong>Bin Sensitivity:</strong> The appearance of the
-                histogram depends on bin selection, which can impact
+                <strong>Bin Sensitivity:</strong> Histogram appearance can vary
+                depending on the number and width of bins, which may influence
                 interpretation.
               </Text>
               <Text>
-                <strong>Loss of Detail:</strong> Can obscure individual data
-                points by grouping them into bins.
+                <strong>Loss of Precision:</strong> Individual data values are
+                not shown, as values are grouped into ranges.
               </Text>
               <Text>
-                <strong>Limited for Small Datasets:</strong> May not be
-                effective when the dataset is too small to form a meaningful
-                distribution.
+                <strong>Limited Use for Small Samples:</strong> May not be
+                meaningful or accurate with very small datasets.
               </Text>
             </Stack>
           ),

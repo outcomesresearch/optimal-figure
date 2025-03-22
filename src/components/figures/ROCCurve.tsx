@@ -5,16 +5,31 @@ const RocCurveComponent = () => {
   return (
     <TabLayout
       description="A Receiver Operating Characteristic (ROC) Curve is used to evaluate the performance of a binary classification model by plotting the true positive rate against the false positive rate at various threshold settings."
-      imageLink={`${import.meta.env.BASE_URL}images/rocCurve.png`}
+      imageLink="/optimal-figure/images/rocCurve.png"
       tabsConfiguration={[
         {
           key: "characteristics",
           label: "Characteristics",
           content: (
-            <Text>
-              Plots the trade-off between sensitivity and specificity for a
-              binary classifier across different thresholds.
-            </Text>
+            <Stack>
+              <Text>
+                A ROC Curve illustrates the trade-off between sensitivity (true
+                positive rate) and specificity (false positive rate) for a
+                classification model across different threshold settings. It
+                provides a graphical way to evaluate how well a model
+                distinguishes between two classes.
+              </Text>
+              <Text>
+                <strong>Binary Classification Model:</strong> A predictive model
+                that categorizes data into one of two possible outcomes, such as
+                disease vs. no disease or spam vs. not spam.
+              </Text>
+              <Text>
+                These models typically output a probability between 0 and 1,
+                which is then compared against a decision threshold to make a
+                final classification.
+              </Text>
+            </Stack>
           ),
         },
         {
@@ -22,8 +37,11 @@ const RocCurveComponent = () => {
           label: "Purpose",
           content: (
             <Text>
-              Identify patterns and outliers in classification performance and
-              evaluate how well a model distinguishes between two classes.
+              ROC Curves are used to identify patterns and outliers in
+              classification performance and to evaluate how well a binary model
+              distinguishes between two possible outcomes. They are especially
+              useful for visualizing the trade-off between sensitivity and
+              specificity.
             </Text>
           ),
         },
@@ -31,24 +49,34 @@ const RocCurveComponent = () => {
           key: "whenToUse",
           label: "When to Use",
           content: (
-            <Stack>
-              <Text>
-                <strong>Independent Variable:</strong> Categorical or
-                dichotomous (two levels).
-              </Text>
-              <Text>
-                <strong>Dependent Variable:</strong> Binary classification
-                outcome.
-              </Text>
-              <Text>
-                <strong>Dataset Size:</strong> Suitable for moderate to large
-                datasets.
-              </Text>
-              <Text>
-                <strong>Example:</strong> Evaluating the diagnostic performance
-                of a medical test that predicts disease presence or absence.
-              </Text>
-            </Stack>
+            <Text>
+              Use ROC Curves to evaluate the diagnostic or classification
+              accuracy of a model that produces binary outcomes. It is
+              particularly helpful when exploring model performance across a
+              range of thresholds, rather than relying on a single cutoff.
+            </Text>
+          ),
+        },
+        {
+          key: "variables",
+          label: "Independent Variable",
+          content: (
+            <Text>
+              The independent variable is typically categorical or dichotomous —
+              such as treatment vs. control, or positive vs. negative test
+              result — and is used to define group membership in the model.
+            </Text>
+          ),
+        },
+        {
+          key: "datasetSize",
+          label: "Dataset Size",
+          content: (
+            <Text>
+              ROC Curves are most effective with moderate to large datasets.
+              Smaller datasets may produce unreliable estimates of sensitivity
+              and specificity, especially when outcome classes are imbalanced.
+            </Text>
           ),
         },
         {
@@ -57,16 +85,18 @@ const RocCurveComponent = () => {
           content: (
             <Stack>
               <Text>
-                <strong>Model Comparison:</strong> Useful for comparing multiple
-                classifiers.
+                <strong>Model Comparison:</strong> Allows side-by-side
+                evaluation of multiple classifiers to see which performs best
+                across thresholds.
               </Text>
               <Text>
-                <strong>Threshold Independence:</strong> Evaluates performance
-                across all thresholds.
+                <strong>Threshold Flexibility:</strong> Helps assess model
+                performance without committing to a specific probability
+                threshold.
               </Text>
               <Text>
-                <strong>Diagnostic Insight:</strong> Helps understand
-                sensitivity vs. specificity trade-offs.
+                <strong>Visual Insight:</strong> Offers an intuitive view of
+                trade-offs between sensitivity and specificity.
               </Text>
             </Stack>
           ),
@@ -77,16 +107,18 @@ const RocCurveComponent = () => {
           content: (
             <Stack>
               <Text>
-                <strong>Limited to Binary Outcomes:</strong> Not suitable for
-                multiclass problems without adaptation.
+                <strong>Binary Limitation:</strong> ROC Curves are designed for
+                binary outcomes and require modification to be used with
+                multiclass problems.
               </Text>
               <Text>
-                <strong>Imbalanced Data:</strong> Can be misleading if the
-                dataset is highly imbalanced.
+                <strong>Class Imbalance Sensitivity:</strong> Performance can be
+                misleading if one outcome class heavily outweighs the other.
               </Text>
               <Text>
-                <strong>Less Interpretable for Small Samples:</strong> Results
-                may be unstable with small datasets.
+                <strong>Unreliable with Small Samples:</strong> Small datasets
+                may not provide stable estimates, especially at extreme
+                thresholds.
               </Text>
             </Stack>
           ),

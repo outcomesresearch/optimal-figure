@@ -11,34 +11,54 @@ const Component = () => {
           key: "characteristics",
           label: "Characteristics",
           content: (
-            <Text>Multiple bar charts for different subsets of data.</Text>
+            <Text>
+              A faceted bar chart organizes data into separate bar charts
+              (facets), each representing a subgroup of the data, enabling clear
+              visual comparisons across dimensions.
+            </Text>
           ),
         },
         {
           key: "purpose",
           label: "Purpose",
           content: (
-            <Text>Compare distribution across more than two groups.</Text>
+            <Text>
+              Compare distributions across more than two groups or categories,
+              especially when relationships vary across subgroups.
+            </Text>
           ),
         },
         {
           key: "whenToUse",
           label: "When to Use",
           content: (
-            <Stack>
-              <Text>
-                <strong>Independent Variable:</strong> Categorical (More than
-                Two-level), Nominal (More than Two-level), Dichotomous.
-              </Text>
-              <Text>
-                <strong>Dataset Size:</strong> Suitable for all sizes (Small,
-                Moderate, Large).
-              </Text>
-              <Text>
-                <strong>Example:</strong> Comparing infection rates across
-                different age groups, genders, and hospital departments.
-              </Text>
-            </Stack>
+            <Text>
+              Use a faceted bar chart when you're working with multiple
+              categorical groupings and want to break down comparisons across
+              each dimension.
+            </Text>
+          ),
+        },
+        {
+          key: "variables",
+          label: "Independent Variable",
+          content: (
+            <Text>
+              Categorical or nominal variables with more than two levels —
+              commonly used to define subgroups (facets) like department,
+              gender, or region.
+            </Text>
+          ),
+        },
+        {
+          key: "datasetSize",
+          label: "Dataset Size",
+          content: (
+            <Text>
+              Suitable for small to large datasets. While faceting can clarify
+              complex data, charts can become overwhelming if there are too many
+              facets or too little data in each subgroup.
+            </Text>
           ),
         },
         {
@@ -47,12 +67,16 @@ const Component = () => {
           content: (
             <Stack>
               <Text>
-                <strong>Detailed Comparisons:</strong> Provides detailed
-                comparisons across multiple subgroups.
+                <strong>Detailed Comparisons:</strong> Makes it easy to compare
+                trends or distributions within subgroups of data.
               </Text>
               <Text>
-                <strong>Interpretability:</strong> Easy to interpret within
-                individual facets.
+                <strong>Interpretability:</strong> Each facet isolates part of
+                the dataset, improving clarity and focus.
+              </Text>
+              <Text>
+                <strong>Scalability:</strong> Scales well when the number of
+                observations is large but spread across categories.
               </Text>
             </Stack>
           ),
@@ -63,12 +87,12 @@ const Component = () => {
           content: (
             <Stack>
               <Text>
-                <strong>Complexity:</strong> Can become complex with too many
-                facets.
+                <strong>Visual Complexity:</strong> Too many facets can result
+                in a crowded layout and reduced readability.
               </Text>
               <Text>
-                <strong>Organization Challenge:</strong> Requires careful
-                organization for clarity.
+                <strong>Design Overhead:</strong> Requires thoughtful layout and
+                ordering to maintain interpretability across facets.
               </Text>
             </Stack>
           ),

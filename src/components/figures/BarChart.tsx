@@ -10,15 +10,21 @@ const Component = () => {
         {
           key: "characteristics",
           label: "Characteristics",
-          content: <Text>Simple, easy to read, compares categories.</Text>,
+          content: (
+            <Text>
+              Uses rectangular bars to represent and compare the values of
+              different categories. The height or length of each bar corresponds
+              to the value it represents.
+            </Text>
+          ),
         },
         {
           key: "purpose",
           label: "Purpose",
           content: (
             <Text>
-              Highlight individual values and compare distribution within a
-              group.
+              Highlight individual values and compare distributions within a
+              single group.
             </Text>
           ),
         },
@@ -26,21 +32,32 @@ const Component = () => {
           key: "whenToUse",
           label: "When to Use",
           content: (
-            <Stack>
-              <Text>
-                <strong>Independent Variable:</strong> Categorical
-                (Single-level, Two-level, More than Two-level), Nominal
-                (Single-level, Two-level, More than Two-level), Dichotomous.
-              </Text>
-              <Text>
-                <strong>Dataset Size:</strong> Suitable for all sizes (Small,
-                Moderate, Large).
-              </Text>
-              <Text>
-                <strong>Example:</strong> Comparing the number of patients with
-                different types of infections.
-              </Text>
-            </Stack>
+            <Text>
+              Bar charts provide a clear, straightforward way to
+              compare discrete categories or to emphasize individual counts or
+              values.
+            </Text>
+          ),
+        },
+        {
+          key: "variables",
+          label: "Independent Variable",
+          content: (
+            <Text>
+              Categorical or nominal variables — including single-level,
+              two-level, or multi-level — such as diagnosis type, department, or
+              patient category.
+            </Text>
+          ),
+        },
+        {
+          key: "datasetSize",
+          label: "Dataset Size",
+          content: (
+            <Text>
+              Suitable for small, moderate, and large datasets. However, with
+              many categories, visual clutter can reduce interpretability.
+            </Text>
           ),
         },
         {
@@ -49,12 +66,16 @@ const Component = () => {
           content: (
             <Stack>
               <Text>
-                <strong>Easy Interpretation:</strong> Easy to interpret and
-                compare different categories.
+                <strong>Easy Interpretation:</strong> Straightforward to read
+                and compare across categories.
               </Text>
               <Text>
-                <strong>Versatility:</strong> Suitable for various dataset
-                sizes.
+                <strong>Versatility:</strong> Works well with a wide range of
+                data sizes and types.
+              </Text>
+              <Text>
+                <strong>Familiar Format:</strong> Universally recognized and
+                commonly used in reporting.
               </Text>
             </Stack>
           ),
@@ -65,12 +86,13 @@ const Component = () => {
           content: (
             <Stack>
               <Text>
-                <strong>Clutter:</strong> Can become cluttered with too many
-                categories.
+                <strong>Visual Clutter:</strong> Becomes harder to read with too
+                many categories or long labels.
               </Text>
               <Text>
-                <strong>Limited Part-to-Whole Representation:</strong> Does not
-                show part-to-whole relationships effectively.
+                <strong>Not Ideal for Part-to-Whole:</strong> Does not naturally
+                convey part-to-whole relationships (use pie or stacked bar for
+                that).
               </Text>
             </Stack>
           ),

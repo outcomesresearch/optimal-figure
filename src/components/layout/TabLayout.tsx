@@ -1,27 +1,32 @@
 import { Tabs, Text, Box, Stack, Group, Image } from "@mantine/core";
 import { useMediaQuery } from "@mantine/hooks";
 
-// Define Tab Titles
-type TabTitle =
-  | "characteristics"
-  | "purpose"
-  | "whenToUse"
-  | "variables"
-  | "datasetSize"
-  | "strengths"
-  | "weaknesses";
-
-// Define the type for each tab's configuration
+// Define each tab shape
 type TabConfiguration = {
-  key: TabTitle;
+  key:
+    | "characteristics"
+    | "purpose"
+    | "whenToUse"
+    | "variables"
+    | "datasetSize"
+    | "strengths"
+    | "weaknesses";
   label: string;
   content: JSX.Element;
 };
 
-// Update Props to define `tabsConfiguration` as an array of TabConfiguration
+// Enforce array of exactly 7 TabConfigurations
 type Props = {
   description: string;
-  tabsConfiguration: TabConfiguration[];
+  tabsConfiguration: [
+    TabConfiguration,
+    TabConfiguration,
+    TabConfiguration,
+    TabConfiguration,
+    TabConfiguration,
+    TabConfiguration,
+    TabConfiguration
+  ];
   imageLink?: string;
 };
 
@@ -47,8 +52,12 @@ export default function CardLayout({
             orientation="vertical"
             styles={{
               tab: { paddingLeft: 0, minWidth: 120, maxWidth: 120, width: 120 },
-              tabLabel: { whiteSpace: "wrap" },
-              list: { minWidth: 120, maxWidth: 120, width: 120 },
+              tabLabel: { whiteSpace: "wrap", lineHeight: 1.5 },
+              list: {
+                minWidth: 120,
+                maxWidth: 120,
+                width: 120,
+              },
             }}
           >
             <Tabs.List>
