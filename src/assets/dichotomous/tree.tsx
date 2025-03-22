@@ -1,7 +1,6 @@
 import AreaChart from "../../components/figures/AreaChart";
 import BarChart from "../../components/figures/BarChart.tsx";
 import BoxWhiskerPlot from "../../components/figures/BoxWhiskerPlot";
-import CustomVisualization from "../../components/figures/CustomVisualization";
 import DotPlot from "../../components/figures/DotPlot.tsx";
 import ROCCurve from "../../components/figures/ROCCurve";
 import MapFigure from "../../components/figures/MapFigure";
@@ -70,12 +69,6 @@ const tree: Record<string, TreeNode> = {
         answer: "Demonstrate Change in Data Over Space",
         next: ids.CHOOSE_CHANGE_OVER_SPACE,
         option_description: "Show spatial variations and trends using maps.",
-      },
-      {
-        answer: "Illustrate a Concept or Theory",
-        next: ids.CUSTOM_VISUALIZATION,
-        option_description:
-          "Customize a visualization to explain a specific idea or theory.",
       },
     ],
   },
@@ -439,13 +432,6 @@ const tree: Record<string, TreeNode> = {
     flowChartTitle: "Geographic Map",
     component: MapFigure,
     inputs: [ids.CHOOSE_CHANGE_OVER_SPACE],
-  },
-  [ids.CUSTOM_VISUALIZATION]: {
-    type: "statement",
-    title: "Custom Visualization",
-    flowChartTitle: "Custom Visualization",
-    component: CustomVisualization,
-    inputs: [DICHOTOMOUS],
   },
 };
 
