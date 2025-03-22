@@ -10,7 +10,8 @@ import HeatMap from "../../components/figures/HeatMap.tsx";
 import Histogram from "../../components/figures/Histogram";
 import LineGraph from "../../components/figures/LineGraph";
 import GroupedBoxPlots from "../../components/figures/BoxWhiskerPlot";
-import ScatterPlot from "../../components/figures/ScatterPlot.tsx";
+import ScatterPlot from "../../components/figures/ScatterPlot";
+import KaplanMeier from "../../components/figures/KaplanMeier";
 import StackedBarGraph from "../../components/figures/StackedBarGraph";
 import ViolinPlot from "../../components/figures/ViolinPlot";
 import * as ids from "./ids";
@@ -134,25 +135,6 @@ const tree: Record<string, TreeNode> = {
       },
     ],
   },
-  [ids.CHOOSE_TRENDS]: {
-    type: "question",
-    title: "These approaches are suitable:",
-    inputs: [DICHOTOMOUS],
-    component: () => "",
-    choices: [
-      {
-        answer: "Line Graph",
-        next: ids.LINE_GRAPH,
-        option_description: "A line graph to display trends over time.",
-      },
-      {
-        answer: "Area Chart",
-        next: ids.AREA_CHART,
-        option_description:
-          "An area chart to emphasize the magnitude of change over time.",
-      },
-    ],
-  },
   [ids.CHOOSE_COMPARE_DISTRIBUTION_WITHIN]: {
     type: "question",
     title: "These approaches are suitable:",
@@ -181,12 +163,12 @@ const tree: Record<string, TreeNode> = {
         answer: "Scatter Plot",
         next: ids.SCATTER_PLOT,
         option_description:
-          "Scatter plot to display the correlation between variables.",
+          "Scatter plots display the correlation between variables.",
       },
       {
         answer: "Line Graph",
         next: ids.LINE_GRAPH,
-        option_description: "Line graph to illustrate trends in relationships.",
+        option_description: "Line graphs illustrate trends in relationships.",
       },
     ],
   },
@@ -284,6 +266,43 @@ const tree: Record<string, TreeNode> = {
       },
     ],
   },
+  [ids.CHOOSE_TRENDS]: {
+    type: "question",
+    title: "What is the type of independent variable?",
+    inputs: [DICHOTOMOUS],
+    component: () => "",
+    choices: [
+      {
+        answer: "Categorical or Dichotomous",
+        next: ids.INDEPENDENT_CAT_TRENDS,
+        option_description:
+          "The independent variable is categorical or dichotomous.",
+      },
+      {
+        answer: "Continuous",
+        next: ids.LINE_GRAPH,
+        option_description: "The independent variable is continuous.",
+      },
+    ],
+  },
+  [ids.INDEPENDENT_CAT_TRENDS]: {
+    type: "question",
+    title: "What is the size of the dataset?",
+    inputs: [ids.CHOOSE_TRENDS],
+    component: () => "",
+    choices: [
+      {
+        answer: "Small",
+        next: ids.LINE_GRAPH,
+        option_description: "Few data points (small dataset).",
+      },
+      {
+        answer: "Moderate or Large",
+        next: ids.KAPLAN_MEIER,
+        option_description: "Moderate or large dataset with many data points.",
+      },
+    ],
+  },
   [ids.BAR_CHART]: {
     type: "statement",
     title: "Bar Chart",
@@ -324,7 +343,18 @@ const tree: Record<string, TreeNode> = {
     title: "Line Graph",
     flowChartTitle: "Line Graph",
     component: LineGraph,
-    inputs: [ids.CHOOSE_TRENDS, ids.CHOOSE_RELATIONSHIP],
+    inputs: [
+      ids.CHOOSE_TRENDS,
+      ids.CHOOSE_RELATIONSHIP,
+      ids.INDEPENDENT_CAT_TRENDS,
+    ],
+  },
+  [ids.KAPLAN_MEIER]: {
+    type: "statement",
+    title: "Kaplan-Meier Curve",
+    flowChartTitle: "Kaplan-Meier Curve",
+    component: KaplanMeier,
+    inputs: [ids.INDEPENDENT_CAT_TRENDS],
   },
   [ids.AREA_CHART]: {
     type: "statement",

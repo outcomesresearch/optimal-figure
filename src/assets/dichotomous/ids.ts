@@ -13,8 +13,8 @@ export const CHOOSE_COMPARE_TWO_GROUPS = "choose-compare-two-groups";
 export const CHOOSE_COMPARE_MORE_THAN_TWO = "choose-compare-more-than-two";
 export const CHOOSE_CHANGE_OVER_SPACE = "choose-change-over-space";
 export const CHOOSE_IDENTIFY_OUTLIERS = "choose-identify-outliers";
+export const INDEPENDENT_CAT_TRENDS = "independent-categorical-trends";
 export const INDEPENDENT_CAT = "independent-cat";
-export const INDEPENDENT_CONT = "independent-cont";
 
 export const BAR_CHART = "fig-bar-chart";
 export const DOT_PLOT = "fig-dot-plot";
@@ -29,6 +29,7 @@ export const SIDE_BY_SIDE_BOX_PLOT = "fig-side-by-side-box-plot";
 export const GROUPED_BAR_CHART = "fig-grouped-bar-chart";
 export const MULTIPLE_BOX_PLOTS = "fig-multiple-box-plots";
 export const STACKED_BAR_CHART = "fig-stacked-bar-chart";
+export const KAPLAN_MEIER = "fig-kaplan-meier";
 export const SCATTER_PLOT_WITH_TREND_LINES =
   "fig-scatter-plot-with-trend-lines";
 export const SCATTER_PLOT_WITH_TREND_LINES_2 =
